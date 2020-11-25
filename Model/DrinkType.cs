@@ -1,16 +1,15 @@
 ﻿namespace Model
 {
-    public class Table
+    public class DrinkType
     {
         int id;
-        string name, status;
+        string name;
 
-        public Table() { }
-        public Table(int id, string name, string status)
+        public DrinkType() { }
+        public DrinkType(int id, string name)
         {
             this.id = id;
             this.name = name;
-            this.status = status;
         }
         public int ID
         {
@@ -21,11 +20,6 @@
         {
             get { return name; }
             set { name = value; }
-        }
-        public string Status
-        {
-            get { return status; }
-            set { status = value; }
         }
     }
 }

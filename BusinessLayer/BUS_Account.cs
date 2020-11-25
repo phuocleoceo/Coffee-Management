@@ -7,14 +7,14 @@ namespace BussinessLayer
 {
     public class BUS_Account
     {
-        DAL_Account DAL_Account = new DAL_Account();
+        private DAL_Account DAL_Account = new DAL_Account();
         public DataTable Read()
         {
             return DAL_Account.Read();
         }
         public void GetList(ManageList<Account> list)
         {
-            list.Clear();
+            list.Clear();              
             foreach (DataRow row in Read().Rows)
             {
                 string UN = row["UserName"].ToString();
