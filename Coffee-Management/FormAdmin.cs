@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Model;
-using BussinessLayer;
+using BusinessLayer;
 
 namespace GUILayer
 {
@@ -13,6 +13,7 @@ namespace GUILayer
         private BUS_Account BUS_Account = new BUS_Account();
         private BUS_Drink BUS_Drink = new BUS_Drink();
         private BUS_Table BUS_Table = new BUS_Table();
+        private BUS_DrinkType BUS_DrinkType = new BUS_DrinkType();
         //-----------------------------------------------------------------------------------        
         public FormAdmin()
         {
@@ -34,6 +35,11 @@ namespace GUILayer
             btnAddDrink.Enabled = false;
             btnEditDrink.Enabled = false;
             btnDeleteDrink.Enabled = false;
+
+            Display.FormatTable(dgvDrinkType);
+            btnAddDrinkType.Enabled = false;
+            btnEditDrinkType.Enabled = false;
+            btnDeleteDrinkType.Enabled = false;
         }
         /*--------------------------ACCOUNT----------------------------------------*/
         // Đọc dữ liệu của hàng được chọn vào biến 
@@ -228,7 +234,6 @@ namespace GUILayer
             //Cập nhật lại Database
             BUS_Drink.Create(newDrink);
             btnShowDrink.PerformClick();
-
         }
 
         private void btnDeleteDrink_Click(object sender, EventArgs e)
@@ -245,6 +250,70 @@ namespace GUILayer
                 //Xoá trong Database
                 BUS_Drink.Delete(deleteDrinkID);
                 btnShowDrink.PerformClick();
+            }
+        }
+
+
+        /*--------------------------DRINKTYPE------------------------------------*/
+        private void dgvDrinkType_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvDrinkType.SelectedRows)
+            {
+                txbDrinkTypeID.Text = row.Cells[0].Value.ToString();
+                txbDrinkTypeName.Text = row.Cells[1].Value.ToString();
+            }
+        }
+        private void btnShowDrinkType_Click(object sender, EventArgs e)
+        {
+            BUS_DrinkType.ShowDGV(dgvDrinkType);
+            //Cho phép các Button khác chạy
+            btnAddDrinkType.Enabled = true;
+            btnEditDrinkType.Enabled = true;
+            btnDeleteDrinkType.Enabled = true;
+        }
+
+        private void btnAddDrinkType_Click(object sender, EventArgs e)
+        {
+            int newDrinkTypeID = Int32.Parse(txbDrinkTypeID.Text);
+            string newDrinkTypeName = txbDrinkTypeName.Text;
+            DrinkType newDrinkType = new DrinkType(newDrinkTypeID, newDrinkTypeName);
+            //Cập nhật lại Database
+            BUS_DrinkType.Create(newDrinkType);
+            btnShowDrinkType.PerformClick();
+        }
+
+        private void btnEditDrinkType_Click(object sender, EventArgs e)
+        {
+            int oldDrinkTypeID = 0, newDrinkTypeID = 0;
+            string newDrinkTypeName = "";
+            //Dữ liệu cũ thì lấy từ Hàng được chọn, chỉ cần Khoá chính là đủ
+            foreach (DataGridViewRow row in dgvDrinkType.SelectedRows)
+            {
+                oldDrinkTypeID = Int32.Parse(row.Cells[0].Value.ToString());
+            }
+            //Dữ liệu mới thì lấy từ TextBox
+            newDrinkTypeID = Int32.Parse(txbDrinkTypeID.Text);
+            newDrinkTypeName = txbDrinkTypeName.Text;
+            DrinkType updateDrinkType = new DrinkType(newDrinkTypeID, newDrinkTypeName);
+            //Sửa Database            
+            BUS_DrinkType.Update(updateDrinkType, oldDrinkTypeID);
+            btnShowDrinkType.PerformClick();
+        }
+
+        private void btnDeleteDrinkType_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Confirm Delete ?", "Warning !", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                int deleteDrinkTypeID = 0;
+                //Xoá trong Table
+                foreach (DataGridViewRow row in dgvDrinkType.SelectedRows)
+                {
+                    deleteDrinkTypeID = Int32.Parse(row.Cells[0].Value.ToString());
+                }
+                //Xoá trong Database
+                BUS_DrinkType.Delete(deleteDrinkTypeID);
+                btnShowDrinkType.PerformClick();
             }
         }
     }

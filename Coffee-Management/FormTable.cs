@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Model;
-using BussinessLayer;
+using BusinessLayer;
 
 namespace GUILayer
 {

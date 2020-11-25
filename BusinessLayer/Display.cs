@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 using System.Drawing;
-namespace BussinessLayer
+namespace BusinessLayer
 {
     public class Display
     {

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tpAccount = new System.Windows.Forms.TabPage();
             this.txbPassWord = new System.Windows.Forms.TextBox();
             this.dgvAccount = new System.Windows.Forms.DataGridView();
@@ -57,18 +58,18 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.txbTableID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.tpDrinkCategory = new System.Windows.Forms.TabPage();
+            this.tpDrinkType = new System.Windows.Forms.TabPage();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.txbCategoryName = new System.Windows.Forms.TextBox();
+            this.txbDrinkTypeName = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnShowCategory = new System.Windows.Forms.Button();
+            this.btnShowDrinkType = new System.Windows.Forms.Button();
             this.panel23 = new System.Windows.Forms.Panel();
-            this.txbCategoryID = new System.Windows.Forms.TextBox();
+            this.txbDrinkTypeID = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnEditCategory = new System.Windows.Forms.Button();
-            this.dtgvCategory = new System.Windows.Forms.DataGridView();
-            this.btnDeleteCategory = new System.Windows.Forms.Button();
-            this.btnAddCategory = new System.Windows.Forms.Button();
+            this.btnEditDrinkType = new System.Windows.Forms.Button();
+            this.dgvDrinkType = new System.Windows.Forms.DataGridView();
+            this.btnDeleteDrinkType = new System.Windows.Forms.Button();
+            this.btnAddDrinkType = new System.Windows.Forms.Button();
             this.tpDrink = new System.Windows.Forms.TabPage();
             this.panel8 = new System.Windows.Forms.Panel();
             this.nmDrinkPrice = new System.Windows.Forms.NumericUpDown();
@@ -90,7 +91,6 @@
             this.btnDeleteDrink = new System.Windows.Forms.Button();
             this.btnAddDrink = new System.Windows.Forms.Button();
             this.tcAdmin = new System.Windows.Forms.TabControl();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tpAccount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).BeginInit();
             this.panel16.SuspendLayout();
@@ -100,10 +100,10 @@
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).BeginInit();
             this.panel11.SuspendLayout();
-            this.tpDrinkCategory.SuspendLayout();
+            this.tpDrinkType.SuspendLayout();
             this.panel22.SuspendLayout();
             this.panel23.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCategory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDrinkType)).BeginInit();
             this.tpDrink.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmDrinkPrice)).BeginInit();
@@ -113,6 +113,15 @@
             this.panel5.SuspendLayout();
             this.tcAdmin.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(945, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // tpAccount
             // 
@@ -459,85 +468,85 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "ID";
             // 
-            // tpDrinkCategory
+            // tpDrinkType
             // 
-            this.tpDrinkCategory.Controls.Add(this.panel22);
-            this.tpDrinkCategory.Controls.Add(this.btnShowCategory);
-            this.tpDrinkCategory.Controls.Add(this.panel23);
-            this.tpDrinkCategory.Controls.Add(this.btnEditCategory);
-            this.tpDrinkCategory.Controls.Add(this.dtgvCategory);
-            this.tpDrinkCategory.Controls.Add(this.btnDeleteCategory);
-            this.tpDrinkCategory.Controls.Add(this.btnAddCategory);
-            this.tpDrinkCategory.Location = new System.Drawing.Point(4, 28);
-            this.tpDrinkCategory.Name = "tpDrinkCategory";
-            this.tpDrinkCategory.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDrinkCategory.Size = new System.Drawing.Size(943, 554);
-            this.tpDrinkCategory.TabIndex = 2;
-            this.tpDrinkCategory.Text = "Category";
-            this.tpDrinkCategory.UseVisualStyleBackColor = true;
+            this.tpDrinkType.Controls.Add(this.panel22);
+            this.tpDrinkType.Controls.Add(this.btnShowDrinkType);
+            this.tpDrinkType.Controls.Add(this.panel23);
+            this.tpDrinkType.Controls.Add(this.btnEditDrinkType);
+            this.tpDrinkType.Controls.Add(this.dgvDrinkType);
+            this.tpDrinkType.Controls.Add(this.btnDeleteDrinkType);
+            this.tpDrinkType.Controls.Add(this.btnAddDrinkType);
+            this.tpDrinkType.Location = new System.Drawing.Point(4, 28);
+            this.tpDrinkType.Name = "tpDrinkType";
+            this.tpDrinkType.Padding = new System.Windows.Forms.Padding(3);
+            this.tpDrinkType.Size = new System.Drawing.Size(943, 554);
+            this.tpDrinkType.TabIndex = 2;
+            this.tpDrinkType.Text = "Drink Type";
+            this.tpDrinkType.UseVisualStyleBackColor = true;
             // 
             // panel22
             // 
-            this.panel22.Controls.Add(this.txbCategoryName);
+            this.panel22.Controls.Add(this.txbDrinkTypeName);
             this.panel22.Controls.Add(this.label11);
             this.panel22.Location = new System.Drawing.Point(481, 15);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(408, 46);
             this.panel22.TabIndex = 1;
             // 
-            // txbCategoryName
+            // txbDrinkTypeName
             // 
-            this.txbCategoryName.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txbCategoryName.Font = new System.Drawing.Font("Cambria", 12F);
-            this.txbCategoryName.Location = new System.Drawing.Point(157, 9);
-            this.txbCategoryName.Name = "txbCategoryName";
-            this.txbCategoryName.Size = new System.Drawing.Size(235, 26);
-            this.txbCategoryName.TabIndex = 5;
-            this.txbCategoryName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txbDrinkTypeName.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txbDrinkTypeName.Font = new System.Drawing.Font("Cambria", 12F);
+            this.txbDrinkTypeName.Location = new System.Drawing.Point(155, 9);
+            this.txbDrinkTypeName.Name = "txbDrinkTypeName";
+            this.txbDrinkTypeName.Size = new System.Drawing.Size(235, 26);
+            this.txbDrinkTypeName.TabIndex = 5;
+            this.txbDrinkTypeName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 12);
+            this.label11.Location = new System.Drawing.Point(36, 10);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(148, 25);
+            this.label11.Size = new System.Drawing.Size(68, 25);
             this.label11.TabIndex = 0;
-            this.label11.Text = "Name Category";
+            this.label11.Text = "Name ";
             // 
-            // btnShowCategory
+            // btnShowDrinkType
             // 
-            this.btnShowCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.btnShowCategory.FlatAppearance.BorderSize = 0;
-            this.btnShowCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowCategory.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnShowCategory.Location = new System.Drawing.Point(8, 426);
-            this.btnShowCategory.Name = "btnShowCategory";
-            this.btnShowCategory.Size = new System.Drawing.Size(124, 79);
-            this.btnShowCategory.TabIndex = 3;
-            this.btnShowCategory.Text = "Show Category";
-            this.btnShowCategory.UseVisualStyleBackColor = false;
+            this.btnShowDrinkType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnShowDrinkType.FlatAppearance.BorderSize = 0;
+            this.btnShowDrinkType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowDrinkType.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowDrinkType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnShowDrinkType.Location = new System.Drawing.Point(17, 54);
+            this.btnShowDrinkType.Name = "btnShowDrinkType";
+            this.btnShowDrinkType.Size = new System.Drawing.Size(124, 79);
+            this.btnShowDrinkType.TabIndex = 3;
+            this.btnShowDrinkType.Text = "Show Drink Type";
+            this.btnShowDrinkType.UseVisualStyleBackColor = false;
+            this.btnShowDrinkType.Click += new System.EventHandler(this.btnShowDrinkType_Click);
             // 
             // panel23
             // 
-            this.panel23.Controls.Add(this.txbCategoryID);
+            this.panel23.Controls.Add(this.txbDrinkTypeID);
             this.panel23.Controls.Add(this.label12);
             this.panel23.Location = new System.Drawing.Point(157, 15);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(284, 46);
             this.panel23.TabIndex = 0;
             // 
-            // txbCategoryID
+            // txbDrinkTypeID
             // 
-            this.txbCategoryID.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txbCategoryID.Font = new System.Drawing.Font("Cambria", 12F);
-            this.txbCategoryID.Location = new System.Drawing.Point(42, 9);
-            this.txbCategoryID.Name = "txbCategoryID";
-            this.txbCategoryID.ReadOnly = true;
-            this.txbCategoryID.Size = new System.Drawing.Size(235, 26);
-            this.txbCategoryID.TabIndex = 4;
-            this.txbCategoryID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txbDrinkTypeID.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txbDrinkTypeID.Font = new System.Drawing.Font("Cambria", 12F);
+            this.txbDrinkTypeID.Location = new System.Drawing.Point(42, 9);
+            this.txbDrinkTypeID.Name = "txbDrinkTypeID";
+            this.txbDrinkTypeID.Size = new System.Drawing.Size(235, 26);
+            this.txbDrinkTypeID.TabIndex = 4;
+            this.txbDrinkTypeID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label12
             // 
@@ -549,57 +558,66 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "ID";
             // 
-            // btnEditCategory
+            // btnEditDrinkType
             // 
-            this.btnEditCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.btnEditCategory.FlatAppearance.BorderSize = 0;
-            this.btnEditCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditCategory.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEditCategory.Location = new System.Drawing.Point(8, 164);
-            this.btnEditCategory.Name = "btnEditCategory";
-            this.btnEditCategory.Size = new System.Drawing.Size(124, 79);
-            this.btnEditCategory.TabIndex = 1;
-            this.btnEditCategory.Text = "Edit Category";
-            this.btnEditCategory.UseVisualStyleBackColor = false;
+            this.btnEditDrinkType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnEditDrinkType.FlatAppearance.BorderSize = 0;
+            this.btnEditDrinkType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditDrinkType.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditDrinkType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEditDrinkType.Location = new System.Drawing.Point(17, 291);
+            this.btnEditDrinkType.Name = "btnEditDrinkType";
+            this.btnEditDrinkType.Size = new System.Drawing.Size(124, 79);
+            this.btnEditDrinkType.TabIndex = 1;
+            this.btnEditDrinkType.Text = "Edit Drink Type";
+            this.btnEditDrinkType.UseVisualStyleBackColor = false;
+            this.btnEditDrinkType.Click += new System.EventHandler(this.btnEditDrinkType_Click);
             // 
-            // dtgvCategory
+            // dgvDrinkType
             // 
-            this.dtgvCategory.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dtgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCategory.Location = new System.Drawing.Point(157, 67);
-            this.dtgvCategory.Name = "dtgvCategory";
-            this.dtgvCategory.RowHeadersWidth = 51;
-            this.dtgvCategory.Size = new System.Drawing.Size(772, 481);
-            this.dtgvCategory.TabIndex = 6;
+            this.dgvDrinkType.AllowUserToAddRows = false;
+            this.dgvDrinkType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDrinkType.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvDrinkType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDrinkType.Location = new System.Drawing.Point(157, 67);
+            this.dgvDrinkType.Name = "dgvDrinkType";
+            this.dgvDrinkType.ReadOnly = true;
+            this.dgvDrinkType.RowHeadersVisible = false;
+            this.dgvDrinkType.RowHeadersWidth = 51;
+            this.dgvDrinkType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDrinkType.Size = new System.Drawing.Size(772, 481);
+            this.dgvDrinkType.TabIndex = 6;
+            this.dgvDrinkType.SelectionChanged += new System.EventHandler(this.dgvDrinkType_SelectionChanged);
             // 
-            // btnDeleteCategory
+            // btnDeleteDrinkType
             // 
-            this.btnDeleteCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.btnDeleteCategory.FlatAppearance.BorderSize = 0;
-            this.btnDeleteCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteCategory.Font = new System.Drawing.Font("Cambria", 15.75F);
-            this.btnDeleteCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDeleteCategory.Location = new System.Drawing.Point(8, 287);
-            this.btnDeleteCategory.Name = "btnDeleteCategory";
-            this.btnDeleteCategory.Size = new System.Drawing.Size(124, 95);
-            this.btnDeleteCategory.TabIndex = 2;
-            this.btnDeleteCategory.Text = "Delete Category";
-            this.btnDeleteCategory.UseVisualStyleBackColor = false;
+            this.btnDeleteDrinkType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnDeleteDrinkType.FlatAppearance.BorderSize = 0;
+            this.btnDeleteDrinkType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteDrinkType.Font = new System.Drawing.Font("Cambria", 15.75F);
+            this.btnDeleteDrinkType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDeleteDrinkType.Location = new System.Drawing.Point(17, 414);
+            this.btnDeleteDrinkType.Name = "btnDeleteDrinkType";
+            this.btnDeleteDrinkType.Size = new System.Drawing.Size(124, 95);
+            this.btnDeleteDrinkType.TabIndex = 2;
+            this.btnDeleteDrinkType.Text = "Delete Drink Type";
+            this.btnDeleteDrinkType.UseVisualStyleBackColor = false;
+            this.btnDeleteDrinkType.Click += new System.EventHandler(this.btnDeleteDrinkType_Click);
             // 
-            // btnAddCategory
+            // btnAddDrinkType
             // 
-            this.btnAddCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.btnAddCategory.FlatAppearance.BorderSize = 0;
-            this.btnAddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCategory.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCategory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddCategory.Location = new System.Drawing.Point(8, 41);
-            this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.Size = new System.Drawing.Size(124, 79);
-            this.btnAddCategory.TabIndex = 0;
-            this.btnAddCategory.Text = "Add Category";
-            this.btnAddCategory.UseVisualStyleBackColor = false;
+            this.btnAddDrinkType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnAddDrinkType.FlatAppearance.BorderSize = 0;
+            this.btnAddDrinkType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddDrinkType.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddDrinkType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAddDrinkType.Location = new System.Drawing.Point(17, 168);
+            this.btnAddDrinkType.Name = "btnAddDrinkType";
+            this.btnAddDrinkType.Size = new System.Drawing.Size(124, 79);
+            this.btnAddDrinkType.TabIndex = 0;
+            this.btnAddDrinkType.Text = "Add Drink Type";
+            this.btnAddDrinkType.UseVisualStyleBackColor = false;
+            this.btnAddDrinkType.Click += new System.EventHandler(this.btnAddDrinkType_Click);
             // 
             // tpDrink
             // 
@@ -849,7 +867,7 @@
             // tcAdmin
             // 
             this.tcAdmin.Controls.Add(this.tpDrink);
-            this.tcAdmin.Controls.Add(this.tpDrinkCategory);
+            this.tcAdmin.Controls.Add(this.tpDrinkType);
             this.tcAdmin.Controls.Add(this.tpTable);
             this.tcAdmin.Controls.Add(this.tpAccount);
             this.tcAdmin.Cursor = System.Windows.Forms.Cursors.Default;
@@ -860,15 +878,6 @@
             this.tcAdmin.SelectedIndex = 0;
             this.tcAdmin.Size = new System.Drawing.Size(951, 586);
             this.tcAdmin.TabIndex = 0;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(945, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // FormAdmin
             // 
@@ -897,12 +906,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
-            this.tpDrinkCategory.ResumeLayout(false);
+            this.tpDrinkType.ResumeLayout(false);
             this.panel22.ResumeLayout(false);
             this.panel22.PerformLayout();
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvCategory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDrinkType)).EndInit();
             this.tpDrink.ResumeLayout(false);
             this.tpDrink.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -922,69 +931,68 @@
         }
 
         #endregion
-
+        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.TabPage tpAccount;
-        private System.Windows.Forms.TabPage tpTable;
-        private System.Windows.Forms.TabPage tpDrinkCategory;
-        private System.Windows.Forms.TabPage tpDrink;
-        private System.Windows.Forms.TabControl tcAdmin;
-        private System.Windows.Forms.DataGridView dgvDrink;
-        private System.Windows.Forms.Button btnAddDrink;
-        private System.Windows.Forms.TextBox txbSearchDrinkName;
-        private System.Windows.Forms.Button btnSearchDrink;
-        private System.Windows.Forms.Button btnShowDrink;
-        private System.Windows.Forms.Button btnEditDrink;
-        private System.Windows.Forms.Button btnDeleteDrink;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox txbDrinkName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox txbDrinkID;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.ComboBox cbDrinkType;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown nmDrinkPrice;
-        private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.TextBox txbCategoryName;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.TextBox txbCategoryID;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DataGridView dtgvCategory;
-        private System.Windows.Forms.Button btnShowCategory;
-        private System.Windows.Forms.Button btnEditCategory;
-        private System.Windows.Forms.Button btnDeleteCategory;
-        private System.Windows.Forms.Button btnAddCategory;
-        private System.Windows.Forms.Button btnShowTable;
-        private System.Windows.Forms.Button btnEditTable;
-        private System.Windows.Forms.Button btnDeleteTable;
-        private System.Windows.Forms.Button btnAddTable;
-        private System.Windows.Forms.DataGridView dgvTable;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.TextBox txbTableID;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txbPassWord;
+        private System.Windows.Forms.DataGridView dgvAccount;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnShowAccount;
         private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.ComboBox cbType;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnEditAccount;
+        private System.Windows.Forms.Button btnDeleteAccount;
+        private System.Windows.Forms.Button btnAddAccount;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.TextBox txbDisplayName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.TextBox txbUserName;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnShowAccount;
-        private System.Windows.Forms.Button btnEditAccount;
-        private System.Windows.Forms.Button btnDeleteAccount;
-        private System.Windows.Forms.Button btnAddAccount;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.DataGridView dgvAccount;
-        private System.Windows.Forms.TextBox txbPassWord;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TabPage tpTable;
+        private System.Windows.Forms.Button btnShowTable;
+        private System.Windows.Forms.Button btnEditTable;
+        private System.Windows.Forms.Button btnDeleteTable;
+        private System.Windows.Forms.Button btnAddTable;
+        private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.TextBox txbTableName;
-        private System.Windows.Forms.ComboBox cbType;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dgvTable;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.TextBox txbTableID;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TabPage tpDrinkType;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.TextBox txbDrinkTypeName;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnShowDrinkType;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.TextBox txbDrinkTypeID;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnEditDrinkType;
+        private System.Windows.Forms.DataGridView dgvDrinkType;
+        private System.Windows.Forms.Button btnDeleteDrinkType;
+        private System.Windows.Forms.Button btnAddDrinkType;
+        private System.Windows.Forms.TabPage tpDrink;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.NumericUpDown nmDrinkPrice;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSearchDrink;
+        private System.Windows.Forms.DataGridView dgvDrink;
+        private System.Windows.Forms.TextBox txbSearchDrinkName;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.ComboBox cbDrinkType;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnShowDrink;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox txbDrinkName;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox txbDrinkID;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnEditDrink;
+        private System.Windows.Forms.Button btnDeleteDrink;
+        private System.Windows.Forms.Button btnAddDrink;
+        private System.Windows.Forms.TabControl tcAdmin;
     }
 }

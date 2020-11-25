@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using Model;
 using DataAccessLayer;
 
-namespace BussinessLayer
+namespace BusinessLayer
 {
     public class BUS_Account
     {
