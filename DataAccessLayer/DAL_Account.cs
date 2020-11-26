@@ -1,6 +1,7 @@
 ﻿using Model;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace DataAccessLayer
 {
@@ -8,16 +9,26 @@ namespace DataAccessLayer
     {
         public override void Create(Account newAccount)
         {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "InsertAccount";
-            cmd.Parameters.AddWithValue("@UserName", SqlDbType.NVarChar).Value = newAccount.UserName;
-            cmd.Parameters.AddWithValue("@DisplayName", SqlDbType.NVarChar).Value = newAccount.DisplayName;
-            cmd.Parameters.AddWithValue("@PassWord", SqlDbType.NVarChar).Value = newAccount.PassWord;
-            cmd.Parameters.AddWithValue("@Type", SqlDbType.Int).Value = newAccount.Type;
-            cmd.ExecuteNonQuery();
-            con.Close();
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "InsertAccount";
+                cmd.Parameters.AddWithValue("@UserName", SqlDbType.NVarChar).Value = newAccount.UserName;
+                cmd.Parameters.AddWithValue("@DisplayName", SqlDbType.NVarChar).Value = newAccount.DisplayName;
+                cmd.Parameters.AddWithValue("@PassWord", SqlDbType.NVarChar).Value = newAccount.PassWord;
+                cmd.Parameters.AddWithValue("@Type", SqlDbType.Int).Value = newAccount.Type;
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Duplicate Primary Key Value !");
+            }
+            finally
+            {
+                con.Close();
+            }            
         }
         public override void Delete(string deleteUserName)
         {

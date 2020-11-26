@@ -1,6 +1,7 @@
 ﻿using Model;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace DataAccessLayer
 {
@@ -8,15 +9,25 @@ namespace DataAccessLayer
     {
         public override void Create(Table newTable)
         {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "InsertTable";
-            cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = newTable.ID;
-            cmd.Parameters.AddWithValue("@Name", SqlDbType.NVarChar).Value = newTable.Name;
-            cmd.Parameters.AddWithValue("@Status", SqlDbType.NVarChar).Value = newTable.Status;
-            cmd.ExecuteNonQuery();
-            con.Close();
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "InsertTable";
+                cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = newTable.ID;
+                cmd.Parameters.AddWithValue("@Name", SqlDbType.NVarChar).Value = newTable.Name;
+                cmd.Parameters.AddWithValue("@Status", SqlDbType.NVarChar).Value = newTable.Status;
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Duplicate Primary Key Value !");
+            }
+            finally
+            {
+                con.Close();
+            }
         }
         public override void Delete(int deleteTableID)
         {

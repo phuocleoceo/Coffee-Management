@@ -1,21 +1,32 @@
 ﻿using Model;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace DataAccessLayer
 {
     public class DAL_DrinkType:DataProvider<DrinkType,int>
     {
         public override void Create(DrinkType newDrinkType)
-        {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "InsertDrinkType";
-            cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = newDrinkType.ID;
-            cmd.Parameters.AddWithValue("@Name", SqlDbType.NVarChar).Value = newDrinkType.Name;
-            cmd.ExecuteNonQuery();
-            con.Close();
+        {            
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "InsertDrinkType";
+                cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = newDrinkType.ID;
+                cmd.Parameters.AddWithValue("@Name", SqlDbType.NVarChar).Value = newDrinkType.Name;
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Duplicate Primary Key Value !");
+            }
+            finally
+            {
+                con.Close();
+            }
         }
         public override void Delete(int deleteDrinkTypeID)
         {

@@ -20,16 +20,26 @@ namespace DataAccessLayer
                 if (String.Compare(dict.Value, newDrink.Type) == 0)
                     newDrinkType = dict.Key;
             }
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "InsertDrink";
-            cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = newDrink.ID;
-            cmd.Parameters.AddWithValue("@Name", SqlDbType.NVarChar).Value = newDrink.Name;
-            cmd.Parameters.AddWithValue("@idType", SqlDbType.Int).Value = newDrinkType;
-            cmd.Parameters.AddWithValue("@Price", SqlDbType.Real).Value = newDrink.Price;
-            cmd.ExecuteNonQuery();
-            con.Close();
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "InsertDrink";
+                cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = newDrink.ID;
+                cmd.Parameters.AddWithValue("@Name", SqlDbType.NVarChar).Value = newDrink.Name;
+                cmd.Parameters.AddWithValue("@idType", SqlDbType.Int).Value = newDrinkType;
+                cmd.Parameters.AddWithValue("@Price", SqlDbType.Real).Value = newDrink.Price;
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Duplicate Primary Key Value !");
+            }
+            finally
+            {
+                con.Close();
+            }
         }
         public override void Delete(int deleteDrinkID)
         {
