@@ -1,16 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using System.Windows.Forms;
 using DataAccessLayer;
+using Model;
 
 namespace BusinessLayer
 {
-    public abstract class BUS<T,DAL>
+    public abstract class BUS<T,U>
     {
-        
-
+        public void ShowDGV(DataGridView dgv)
+        {
+            dgv.DataSource = null;
+            dgv.Rows.Clear();
+            dgv.DataSource = Read();
+        }
+        public abstract DataTable GetDataTableByQuery(string query);
+        public abstract void GetList(ManageList<T> list);
+        public abstract DataTable Read();
+        public abstract void Create(T element);
+        public abstract void Delete(U data);
+        public abstract void Update(T element, U data);
     }
 }

@@ -766,18 +766,18 @@
             // 
             this.panel6.Controls.Add(this.txbDrinkName);
             this.panel6.Controls.Add(this.label2);
-            this.panel6.Location = new System.Drawing.Point(716, 217);
+            this.panel6.Location = new System.Drawing.Point(716, 213);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(221, 62);
+            this.panel6.Size = new System.Drawing.Size(221, 74);
             this.panel6.TabIndex = 1;
             // 
             // txbDrinkName
             // 
             this.txbDrinkName.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txbDrinkName.Location = new System.Drawing.Point(63, 20);
+            this.txbDrinkName.Location = new System.Drawing.Point(63, 6);
             this.txbDrinkName.Multiline = true;
             this.txbDrinkName.Name = "txbDrinkName";
-            this.txbDrinkName.Size = new System.Drawing.Size(150, 26);
+            this.txbDrinkName.Size = new System.Drawing.Size(150, 54);
             this.txbDrinkName.TabIndex = 2;
             this.txbDrinkName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -803,9 +803,9 @@
             // txbDrinkID
             // 
             this.txbDrinkID.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txbDrinkID.Location = new System.Drawing.Point(42, 12);
+            this.txbDrinkID.Location = new System.Drawing.Point(63, 12);
             this.txbDrinkID.Name = "txbDrinkID";
-            this.txbDrinkID.Size = new System.Drawing.Size(171, 26);
+            this.txbDrinkID.Size = new System.Drawing.Size(150, 26);
             this.txbDrinkID.TabIndex = 1;
             this.txbDrinkID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -813,7 +813,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Location = new System.Drawing.Point(14, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 25);
             this.label1.TabIndex = 0;

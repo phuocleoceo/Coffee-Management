@@ -7,7 +7,11 @@ namespace BusinessLayer
 {
     public class BUS_Drink
     {
-        DAL_Drink DAL_Drink = new DAL_Drink();
+        DAL_Drink DAL_Drink;
+        public BUS_Drink()
+        {
+            DAL_Drink = new DAL_Drink();
+        }
         public DataTable Read()
         {
             return DAL_Drink.Read();

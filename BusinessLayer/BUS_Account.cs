@@ -7,7 +7,11 @@ namespace BusinessLayer
 {
     public class BUS_Account
     {
-        private DAL_Account DAL_Account = new DAL_Account();
+        private DAL_Account DAL_Account;
+        public BUS_Account()
+        {
+            DAL_Account = new DAL_Account();
+        }
         public DataTable Read()
         {
             return DAL_Account.Read();

@@ -30,8 +30,7 @@ namespace GUILayer
         }
         private void FormMainMenu_Load(object sender, EventArgs e)
         {
-            BUS_Table.GetList(listTable);
-            BUS_Drink.GetList(listDrink);
+
         }
         //Phân quyền
         private void Decentralization()

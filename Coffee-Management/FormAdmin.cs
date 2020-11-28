@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 using Model;
 using BusinessLayer;
@@ -7,9 +8,6 @@ namespace GUILayer
 {
     public partial class FormAdmin : Form
     {
-        private ManageList<Account> listAccount = FormLogin.listAccount;
-        private ManageList<Table> listTable = FormMainMenu.listTable;
-        private ManageList<Drink> listDrink = FormMainMenu.listDrink;
         private BUS_Account BUS_Account = new BUS_Account();
         private BUS_Drink BUS_Drink = new BUS_Drink();
         private BUS_Table BUS_Table = new BUS_Table();
@@ -183,9 +181,13 @@ namespace GUILayer
         }
 
         /*--------------------------DRINK----------------------------------------*/
+
         private void btnShowDrink_Click(object sender, EventArgs e)
         {
+            DataTable DrinkTypeDT = BUS_DrinkType.Read();
             BUS_Drink.ShowDGV(dgvDrink);
+            cbDrinkType.DataSource = DrinkTypeDT;
+            cbDrinkType.ValueMember = "Name";
             //Cho phép các Button khác chạy
             btnAddDrink.Enabled = true;
             btnEditDrink.Enabled = true;
@@ -251,7 +253,6 @@ namespace GUILayer
                 btnShowDrink.PerformClick();
             }
         }
-
 
         /*--------------------------DRINKTYPE------------------------------------*/
         private void dgvDrinkType_SelectionChanged(object sender, EventArgs e)
