@@ -186,7 +186,6 @@ namespace GUILayer
         private void btnShowDrink_Click(object sender, EventArgs e)
         {
             BUS_Drink.ShowDGV(dgvDrink);
-            BUS_Drink.getComboBoxType(listDrink, cbDrinkType);
             //Cho phép các Button khác chạy
             btnAddDrink.Enabled = true;
             btnEditDrink.Enabled = true;

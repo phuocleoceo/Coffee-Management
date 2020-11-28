@@ -42,9 +42,5 @@ namespace BusinessLayer
         {
             DAL_Drink.Update(updateDrink, oldDrinkID);
         }
-        public void getComboBoxType(ManageList<Drink> listDrink, ComboBox cb)
-        {
-            DAL_Drink.getComboBoxType(listDrink, cb);
-        }
     }
 }
