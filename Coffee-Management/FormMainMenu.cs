@@ -12,8 +12,6 @@ namespace GUILayer
         /*-----------------------------------------------------------------*/
         public static ManageList<Table> listTable = new ManageList<Table>();
         public static ManageList<Drink> listDrink = new ManageList<Drink>();
-        private BUS_Drink BUS_Drink = new BUS_Drink();
-        private BUS_Table BUS_Table = new BUS_Table();
         private int Type = FormLogin.Type;
         /*-----------------------------------------------------------------*/
         //Khai báo các Hàm
@@ -30,7 +28,8 @@ namespace GUILayer
         }
         private void FormMainMenu_Load(object sender, EventArgs e)
         {
-
+            BUS_Table.Instance.GetList(listTable);
+            BUS_Drink.Instance.GetList(listDrink);
         }
         //Phân quyền
         private void Decentralization()
