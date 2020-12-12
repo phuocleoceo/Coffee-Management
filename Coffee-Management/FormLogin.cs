@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Data;
 using BusinessLayer;
 using Model;
 
@@ -8,7 +9,6 @@ namespace GUILayer
     public partial class FormLogin : Form
     {
         //----------------------------------------------------------------------------------
-        public static ManageList<Account> listAccount = new ManageList<Account>();
         public static int Type;  //Biên lưu vai trò của Account ( 1 Admin  0 Staff )
         //----------------------------------------------------------------------------------
         public FormLogin()
@@ -16,19 +16,14 @@ namespace GUILayer
             InitializeComponent();
             btnHidePass.Hide();
         }
-        private void FormLogin_Load(object sender, EventArgs e)
-        {
-            BUS_Account.Instance.GetList(listAccount);
-        }
-
         private bool CheckLogin(string username, string password)
         {
-            for (int i = 0; i < listAccount.Count; i++)
+            DataTable dt = BUS_Account.Instance.Read();
+            for (int i = 0; i < dt.Rows.Count; i++)
             {
-                if (String.Compare(listAccount[i].UserName, username) == 0 &&
-                    String.Compare(listAccount[i].PassWord, password) == 0)
+                if (dt.Rows[i][0].ToString() == username && dt.Rows[i][2].ToString() == password)
                 {
-                    Type = listAccount[i].Type;
+                    Type = (int)dt.Rows[i][3];
                     return true;
                 }
             }
