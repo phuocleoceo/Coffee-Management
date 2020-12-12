@@ -7,12 +7,7 @@ using BusinessLayer;
 namespace GUILayer
 {
     public partial class FormAdmin : Form
-    {
-        private BUS_Account BUS_Account = new BUS_Account();
-        private BUS_Drink BUS_Drink = new BUS_Drink();
-        private BUS_Table BUS_Table = new BUS_Table();
-        private BUS_DrinkType BUS_DrinkType = new BUS_DrinkType();
-        //-----------------------------------------------------------------------------------        
+    {      
         public FormAdmin()
         {
             InitializeComponent();
@@ -55,7 +50,7 @@ namespace GUILayer
         //Nút Show cũng xem như nút Reset Bảng, xoá hết rồi mới thêm lại
         private void btnShowAccount_Click(object sender, EventArgs e)
         {
-            BUS_Account.ShowDGV(dgvAccount);
+            BUS_Account.Instance.ShowDGV(dgvAccount);
             //Cho phép các Button khác chạy
             btnEditAccount.Enabled = true;
             btnDeleteAccount.Enabled = true;
@@ -73,7 +68,7 @@ namespace GUILayer
             //Tạo đối tượng mới rồi thêm vào Danh Sách Tài Khoản
             Account newAccount = new Account(newUserName, newDisplayName, newPassWord, newType);
             //Cập nhật lại Database
-            BUS_Account.Create(newAccount);
+            BUS_Account.Instance.Create(newAccount);
             btnShowAccount.PerformClick();
         }
 
@@ -91,7 +86,7 @@ namespace GUILayer
                     deleteUserName = row.Cells[0].Value.ToString();
                 }
                 //Xoá trong Database
-                BUS_Account.Delete(deleteUserName);
+                BUS_Account.Instance.Delete(deleteUserName);
                 btnShowAccount.PerformClick();
             }
         }
@@ -114,7 +109,7 @@ namespace GUILayer
             newType = (String.Compare(newTypeDetail, "Admin") == 0) ? 1 : 0;
             Account updateAccount = new Account(newUserName, newDisplayName, newPassWord, newType);
             //Sửa Database            
-            BUS_Account.Update(updateAccount, oldUserName);
+            BUS_Account.Instance.Update(updateAccount, oldUserName);
             //Sửa trong List
             btnShowAccount.PerformClick();
         }
@@ -122,7 +117,7 @@ namespace GUILayer
         /*--------------------------TABLE----------------------------------------*/
         private void btnShowTable_Click(object sender, EventArgs e)
         {
-            BUS_Table.ShowDGV(dgvTable);
+            BUS_Table.Instance.ShowDGV(dgvTable);
             //Cho phép các Button khác chạy
             btnAddTable.Enabled = true;
             btnEditTable.Enabled = true;
@@ -149,7 +144,7 @@ namespace GUILayer
             string newTableName = txbTableName.Text;
             Table updateTable = new Table(newID, newTableName, "Empty");
             //Sửa Database            
-            BUS_Table.Update(updateTable, oldID);            
+            BUS_Table.Instance.Update(updateTable, oldID);            
             btnShowTable.PerformClick();
         }
 
@@ -159,7 +154,7 @@ namespace GUILayer
             string newTableName = txbTableName.Text;
             Table newTable = new Table(newTableID, newTableName, "Empty");
             //Cập nhật lại Database
-            BUS_Table.Create(newTable);
+            BUS_Table.Instance.Create(newTable);
             btnShowTable.PerformClick();
         }
 
@@ -175,7 +170,7 @@ namespace GUILayer
                     deleteTableID = Int32.Parse(row.Cells[0].Value.ToString());
                 }
                 //Xoá trong Database
-                BUS_Table.Delete(deleteTableID);
+                BUS_Table.Instance.Delete(deleteTableID);
                 btnShowTable.PerformClick();
             }
         }
@@ -184,8 +179,8 @@ namespace GUILayer
 
         private void btnShowDrink_Click(object sender, EventArgs e)
         {
-            DataTable DrinkTypeDT = BUS_DrinkType.Read();
-            BUS_Drink.ShowDGV(dgvDrink);
+            DataTable DrinkTypeDT = BUS_DrinkType.Instance.Read();
+            BUS_Drink.Instance.ShowDGV(dgvDrink);
             cbDrinkType.DataSource = DrinkTypeDT;
             cbDrinkType.ValueMember = "Name";
             //Cho phép các Button khác chạy
@@ -221,7 +216,7 @@ namespace GUILayer
             newDrinkPrice = Int32.Parse(nmDrinkPrice.Value.ToString());
             Drink updateDrink = new Drink(newDrinkID, newDrinkName, newDrinkType, newDrinkPrice);
             //Sửa Database            
-            BUS_Drink.Update(updateDrink, oldDrinkID);
+            BUS_Drink.Instance.Update(updateDrink, oldDrinkID);
             btnShowDrink.PerformClick();
         }
 
@@ -233,7 +228,7 @@ namespace GUILayer
             float newDrinkPrice = float.Parse(nmDrinkPrice.Value.ToString());
             Drink newDrink = new Drink(newDrinkID, newDrinkName, newDrinkType, newDrinkPrice);
             //Cập nhật lại Database
-            BUS_Drink.Create(newDrink);
+            BUS_Drink.Instance.Create(newDrink);
             btnShowDrink.PerformClick();
         }
 
@@ -249,7 +244,7 @@ namespace GUILayer
                     deleteDrinkID = Int32.Parse(row.Cells[0].Value.ToString());
                 }
                 //Xoá trong Database
-                BUS_Drink.Delete(deleteDrinkID);
+                BUS_Drink.Instance.Delete(deleteDrinkID);
                 btnShowDrink.PerformClick();
             }
         }
@@ -265,7 +260,7 @@ namespace GUILayer
         }
         private void btnShowDrinkType_Click(object sender, EventArgs e)
         {
-            BUS_DrinkType.ShowDGV(dgvDrinkType);
+            BUS_DrinkType.Instance.ShowDGV(dgvDrinkType);
             //Cho phép các Button khác chạy
             btnAddDrinkType.Enabled = true;
             btnEditDrinkType.Enabled = true;
@@ -278,7 +273,7 @@ namespace GUILayer
             string newDrinkTypeName = txbDrinkTypeName.Text;
             DrinkType newDrinkType = new DrinkType(newDrinkTypeID, newDrinkTypeName);
             //Cập nhật lại Database
-            BUS_DrinkType.Create(newDrinkType);
+            BUS_DrinkType.Instance.Create(newDrinkType);
             btnShowDrinkType.PerformClick();
         }
 
@@ -296,7 +291,7 @@ namespace GUILayer
             newDrinkTypeName = txbDrinkTypeName.Text;
             DrinkType updateDrinkType = new DrinkType(newDrinkTypeID, newDrinkTypeName);
             //Sửa Database            
-            BUS_DrinkType.Update(updateDrinkType, oldDrinkTypeID);
+            BUS_DrinkType.Instance.Update(updateDrinkType, oldDrinkTypeID);
             btnShowDrinkType.PerformClick();
         }
 
@@ -312,7 +307,7 @@ namespace GUILayer
                     deleteDrinkTypeID = Int32.Parse(row.Cells[0].Value.ToString());
                 }
                 //Xoá trong Database
-                BUS_DrinkType.Delete(deleteDrinkTypeID);
+                BUS_DrinkType.Instance.Delete(deleteDrinkTypeID);
                 btnShowDrinkType.PerformClick();
             }
         }

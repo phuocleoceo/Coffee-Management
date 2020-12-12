@@ -9,7 +9,6 @@ namespace GUILayer
     {
         //----------------------------------------------------------------------------------
         public static ManageList<Account> listAccount = new ManageList<Account>();
-        private BUS_Account BUS_Account = new BUS_Account();
         public static int Type;  //Biên lưu vai trò của Account ( 1 Admin  0 Staff )
         //----------------------------------------------------------------------------------
         public FormLogin()
@@ -19,7 +18,7 @@ namespace GUILayer
         }
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            BUS_Account.GetList(listAccount);
+            BUS_Account.Instance.GetList(listAccount);
         }
 
         private bool CheckLogin(string username, string password)

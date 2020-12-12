@@ -1,11 +1,10 @@
 ﻿using System.Data;
-using System.Windows.Forms;
 using Model;
 using DataAccessLayer;
 
 namespace BusinessLayer
 {
-    public class BUS_Drink : BUS<DAL_Drink, Drink, int>
+    public class BUS_Drink : BUS<BUS_Drink, Drink, int>
     {
         public override DataTable Read()
         {

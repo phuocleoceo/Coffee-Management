@@ -1,13 +1,22 @@
 ﻿using System.Data;
 using System.Windows.Forms;
-using DataAccessLayer;
 using Model;
 
 namespace BusinessLayer
 {
-    public abstract class BUS<DALType, ModelType, PKType> where DALType : new()
+    public abstract class BUS<BUSType, ModelType, PKType> where BUSType : new()
     {
-        public BUS() { }
+        protected static BUSType _instance;
+        protected BUS() { }
+        public static BUSType Instance
+        {
+            get
+            {
+                if (_instance == null) _instance = new BUSType();
+                return _instance;
+            }
+            private set => _instance = value;
+        }
         public void ShowDGV(DataGridView dgv)
         {
             dgv.DataSource = null;

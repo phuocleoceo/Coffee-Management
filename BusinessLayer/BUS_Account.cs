@@ -1,11 +1,10 @@
 ﻿using System.Data;
-using System.Windows.Forms;
 using Model;
 using DataAccessLayer;
 
 namespace BusinessLayer
 {
-    public class BUS_Account : BUS<DAL_Account, Account, string>
+    public class BUS_Account : BUS<BUS_Account, Account, string>
     {
         public override DataTable Read()
         {
