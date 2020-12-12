@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL.cs" />
     <Compile Include="DAL_Account.cs" />
     <Compile Include="DAL_Drink.cs" />
     <Compile Include="DAL_DrinkType.cs" />

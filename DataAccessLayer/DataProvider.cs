@@ -1,9 +1,10 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace DataAccessLayer
 {
-    public class DataProvider
+    public sealed class DataProvider
     {
         //protected static string ConStr = @"Data Source=.\sqlexpress;Initial Catalog=CoffeeManagement;Integrated Security=True";        
         private static string ConStr = @"Data Source=.;Initial Catalog=CoffeeManagement;Integrated Security=True";
@@ -25,20 +26,41 @@ namespace DataAccessLayer
         }
         public DataTable ExecuteTable(SqlCommand cmd)
         {
-            con.Open();
-            cmd.Connection = con;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
-            da.Fill(dt);
-            con.Close();
-            return dt;
+            try
+            {
+                con.Open();
+                cmd.Connection = con;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                return dt;
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Duplicate PK Value ! ");
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
         }
         public void ExecuteNonQuery(SqlCommand cmd)
         {
-            con.Open();
-            cmd.Connection = con;
-            cmd.ExecuteNonQuery();
-            con.Close();
+            try
+            {
+                con.Open();
+                cmd.Connection = con;
+                cmd.ExecuteNonQuery();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Duplicate PK Value ! ");
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }
