@@ -4,9 +4,9 @@ using System.Data.SqlClient;
 
 namespace DataAccessLayer
 {
-    public class DAL_Account
+    public class DAL_Account : DAL<DAL_Account, Account, string>
     {
-        public void Create(Account newAccount)
+        public override void Create(Account newAccount)
         {
             SqlCommand cmd = new SqlCommand("InsertAccount");
             cmd.CommandType = CommandType.StoredProcedure;
@@ -16,14 +16,14 @@ namespace DataAccessLayer
             cmd.Parameters.AddWithValue("@Type", SqlDbType.Int).Value = newAccount.Type;
             DataProvider.Instance.ExecuteNonQuery(cmd);
         }
-        public void Delete(string deleteUserName)
+        public override void Delete(string deleteUserName)
         {
             SqlCommand cmd = new SqlCommand("DeleteAccount");
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@UserName", SqlDbType.NVarChar).Value = deleteUserName;
             DataProvider.Instance.ExecuteNonQuery(cmd);
         }
-        public void Update(Account updateAccount, string oldUserName)
+        public override void Update(Account updateAccount, string oldUserName)
         {
             SqlCommand cmd = new SqlCommand("UpdateAccount");
             cmd.CommandType = CommandType.StoredProcedure;
@@ -34,7 +34,7 @@ namespace DataAccessLayer
             cmd.Parameters.AddWithValue("@oldUserName", SqlDbType.NVarChar).Value = oldUserName;
             DataProvider.Instance.ExecuteNonQuery(cmd);
         }
-        public DataTable Read()
+        public override DataTable Read()
         {
             SqlCommand cmd = new SqlCommand("GetAccount");
             cmd.CommandType = CommandType.StoredProcedure;

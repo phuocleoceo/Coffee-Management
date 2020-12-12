@@ -5,13 +5,9 @@ using Model;
 
 namespace BusinessLayer
 {
-    public abstract class BUS<E, T, U> where E : new()
+    public abstract class BUS<DALType, ModelType, PKType> where DALType : new()
     {
-        protected E DAL;
-        public BUS()
-        {
-            DAL = new E();
-        }
+        public BUS() { }
         public void ShowDGV(DataGridView dgv)
         {
             dgv.DataSource = null;
@@ -19,10 +15,10 @@ namespace BusinessLayer
             dgv.DataSource = Read();
         }
         //public abstract DataTable GetDataTableByQuery(string query);
-        public abstract void GetList(ManageList<T> list);
+        public abstract void GetList(ManageList<ModelType> list);
         public abstract DataTable Read();
-        public abstract void Create(T element);
-        public abstract void Delete(U data);
-        public abstract void Update(T element, U data);
+        public abstract void Create(ModelType element);
+        public abstract void Delete(PKType data);
+        public abstract void Update(ModelType element, PKType data);
     }
 }

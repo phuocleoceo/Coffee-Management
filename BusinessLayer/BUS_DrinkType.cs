@@ -5,11 +5,11 @@ using DataAccessLayer;
 
 namespace BusinessLayer
 {
-    public class BUS_DrinkType:BUS<DAL_DrinkType,DrinkType,int>
+    public class BUS_DrinkType : BUS<DAL_DrinkType, DrinkType, int>
     {
         public override DataTable Read()
         {
-            return DAL.Read();
+            return DAL_DrinkType.Instance.Read();
         }
         public override void GetList(ManageList<DrinkType> list)
         {
@@ -21,15 +21,15 @@ namespace BusinessLayer
         }
         public override void Create(DrinkType newDrinkType)
         {
-            DAL.Create(newDrinkType);
+            DAL_DrinkType.Instance.Create(newDrinkType);
         }
         public override void Delete(int deleteDrinkTypeID)
         {
-            DAL.Delete(deleteDrinkTypeID);
+            DAL_DrinkType.Instance.Delete(deleteDrinkTypeID);
         }
         public override void Update(DrinkType updateDrinkType, int oldDrinkTypeID)
         {
-            DAL.Update(updateDrinkType, oldDrinkTypeID);
+            DAL_DrinkType.Instance.Update(updateDrinkType, oldDrinkTypeID);
         }
     }
 }

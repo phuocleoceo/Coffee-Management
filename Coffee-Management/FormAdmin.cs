@@ -149,7 +149,7 @@ namespace GUILayer
             string newTableName = txbTableName.Text;
             Table updateTable = new Table(newID, newTableName, "Empty");
             //Sửa Database            
-            BUS_Table.Update(updateTable, oldID);
+            BUS_Table.Update(updateTable, oldID);            
             btnShowTable.PerformClick();
         }
 

@@ -4,9 +4,9 @@ using System.Data.SqlClient;
 
 namespace DataAccessLayer
 {
-    public class DAL_Table
+    public class DAL_Table : DAL<DAL_Table, Table, int>
     {
-        public void Create(Table newTable)
+        public override void Create(Table newTable)
         {
             SqlCommand cmd = new SqlCommand("InsertTable");
             cmd.CommandType = CommandType.StoredProcedure;
@@ -15,14 +15,14 @@ namespace DataAccessLayer
             cmd.Parameters.AddWithValue("@Status", SqlDbType.NVarChar).Value = newTable.Status;
             DataProvider.Instance.ExecuteNonQuery(cmd);
         }
-        public void Delete(int deleteTableID)
+        public override void Delete(int deleteTableID)
         {
             SqlCommand cmd = new SqlCommand("DeleteTable");
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = deleteTableID;
             DataProvider.Instance.ExecuteNonQuery(cmd);
         }
-        public void Update(Table updateTable, int oldTableID)
+        public override void Update(Table updateTable, int oldTableID)
         {
             SqlCommand cmd = new SqlCommand("UpdateTable");
             cmd.CommandType = CommandType.StoredProcedure;
@@ -32,7 +32,7 @@ namespace DataAccessLayer
             cmd.Parameters.AddWithValue("@oldID", SqlDbType.Int).Value = oldTableID;
             DataProvider.Instance.ExecuteNonQuery(cmd);
         }
-        public DataTable Read()
+        public override DataTable Read()
         {
             SqlCommand cmd = new SqlCommand("GetTable");
             cmd.CommandType = CommandType.StoredProcedure;

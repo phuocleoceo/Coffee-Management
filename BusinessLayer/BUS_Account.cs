@@ -5,15 +5,15 @@ using DataAccessLayer;
 
 namespace BusinessLayer
 {
-    public class BUS_Account:BUS<DAL_Account,Account,string>
+    public class BUS_Account : BUS<DAL_Account, Account, string>
     {
         public override DataTable Read()
         {
-            return DAL.Read();
+            return DAL_Account.Instance.Read();
         }
         public override void GetList(ManageList<Account> list)
         {
-            list.Clear();              
+            list.Clear();
             foreach (DataRow row in Read().Rows)
             {
                 list.Add(new Account(row));
@@ -21,15 +21,15 @@ namespace BusinessLayer
         }
         public override void Create(Account newAccount)
         {
-            DAL.Create(newAccount);
+            DAL_Account.Instance.Create(newAccount);
         }
         public override void Delete(string deleteUserName)
         {
-            DAL.Delete(deleteUserName);
+            DAL_Account.Instance.Delete(deleteUserName);
         }
         public override void Update(Account updateAccount, string oldUserName)
         {
-            DAL.Update(updateAccount, oldUserName);
+            DAL_Account.Instance.Update(updateAccount, oldUserName);
         }
     }
 }
