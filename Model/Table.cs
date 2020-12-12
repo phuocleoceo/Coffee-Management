@@ -1,4 +1,5 @@
-﻿namespace Model
+﻿using System.Data;
+namespace Model
 {
     public class Table
     {
@@ -11,6 +12,12 @@
             this.id = id;
             this.name = name;
             this.status = status;
+        }
+        public Table(DataRow row)
+        {
+            this.id = (int)row["id"];
+            this.name = row["Name"].ToString();
+            this.status = row["Status"].ToString();
         }
         public int ID
         {

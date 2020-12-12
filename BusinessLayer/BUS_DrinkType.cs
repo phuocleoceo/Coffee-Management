@@ -16,9 +16,7 @@ namespace BusinessLayer
             list.Clear();
             foreach (DataRow row in Read().Rows)
             {
-                int id = (int)row["id"];
-                string name = row["Name"].ToString();
-                list.Add(new DrinkType(id, name));
+                list.Add(new DrinkType(row));
             }
         }
         public override void Create(DrinkType newDrinkType)

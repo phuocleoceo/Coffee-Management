@@ -1,4 +1,5 @@
-﻿namespace Model
+﻿using System.Data;
+namespace Model
 {
     public class Drink
     {
@@ -13,6 +14,13 @@
             this.name = name;
             this.type = type;
             this.price = price;
+        }
+        public Drink(DataRow row)
+        {
+            this.id = (int)row["id"];
+            this.name = row["Name"].ToString();
+            this.type = row["Type"].ToString();
+            this.price = float.Parse(row["Price"].ToString());
         }
         public int ID
         {

@@ -16,11 +16,7 @@ namespace BusinessLayer
             list.Clear();              
             foreach (DataRow row in Read().Rows)
             {
-                string UN = row["UserName"].ToString();
-                string DN = row["DisplayName"].ToString();
-                string PW = row["PassWord"].ToString();
-                int Type = (int)row["Type"];
-                list.Add(new Account(UN, DN, PW, Type));
+                list.Add(new Account(row));
             }
         }
         public override void Create(Account newAccount)

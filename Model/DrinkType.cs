@@ -1,4 +1,5 @@
-﻿namespace Model
+﻿using System.Data;
+namespace Model
 {
     public class DrinkType
     {
@@ -10,6 +11,11 @@
         {
             this.id = id;
             this.name = name;
+        }
+        public DrinkType(DataRow row)
+        {
+            this.id = (int)row["id"];
+            this.name = row["Name"].ToString();
         }
         public int ID
         {

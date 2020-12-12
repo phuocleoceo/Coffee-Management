@@ -1,4 +1,5 @@
-﻿namespace Model
+﻿using System.Data;
+namespace Model
 {
     public class Account
     {
@@ -13,6 +14,13 @@
             this.displayname = displayname;
             this.password = password;
             this.type = type;
+        }
+        public Account(DataRow row)
+        {
+            this.username = row["UserName"].ToString();
+            this.displayname = row["DisplayName"].ToString();
+            this.password = row["PassWord"].ToString();
+            this.type = (int)row["Type"];
         }
         public string UserName
         {

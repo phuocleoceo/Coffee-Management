@@ -15,11 +15,8 @@ namespace BusinessLayer
         {
             list.Clear();
             foreach (DataRow row in Read().Rows)
-            {
-                int id = (int)row["id"];
-                string name = row["Name"].ToString();
-                string status = row["Status"].ToString();
-                list.Add(new Table(id, name, status));
+            {                
+                list.Add(new Table(row));
             }
         }
         public override void Create(Table newTable)
