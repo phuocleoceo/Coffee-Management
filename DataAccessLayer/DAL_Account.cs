@@ -5,66 +5,41 @@ using System.Windows.Forms;
 
 namespace DataAccessLayer
 {
-    public class DAL_Account : DataProvider<Account, string>
+    public class DAL_Account
     {
-        public override void Create(Account newAccount)
+        public void Create(Account newAccount)
         {
-            try
-            {
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "InsertAccount";
-                cmd.Parameters.AddWithValue("@UserName", SqlDbType.NVarChar).Value = newAccount.UserName;
-                cmd.Parameters.AddWithValue("@DisplayName", SqlDbType.NVarChar).Value = newAccount.DisplayName;
-                cmd.Parameters.AddWithValue("@PassWord", SqlDbType.NVarChar).Value = newAccount.PassWord;
-                cmd.Parameters.AddWithValue("@Type", SqlDbType.Int).Value = newAccount.Type;
-                cmd.ExecuteNonQuery();
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Duplicate Primary Key Value !");
-            }
-            finally
-            {
-                con.Close();
-            }            
-        }
-        public override void Delete(string deleteUserName)
-        {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
+            SqlCommand cmd = new SqlCommand("InsertAccount");
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "DeleteAccount";
+            cmd.Parameters.AddWithValue("@UserName", SqlDbType.NVarChar).Value = newAccount.UserName;
+            cmd.Parameters.AddWithValue("@DisplayName", SqlDbType.NVarChar).Value = newAccount.DisplayName;
+            cmd.Parameters.AddWithValue("@PassWord", SqlDbType.NVarChar).Value = newAccount.PassWord;
+            cmd.Parameters.AddWithValue("@Type", SqlDbType.Int).Value = newAccount.Type;
+            DataProvider.Instance.ExecuteNonQuery(cmd);
+        }
+        public void Delete(string deleteUserName)
+        {
+            SqlCommand cmd = new SqlCommand("DeleteAccount");
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@UserName", SqlDbType.NVarChar).Value = deleteUserName;
-            cmd.ExecuteNonQuery();
-            con.Close();
+            DataProvider.Instance.ExecuteNonQuery(cmd);
         }
-        public override void Update(Account updateAccount, string oldUserName)
+        public void Update(Account updateAccount, string oldUserName)
         {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
+            SqlCommand cmd = new SqlCommand("UpdateAccount");
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "UpdateAccount";
             cmd.Parameters.AddWithValue("@UserName", SqlDbType.NVarChar).Value = updateAccount.UserName;
             cmd.Parameters.AddWithValue("@DisplayName", SqlDbType.NVarChar).Value = updateAccount.DisplayName;
             cmd.Parameters.AddWithValue("@PassWord", SqlDbType.NVarChar).Value = updateAccount.PassWord;
             cmd.Parameters.AddWithValue("@Type", SqlDbType.Int).Value = updateAccount.Type;
             cmd.Parameters.AddWithValue("@oldUserName", SqlDbType.NVarChar).Value = oldUserName;
-            cmd.ExecuteNonQuery();
-            con.Close();
+            DataProvider.Instance.ExecuteNonQuery(cmd);
         }
-        public override DataTable Read()
+        public DataTable Read()
         {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
+            SqlCommand cmd = new SqlCommand("GetAccount");
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "GetAccount";
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            con.Close();
-            return dt;
+            return DataProvider.Instance.ExecuteTable(cmd);
         }
     }
 }

@@ -7,66 +7,41 @@ using System.Windows.Forms;
 
 namespace DataAccessLayer
 {
-    public class DAL_Drink : DataProvider<Drink, int>
+    public class DAL_Drink
     {
-        public override void Create(Drink newDrink)
-        {  
-            try
-            {
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "InsertDrink";
-                cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = newDrink.ID;
-                cmd.Parameters.AddWithValue("@Name", SqlDbType.NVarChar).Value = newDrink.Name;
-                cmd.Parameters.AddWithValue("@Type", SqlDbType.Int).Value = newDrink.Type;
-                cmd.Parameters.AddWithValue("@Price", SqlDbType.Real).Value = newDrink.Price;
-                cmd.ExecuteNonQuery();
-            }
-            catch (SqlException)
-            {
-                MessageBox.Show("Duplicate Primary Key Value !");
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-        public override void Delete(int deleteDrinkID)
+        public void Create(Drink newDrink)
         {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
+            SqlCommand cmd = new SqlCommand("InsertDrink");
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "DeleteDrink";
+            cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = newDrink.ID;
+            cmd.Parameters.AddWithValue("@Name", SqlDbType.NVarChar).Value = newDrink.Name;
+            cmd.Parameters.AddWithValue("@Type", SqlDbType.Int).Value = newDrink.Type;
+            cmd.Parameters.AddWithValue("@Price", SqlDbType.Real).Value = newDrink.Price;
+            DataProvider.Instance.ExecuteNonQuery(cmd);
+        }
+        public void Delete(int deleteDrinkID)
+        {
+            SqlCommand cmd = new SqlCommand("DeleteDrink");
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = deleteDrinkID;
-            cmd.ExecuteNonQuery();
-            con.Close();
+            DataProvider.Instance.ExecuteNonQuery(cmd);
         }
-        public override void Update(Drink updateDrink, int oldDrinkID)
+        public void Update(Drink updateDrink, int oldDrinkID)
         {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
+            SqlCommand cmd = new SqlCommand("UpdateDrink");
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "UpdateDrink";
             cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = updateDrink.ID;
             cmd.Parameters.AddWithValue("@Name", SqlDbType.NVarChar).Value = updateDrink.Name;
             cmd.Parameters.AddWithValue("@Type", SqlDbType.Int).Value = updateDrink.Type;
             cmd.Parameters.AddWithValue("@Price", SqlDbType.Real).Value = updateDrink.Price;
             cmd.Parameters.AddWithValue("@oldID", SqlDbType.Int).Value = oldDrinkID;
-            cmd.ExecuteNonQuery();
-            con.Close();
+            DataProvider.Instance.ExecuteNonQuery(cmd);
         }
-        public override DataTable Read()
+        public DataTable Read()
         {
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
+            SqlCommand cmd = new SqlCommand("GetDrink");
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "GetDrink";
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            con.Close();
-            return dt;
+            return DataProvider.Instance.ExecuteTable(cmd);
         }
     }
 }
