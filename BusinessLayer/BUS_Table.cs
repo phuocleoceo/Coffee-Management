@@ -5,18 +5,13 @@ using DataAccessLayer;
 
 namespace BusinessLayer
 {
-    public class BUS_Table
+    public class BUS_Table:BUS<DAL_Table,Table,int>
     {
-        DAL_Table DAL_Table;
-        public BUS_Table()
+        public override DataTable Read()
         {
-            DAL_Table = new DAL_Table();
+            return DAL.Read();
         }
-        public DataTable Read()
-        {
-            return DAL_Table.Read();
-        }
-        public void GetList(ManageList<Table> list)
+        public override void GetList(ManageList<Table> list)
         {
             list.Clear();
             foreach (DataRow row in Read().Rows)
@@ -27,23 +22,17 @@ namespace BusinessLayer
                 list.Add(new Table(id, name, status));
             }
         }
-        public void ShowDGV(DataGridView dgv)
+        public override void Create(Table newTable)
         {
-            dgv.DataSource = null;
-            dgv.Rows.Clear();
-            dgv.DataSource = Read();
+            DAL.Create(newTable);
         }
-        public void Create(Table newTable)
+        public override void Delete(int deleteTableID)
         {
-            DAL_Table.Create(newTable);
+            DAL.Delete(deleteTableID);
         }
-        public void Delete(int deleteTableID)
+        public override void Update(Table updateTable, int oldTableID)
         {
-            DAL_Table.Delete(deleteTableID);
-        }
-        public void Update(Table updateTable, int oldTableID)
-        {
-            DAL_Table.Update(updateTable, oldTableID);
+            DAL.Update(updateTable, oldTableID);
         }
     }
 }

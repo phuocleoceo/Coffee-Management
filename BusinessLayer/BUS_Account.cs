@@ -5,18 +5,13 @@ using DataAccessLayer;
 
 namespace BusinessLayer
 {
-    public class BUS_Account
+    public class BUS_Account:BUS<DAL_Account,Account,string>
     {
-        private DAL_Account DAL_Account;
-        public BUS_Account()
+        public override DataTable Read()
         {
-            DAL_Account = new DAL_Account();
+            return DAL.Read();
         }
-        public DataTable Read()
-        {
-            return DAL_Account.Read();
-        }
-        public void GetList(ManageList<Account> list)
+        public override void GetList(ManageList<Account> list)
         {
             list.Clear();              
             foreach (DataRow row in Read().Rows)
@@ -28,23 +23,17 @@ namespace BusinessLayer
                 list.Add(new Account(UN, DN, PW, Type));
             }
         }
-        public void ShowDGV(DataGridView dgv)
+        public override void Create(Account newAccount)
         {
-            dgv.DataSource = null;
-            dgv.Rows.Clear();
-            dgv.DataSource = Read();
+            DAL.Create(newAccount);
         }
-        public void Create(Account newAccount)
+        public override void Delete(string deleteUserName)
         {
-            DAL_Account.Create(newAccount);
+            DAL.Delete(deleteUserName);
         }
-        public void Delete(string deleteUserName)
+        public override void Update(Account updateAccount, string oldUserName)
         {
-            DAL_Account.Delete(deleteUserName);
-        }
-        public void Update(Account updateAccount, string oldUserName)
-        {
-            DAL_Account.Update(updateAccount, oldUserName);
+            DAL.Update(updateAccount, oldUserName);
         }
     }
 }

@@ -194,6 +194,10 @@
       <Project>{1d2aad96-b299-4350-a959-286ef34db0cd}</Project>
       <Name>BusinessLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{2E368626-8C8F-430D-81FF-CC662EB1C866}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{c7b0d887-0a13-499e-b052-8f141e798ce3}</Project>
       <Name>Model</Name>

@@ -5,18 +5,13 @@ using DataAccessLayer;
 
 namespace BusinessLayer
 {
-    public class BUS_Drink
+    public class BUS_Drink:BUS<DAL_Drink,Drink,int>
     {
-        DAL_Drink DAL_Drink;
-        public BUS_Drink()
+        public override DataTable Read()
         {
-            DAL_Drink = new DAL_Drink();
+            return DAL.Read();
         }
-        public DataTable Read()
-        {
-            return DAL_Drink.Read();
-        }
-        public void GetList(ManageList<Drink> list)
+        public override void GetList(ManageList<Drink> list)
         {
             list.Clear();
             foreach (DataRow row in Read().Rows)
@@ -28,23 +23,17 @@ namespace BusinessLayer
                 list.Add(new Drink(id, name, type, price));
             }
         }
-        public void ShowDGV(DataGridView dgv)
+        public override void Create(Drink newDrink)
         {
-            dgv.DataSource = null;
-            dgv.Rows.Clear();
-            dgv.DataSource = Read();
+            DAL.Create(newDrink);
         }
-        public void Create(Drink newDrink)
+        public override void Delete(int deleteDrinkID)
         {
-            DAL_Drink.Create(newDrink);
+            DAL.Delete(deleteDrinkID);
         }
-        public void Delete(int deleteDrinkID)
+        public override void Update(Drink updateDrink, int oldDrinkID)
         {
-            DAL_Drink.Delete(deleteDrinkID);
-        }
-        public void Update(Drink updateDrink, int oldDrinkID)
-        {
-            DAL_Drink.Update(updateDrink, oldDrinkID);
+            DAL.Update(updateDrink, oldDrinkID);
         }
     }
 }

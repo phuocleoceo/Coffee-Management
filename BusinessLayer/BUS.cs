@@ -5,15 +5,20 @@ using Model;
 
 namespace BusinessLayer
 {
-    public abstract class BUS<T,U>
+    public abstract class BUS<E, T, U> where E : new()
     {
+        protected E DAL;
+        public BUS()
+        {
+            DAL = new E();
+        }
         public void ShowDGV(DataGridView dgv)
         {
             dgv.DataSource = null;
             dgv.Rows.Clear();
             dgv.DataSource = Read();
         }
-        public abstract DataTable GetDataTableByQuery(string query);
+        //public abstract DataTable GetDataTableByQuery(string query);
         public abstract void GetList(ManageList<T> list);
         public abstract DataTable Read();
         public abstract void Create(T element);
