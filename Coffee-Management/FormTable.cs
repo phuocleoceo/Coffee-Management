@@ -16,11 +16,13 @@ namespace GUILayer
             InitializeComponent();
             LoadTable();
         }
+        // An 2 group box chuc nang
         private void HideGroupBox()
         {
             grbAddDrink.Visible = false;
             grbSwitchTable.Visible = false;
         }
+        // Load danh sach Table
         private void LoadTable()
         {
             try
@@ -66,6 +68,7 @@ namespace GUILayer
                 MessageBox.Show("Database is not available ! ");
             }
         }
+        // Load Bill
         public void LoadBill()
         {
             try
@@ -94,6 +97,7 @@ namespace GUILayer
                 MessageBox.Show("This Bill is not available");
             }
         }
+        //Khi Click vao Table
         private void btnTable_MouseClick(object sender, EventArgs e)
         {
             ClickTable(sender, e);
@@ -115,6 +119,34 @@ namespace GUILayer
             txtTotal.Text = ((Button)sender).Tag.ToString();
             LoadBill();
         }
+        // Su kien cho cac nut bam
+        private void btnAddDrink_Click(object sender, EventArgs e)
+        {
+            HideGroupBox();
+            grbAddDrink.Visible = true;
+            AddDrink();
+        }
+
+        private void btnSwitchTable_Click(object sender, EventArgs e)
+        {
+            HideGroupBox();
+            grbSwitchTable.Visible = true;
+            SwitchTable();
+        }
+
+        private void btnPurchase_Click(object sender, EventArgs e)
+        {
+            HideGroupBox();
+            PurchaseDrink();
+        }
+
+        private void gpbTable_SizeChanged(object sender, EventArgs e)
+        {
+            LoadTable();
+        }
+
+        /*--------------------------------------------------------------------------------------*/
+        //Them do uong
         private void AddDrink()
         {
             try
@@ -143,6 +175,7 @@ namespace GUILayer
             }
             catch { }
         }
+        //Thanh toan
         private void PurchaseDrink()
         {
             try
@@ -163,6 +196,7 @@ namespace GUILayer
             }
             catch { }
         }
+        // Chuyen ban
         private void SwitchTable()
         {
             try
@@ -181,30 +215,6 @@ namespace GUILayer
                 }
             }
             catch { }
-        }
-        private void btnAddDrink_Click(object sender, EventArgs e)
-        {
-            HideGroupBox();
-            grbAddDrink.Visible = true;
-            AddDrink();
-        }
-
-        private void btnSwitchTable_Click(object sender, EventArgs e)
-        {
-            HideGroupBox();
-            grbSwitchTable.Visible = true;
-            SwitchTable();
-        }
-
-        private void btnPurchase_Click(object sender, EventArgs e)
-        {
-            HideGroupBox();
-            PurchaseDrink();
-        }
-
-        private void gpbTable_SizeChanged(object sender, EventArgs e)
-        {
-            LoadTable();
         }
     }
 }
