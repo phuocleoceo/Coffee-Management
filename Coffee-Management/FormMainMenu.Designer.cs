@@ -55,7 +55,7 @@
             this.panelSlideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSlideMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelSlideMenu.Name = "panelSlideMenu";
-            this.panelSlideMenu.Size = new System.Drawing.Size(293, 844);
+            this.panelSlideMenu.Size = new System.Drawing.Size(293, 901);
             this.panelSlideMenu.TabIndex = 20;
             // 
             // panelLogo
@@ -90,7 +90,7 @@
             this.panelTitleBar.Location = new System.Drawing.Point(293, 0);
             this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1268, 123);
+            this.panelTitleBar.Size = new System.Drawing.Size(1412, 123);
             this.panelTitleBar.TabIndex = 40;
             // 
             // lblTitle
@@ -99,7 +99,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Freestyle Script", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(501, 21);
+            this.lblTitle.Location = new System.Drawing.Point(573, 21);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(243, 89);
@@ -112,18 +112,19 @@
             this.panelDesktopPane.Location = new System.Drawing.Point(293, 123);
             this.panelDesktopPane.Margin = new System.Windows.Forms.Padding(4);
             this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(1268, 721);
+            this.panelDesktopPane.Size = new System.Drawing.Size(1412, 778);
             this.panelDesktopPane.TabIndex = 50;
             // 
             // btnCloseChildForm
             // 
+            this.btnCloseChildForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCloseChildForm.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
             this.btnCloseChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseChildForm.Image = global::GUILayer.Properties.Resources.Xclose;
+            this.btnCloseChildForm.Image = global::GUILayer.Properties.Resources.Close3;
             this.btnCloseChildForm.Location = new System.Drawing.Point(0, 0);
             this.btnCloseChildForm.Name = "btnCloseChildForm";
-            this.btnCloseChildForm.Size = new System.Drawing.Size(109, 123);
+            this.btnCloseChildForm.Size = new System.Drawing.Size(117, 123);
             this.btnCloseChildForm.TabIndex = 2;
             this.btnCloseChildForm.UseVisualStyleBackColor = true;
             this.btnCloseChildForm.Click += new System.EventHandler(this.btnCloseChildForm_Click);
@@ -194,7 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1561, 844);
+            this.ClientSize = new System.Drawing.Size(1705, 901);
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelSlideMenu);

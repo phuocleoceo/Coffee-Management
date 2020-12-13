@@ -209,5 +209,35 @@
   <ItemGroup>
     <None Include="Resources\Xclose.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Money1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
