@@ -95,17 +95,23 @@
     <Compile Include="FormMainMenu.Designer.cs">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTable.cs">
+    <Compile Include="FormTableBackup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTable.Designer.cs">
-      <DependentUpon>FormTable.cs</DependentUpon>
+    <Compile Include="FormTableBackup.Designer.cs">
+      <DependentUpon>FormTableBackup.cs</DependentUpon>
     </Compile>
     <Compile Include="FormReporting.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormReporting.Designer.cs">
       <DependentUpon>FormReporting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTable.designer.cs">
+      <DependentUpon>FormTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,11 +130,14 @@
     <EmbeddedResource Include="FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTable.resx">
-      <DependentUpon>FormTable.cs</DependentUpon>
+    <EmbeddedResource Include="FormTableBackup.resx">
+      <DependentUpon>FormTableBackup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReporting.resx">
       <DependentUpon>FormReporting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTable.resx">
+      <DependentUpon>FormTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
