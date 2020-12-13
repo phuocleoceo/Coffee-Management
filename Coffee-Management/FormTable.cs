@@ -156,8 +156,8 @@ namespace GUILayer
                     //frmAddFood addF = new frmAddFood(txtNameTable.Text, txtNameFood.Text, txtSTT.Text);
                     //addF.ShowDialog();
                     //this.Show();
-                    //loaddataTable();
-                    //loaddataBill();
+                    LoadTable();
+                    LoadBill();
 
                 }
                 else if (txtSTT.Text == "Empty")
@@ -168,8 +168,8 @@ namespace GUILayer
                         //frmAddFood addF = new frmAddFood(txtNameTable.Text, txtNameFood.Text, txtSTT.Text);
                         //addF.ShowDialog();
                         //this.Show();
-                        //loaddataTable();
-                        //loaddataBill();
+                        LoadTable();
+                        LoadBill();
                     }
                 }
             }
@@ -185,8 +185,8 @@ namespace GUILayer
                     //frmPay addF = new frmPay(txtNameTable.Text);
                     //addF.ShowDialog();
                     //this.Show();
-                    //loaddataTable();
-                    //loaddataBill();
+                    LoadTable();
+                    LoadBill();
 
                 }
                 else if (txtSTT.Text == "Empty")
@@ -206,8 +206,8 @@ namespace GUILayer
                     //ReplaceTable addF = new ReplaceTable(txtNameTable.Text);
                     //addF.ShowDialog();
                     //this.Show();
-                    //loaddataTable();
-                    //loaddataBill();
+                    LoadTable();
+                    LoadBill();
                 }
                 else if (txtSTT.Text == "Empty")
                 {

@@ -15,16 +15,19 @@ namespace DataAccessLayer
         }
         public override void Create(Bill newDrink)
         {
+            throw new System.NotImplementedException();
         }
         public override void Delete(int deleteBillID)
         {
+            throw new System.NotImplementedException();
         }
         public override void Update(Bill updateDrink, int oldBillID)
         {
+            throw new System.NotImplementedException();
         }
         public override DataTable Read()
         {
-            return null;
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -16,15 +16,19 @@ namespace BusinessLayer
         }
         public override void GetList(ManageList<Bill> list)
         {
+            throw new System.NotImplementedException();
         }
         public override void Create(Bill newBill)
         {
+            throw new System.NotImplementedException();
         }
         public override void Delete(int deleteBillID)
         {
+            throw new System.NotImplementedException();
         }
         public override void Update(Bill updateBill, int oldBillID)
         {
+            throw new System.NotImplementedException();
         }
     }
 }
