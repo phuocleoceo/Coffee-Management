@@ -22,6 +22,8 @@ namespace GUILayer
             grbAddDrink.Visible = false;
             grbSwitchTable.Visible = false;
         }
+        /*---------------------------------TABLE + BILL-----------------------------------------------*/
+
         // Load danh sach Table
         private void LoadTable()
         {
@@ -118,34 +120,20 @@ namespace GUILayer
             //Tra ve tong tien
             txtTotal.Text = ((Button)sender).Tag.ToString();
             LoadBill();
+        }      
+        private void gpbTable_SizeChanged(object sender, EventArgs e)
+        {
+            LoadTable();
         }
-        // Su kien cho cac nut bam
+
+        /*---------------------------------ADD DRINK-----------------------------------------------*/
+
         private void btnAddDrink_Click(object sender, EventArgs e)
         {
             HideGroupBox();
             grbAddDrink.Visible = true;
             AddDrink();
         }
-
-        private void btnSwitchTable_Click(object sender, EventArgs e)
-        {
-            HideGroupBox();
-            grbSwitchTable.Visible = true;
-            SwitchTable();
-        }
-
-        private void btnPurchase_Click(object sender, EventArgs e)
-        {
-            HideGroupBox();
-            PurchaseDrink();
-        }
-
-        private void gpbTable_SizeChanged(object sender, EventArgs e)
-        {
-            LoadTable();
-        }
-
-        /*--------------------------------------------------------------------------------------*/
         //Them do uong
         private void AddDrink()
         {
@@ -175,26 +163,14 @@ namespace GUILayer
             }
             catch { }
         }
-        //Thanh toan
-        private void PurchaseDrink()
-        {
-            try
-            {
-                if (txtSTT.Text == "Online")
-                {
-                    //frmPay addF = new frmPay(txtNameTable.Text);
-                    //addF.ShowDialog();
-                    //this.Show();
-                    LoadTable();
-                    LoadBill();
 
-                }
-                else if (txtSTT.Text == "Empty")
-                {
-                    MessageBox.Show("This Table Is Now Empty !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            catch { }
+        /*---------------------------------SWITCH TABLE--------------------------------------------*/
+
+        private void btnSwitchTable_Click(object sender, EventArgs e)
+        {
+            HideGroupBox();
+            grbSwitchTable.Visible = true;
+            SwitchTable();
         }
         // Chuyen ban
         private void SwitchTable()
@@ -216,5 +192,35 @@ namespace GUILayer
             }
             catch { }
         }
+
+        /*---------------------------------PURCHASE------------------------------------------------*/
+
+        private void btnPurchase_Click(object sender, EventArgs e)
+        {
+            HideGroupBox();
+            PurchaseDrink();
+        }
+        //Thanh toan
+        private void PurchaseDrink()
+        {
+            try
+            {
+                if (txtSTT.Text == "Online")
+                {
+                    //frmPay addF = new frmPay(txtNameTable.Text);
+                    //addF.ShowDialog();
+                    //this.Show();
+                    LoadTable();
+                    LoadBill();
+
+                }
+                else if (txtSTT.Text == "Empty")
+                {
+                    MessageBox.Show("This Table Is Now Empty !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch { }
+        }
+        
     }
 }
