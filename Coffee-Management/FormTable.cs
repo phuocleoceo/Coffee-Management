@@ -141,9 +141,7 @@ namespace GUILayer
             {
                 if (txtSTT.Text == "Online")
                 {
-                    //frmAddFood addF = new frmAddFood(txtNameTable.Text, txtNameFood.Text, txtSTT.Text);
-                    //addF.ShowDialog();
-                    //this.Show();
+                    LoadDataForAddDrinkGRB();
                     LoadTable();
                     LoadBill();
 
@@ -153,15 +151,25 @@ namespace GUILayer
                     DialogResult ms = MessageBox.Show("This Table Is Now Empty !. Open It?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (ms == DialogResult.Yes)
                     {
-                        //frmAddFood addF = new frmAddFood(txtNameTable.Text, txtNameFood.Text, txtSTT.Text);
-                        //addF.ShowDialog();
-                        //this.Show();
+                        LoadDataForAddDrinkGRB();
                         LoadTable();
                         LoadBill();
                     }
                 }
             }
             catch { }
+        }
+
+        private void LoadDataForAddDrinkGRB()
+        {
+            txtTableAD.Text = txtNameTable.Text;
+            txtStatusAD.Text = txtSTT.Text;
+            ManageList<Drink> listDrink = new ManageList<Drink>();
+            BUS_Drink.Instance.GetList(listDrink);
+            for (int i = 0; i < listDrink.Count; i++)
+            {
+                cbbDrinkAD.Items.Add(listDrink[i].Name);
+            }
         }
 
         /*---------------------------------SWITCH TABLE--------------------------------------------*/
