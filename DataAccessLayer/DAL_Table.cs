@@ -9,7 +9,6 @@ namespace DataAccessLayer
         public override void Create(Table newTable)
         {
             SqlCommand cmd = new SqlCommand("InsertTable");
-            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = newTable.ID;
             cmd.Parameters.AddWithValue("@Name", SqlDbType.NVarChar).Value = newTable.Name;
             cmd.Parameters.AddWithValue("@Status", SqlDbType.NVarChar).Value = newTable.Status;
@@ -18,14 +17,12 @@ namespace DataAccessLayer
         public override void Delete(int deleteTableID)
         {
             SqlCommand cmd = new SqlCommand("DeleteTable");
-            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = deleteTableID;
             DataProvider.Instance.ExecuteNonQuery(cmd);
         }
         public override void Update(Table updateTable, int oldTableID)
         {
             SqlCommand cmd = new SqlCommand("UpdateTable");
-            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = updateTable.ID;
             cmd.Parameters.AddWithValue("@Name", SqlDbType.NVarChar).Value = updateTable.Name;
             cmd.Parameters.AddWithValue("@Status", SqlDbType.NVarChar).Value = updateTable.Status;
@@ -35,7 +32,6 @@ namespace DataAccessLayer
         public override DataTable Read()
         {
             SqlCommand cmd = new SqlCommand("GetTable");
-            cmd.CommandType = CommandType.StoredProcedure;
             return DataProvider.Instance.ExecuteTable(cmd);
         }
     }

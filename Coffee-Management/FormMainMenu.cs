@@ -10,8 +10,6 @@ namespace GUILayer
     public partial class FormMainMenu : Form
     {
         /*-----------------------------------------------------------------*/
-        public static ManageList<Table> listTable = new ManageList<Table>();
-        public static ManageList<Drink> listDrink = new ManageList<Drink>();
         private int Type = FormLogin.Type;
         /*-----------------------------------------------------------------*/
         //Khai báo các Hàm
@@ -25,11 +23,6 @@ namespace GUILayer
             Decentralization();
             hideSubMenu();
             random = new Random();
-        }
-        private void FormMainMenu_Load(object sender, EventArgs e)
-        {
-            BUS_Table.Instance.GetList(listTable);
-            BUS_Drink.Instance.GetList(listDrink);
         }
         //Phân quyền
         private void Decentralization()

@@ -249,7 +249,6 @@
             this.Name = "FormMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Coffee Management";
-            this.Load += new System.EventHandler(this.FormMainMenu_Load);
             this.panelSlideMenu.ResumeLayout(false);
             this.panelAccountSubMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);

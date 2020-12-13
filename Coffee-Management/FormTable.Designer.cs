@@ -48,7 +48,7 @@
             this.btnAddDrink = new System.Windows.Forms.Button();
             this.dgvDrink = new System.Windows.Forms.DataGridView();
             this.DrinkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listViewTable = new System.Windows.Forms.ListView();
+            this.FLPTable = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.nmDrinkCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDrink)).BeginInit();
             this.SuspendLayout();
@@ -293,23 +293,19 @@
             this.DrinkName.ReadOnly = true;
             this.DrinkName.Width = 190;
             // 
-            // listViewTable
+            // FLPTable
             // 
-            this.listViewTable.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.listViewTable.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewTable.HideSelection = false;
-            this.listViewTable.Location = new System.Drawing.Point(5, 7);
-            this.listViewTable.Name = "listViewTable";
-            this.listViewTable.Size = new System.Drawing.Size(351, 569);
-            this.listViewTable.TabIndex = 12;
-            this.listViewTable.UseCompatibleStateImageBehavior = false;
+            this.FLPTable.Location = new System.Drawing.Point(6, 26);
+            this.FLPTable.Name = "FLPTable";
+            this.FLPTable.Size = new System.Drawing.Size(338, 525);
+            this.FLPTable.TabIndex = 19;
             // 
             // FormTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 578);
-            this.Controls.Add(this.listViewTable);
+            this.Controls.Add(this.FLPTable);
             this.Controls.Add(this.dgvDrink);
             this.Controls.Add(this.btnAddDrink);
             this.Controls.Add(this.txtTotal);
@@ -356,6 +352,6 @@
         private System.Windows.Forms.Button btnAddDrink;
         private System.Windows.Forms.DataGridView dgvDrink;
         private System.Windows.Forms.DataGridViewTextBoxColumn DrinkName;
-        private System.Windows.Forms.ListView listViewTable;
+        private System.Windows.Forms.FlowLayoutPanel FLPTable;
     }
 }

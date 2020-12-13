@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using System.Data;
 using BusinessLayer;
-using Model;
 
 namespace GUILayer
 {
