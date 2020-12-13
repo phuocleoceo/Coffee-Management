@@ -18,6 +18,7 @@ namespace DataAccessLayer
         public override void Delete(int deleteTableID)
         {
             SqlCommand cmd = new SqlCommand("DeleteTable");
+            cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id", SqlDbType.Int).Value = deleteTableID;
             DataProvider.Instance.ExecuteNonQuery(cmd);
         }
