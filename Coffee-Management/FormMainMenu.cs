@@ -21,16 +21,15 @@ namespace GUILayer
         {
             InitializeComponent();
             Decentralization();
-            hideSubMenu();
             random = new Random();
         }
         //Phân quyền
         private void Decentralization()
         {
             if (Type == "Admin")
-                btnAdmin.Enabled = true;
+                btnAccount.Enabled = true;
             else
-                btnAdmin.Enabled = false;
+                btnAccount.Enabled = false;
         }
         //Lựa Chọn Màu
         private Color SelectThemeColor()
@@ -93,55 +92,25 @@ namespace GUILayer
             childForm.Show();
             lblTitle.Text = childForm.Text;
         }
-        //Hiện Sub Menu
-        private void showSubMenu(Panel subMenu)
-        {
-            if (subMenu.Visible == false)
-            {
-                hideSubMenu();
-                subMenu.Visible = true;
-            }
-            else
-                subMenu.Visible = false;
-        }
-        //Ẩn Sub Menu
-        private void hideSubMenu()
-        {
-            panelAccountSubMenu.Visible = false;
-        }
         //Thiết Lập Các Click Nút
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
 
-            OpenChildForm(new FormAccount(), sender);
-            showSubMenu(panelAccountSubMenu);
-        }
-        private void btnAdmin_Click(object sender, EventArgs e)
-        {
             OpenChildForm(new FormAdmin(), sender);
-            hideSubMenu();
-        }
-        private void btnAccountProfile_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new FormAccountProfile(), sender);
-            hideSubMenu();
-        }
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            //OpenChildForm(new FormLogin(), sender);
-            hideSubMenu();
-            Close();
         }
         private void btnTable_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormTable(), sender);
-            hideSubMenu();
         }
         private void btnReporting_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormReporting(), sender);
-            hideSubMenu();
+        }
+
+        private void btnCloseChildForm_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

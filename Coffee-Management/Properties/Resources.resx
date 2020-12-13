@@ -118,23 +118,29 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PassShow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PassShow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="coffe1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\coffe1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="accountprofile1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\accountprofile1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="coffe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\coffe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PassHide" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PassHide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="accountlogo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\accountlogo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="accountlogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\accountlogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="chart1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chart1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="kinhlup1.jpg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kinhlup1.jpg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="kinhlup" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kinhlup.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="accountprofile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\accountprofile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,16 +148,13 @@
   <data name="kinhlup1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kinhlup1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="accountlogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\accountlogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="coffe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coffe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="kinhlup" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\kinhlup.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="kinhlup1.jpg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kinhlup1.jpg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PassHide" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PassHide.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PassShow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PassShow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Xclose" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Xclose.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

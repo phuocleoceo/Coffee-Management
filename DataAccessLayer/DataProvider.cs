@@ -6,8 +6,8 @@ namespace DataAccessLayer
 {
     public sealed class DataProvider
     {
-        //private static string ConStr = @"Data Source=.\sqlexpress;Initial Catalog=CoffeeManagement;Integrated Security=True";        
-        private static string ConStr = @"Data Source=.;Initial Catalog=CoffeeManagement;Integrated Security=True";
+        private static string ConStr = @"Data Source=.\sqlexpress;Initial Catalog=CoffeeManagement;Integrated Security=True";        
+        //private static string ConStr = @"Data Source=.;Initial Catalog=CoffeeManagement;Integrated Security=True";
         public SqlConnection con { get; set; }
         private static DataProvider _instance;
         private DataProvider()
