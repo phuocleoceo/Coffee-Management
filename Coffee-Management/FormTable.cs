@@ -1,5 +1,5 @@
 ﻿using System;
-using System.ComponentModel;
+using Model;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
@@ -126,10 +126,11 @@ namespace GUILayer
                     //this.Show();
                     //loaddataTable();
                     //loaddataBill();
+
                 }
                 else if (txtSTT.Text == "Empty")
                 {
-                    DialogResult ms = MessageBox.Show("Bàn này đang trống. Mở bàn nhé?", "Lỗi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult ms = MessageBox.Show("This Table Is Now Empty !. Open It?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (ms == DialogResult.Yes)
                     {
                         //frmAddFood addF = new frmAddFood(txtNameTable.Text, txtNameFood.Text, txtSTT.Text);
@@ -153,10 +154,11 @@ namespace GUILayer
                     //this.Show();
                     //loaddataTable();
                     //loaddataBill();
+
                 }
                 else if (txtSTT.Text == "Empty")
                 {
-                    MessageBox.Show("Bàn này đang trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("This Table Is Now Empty !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch { }
@@ -175,48 +177,11 @@ namespace GUILayer
                 }
                 else if (txtSTT.Text == "Empty")
                 {
-                    MessageBox.Show("Bàn này đang trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("This Table Is Now Empty !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch { }
         }
-        //menu context SubTable
-        private void tsmThemMon_Click(object sender, EventArgs e)
-        {
-            AddDrink();
-        }
-        private void tsmThanhToan_Click(object sender, EventArgs e)
-        {
-            PurchaseDrink();
-        }
-        private void tsmChuyenBan_Click(object sender, EventArgs e)
-        {
-            SwitchTable();
-        }
-        private void tmsThemMon2_Click(object sender, EventArgs e)
-        {
-            AddDrink();
-        }
-        //Dat ban
-        private void tsmDatBan_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //provider.Datban("DATTRUOC", txtNameTable.Text);
-                LoadTable();
-            }
-            catch { }
-        }
-        private void tsmMoBan_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //provider.Datban("TRONG",txtNameTable.Text);
-                LoadTable();
-            }
-            catch { }
-        }
-
         private void btnAddDrink_Click(object sender, EventArgs e)
         {
             HideGroupBox();
