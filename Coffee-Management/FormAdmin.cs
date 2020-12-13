@@ -115,7 +115,8 @@ namespace GUILayer
         private void btnShowTable_Click(object sender, EventArgs e)
         {
             BUS_Table.Instance.ShowDGV(dgvTable);
-
+            dgvTable.Columns["Status"].Visible = false;
+            dgvTable.Columns["Total"].Visible = false;
             //Cho phép các Button khác chạy
             btnAddTable.Enabled = true;
             btnEditTable.Enabled = true;

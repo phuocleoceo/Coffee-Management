@@ -31,7 +31,7 @@ namespace GUILayer
                     {
                         Name = "btnTable" + (i + 1),
                         Text = table.Rows[i][1].ToString(),
-                        //Tag = table.Rows[i][2].ToString(),
+                        Tag = table.Rows[i][3].ToString(),
                         Width = 100,
                         Height = 50,
                         Location = new Point(x, y),
@@ -42,7 +42,7 @@ namespace GUILayer
                     }
                     else if (table.Rows[i][2].ToString() == "Online")
                     {
-                        btn.BackColor = ColorTranslator.FromHtml("lime");
+                        btn.BackColor = ColorTranslator.FromHtml("red");
                     }
                     if (x < pnlTable.Width - 220)
                     {
@@ -70,7 +70,8 @@ namespace GUILayer
             {
                 pnlBill.Controls.Clear();
                 strBill = "";
-                DataTable table = null; //BUS_Table.Instance.loadBillInfo(txtNameTable.Text);
+                DataTable table = BUS_Bill.Instance.Read(txtNameTable.Text);
+                //BUS_Table.Instance.loadBillInfo(txtNameTable.Text);
                 //Load thong tin cac mon trong bill 
                 int y = 10;
                 for (int i = 0; i < table.Rows.Count; i++)
@@ -170,15 +171,11 @@ namespace GUILayer
             //tra ve trang thai ban theo mau sac cua btnTable
             if (((Button)sender).BackColor.ToString() == "Color [Snow]")
             {
-                txtSTT.Text = "TRONG";
+                txtSTT.Text = "EMPTY";
             }
-            else if (((Button)sender).BackColor.ToString() == "Color [Lime]")
+            else if (((Button)sender).BackColor.ToString() == "Color [RED]")
             {
                 txtSTT.Text = "ONLINE";
-            }
-            else if (((Button)sender).BackColor.ToString() == "Color [Red]")
-            {
-                txtSTT.Text = "DATTRUOC";
             }
             //tra ve ten ban
             txtNameTable.Text = ((Button)sender).Text;
@@ -427,7 +424,7 @@ namespace GUILayer
         {
             try
             {
-                
+
             }
             catch
             {

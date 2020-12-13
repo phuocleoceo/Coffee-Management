@@ -10,21 +10,21 @@ namespace Model
     public class Bill
     {
         int id;
-        string table, drink;
+        string tableID, drinkID;
         int counts;
         public Bill() { }
-        public Bill(int id,string table, string drink,int counts)
+        public Bill(int id,string tableID, string drinkID,int counts)
         {
             this.id = id;
-            this.table = table;
-            this.drink = drink;
+            this.tableID = tableID;
+            this.drinkID = drinkID;
             this.Counts = counts;
         }
         public Bill(DataRow row)
         {
             this.id = (int)row["id"];
-            this.table = row["Table"].ToString();
-            this.drink = row["Drink"].ToString();
+            this.tableID = row["TableID"].ToString();
+            this.drinkID = row["DrinkID"].ToString();
             this.counts = (int)row["Counts"];
         }
         public int ID
@@ -32,15 +32,15 @@ namespace Model
             get { return id; }
             set { id = value; }
         }
-        public string Table
+        public string TableID
         {
-            get { return table; }
-            set { table = value; }
+            get { return tableID; }
+            set { tableID = value; }
         }
-        public string Drink
+        public string DrinkID
         {
-            get { return drink; }
-            set { drink = value; }
+            get { return drinkID; }
+            set { drinkID = value; }
         }
         public int Counts
         {

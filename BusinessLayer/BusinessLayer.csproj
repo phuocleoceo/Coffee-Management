@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="BUS.cs" />
     <Compile Include="BUS_Account.cs" />
+    <Compile Include="BUS_Bill.cs" />
     <Compile Include="BUS_Drink.cs" />
     <Compile Include="BUS_DrinkType.cs" />
     <Compile Include="BUS_Table.cs" />
