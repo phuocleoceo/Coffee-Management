@@ -7,7 +7,7 @@ using BusinessLayer;
 namespace GUILayer
 {
     public partial class FormAdmin : Form
-    {      
+    {
         public FormAdmin()
         {
             InitializeComponent();
@@ -43,7 +43,7 @@ namespace GUILayer
                 txbUserName.Text = row.Cells[0].Value.ToString();
                 txbDisplayName.Text = row.Cells[1].Value.ToString();
                 txbPassWord.Text = row.Cells[2].Value.ToString();
-                cbType.Text = (row.Cells[3].Value.ToString() == "1") ? "Admin" : "Staff";
+                cbType.Text = row.Cells[3].Value.ToString();
             }
         }
 
@@ -63,8 +63,7 @@ namespace GUILayer
             string newUserName = txbUserName.Text;
             string newDisplayName = txbDisplayName.Text;
             string newPassWord = txbPassWord.Text;
-            string newTypeDetail = cbType.Text;
-            int newType = (String.Compare(newTypeDetail, "Admin") == 0) ? 1 : 0;
+            string newType = cbType.Text;
             //Tạo đối tượng mới rồi thêm vào Danh Sách Tài Khoản
             Account newAccount = new Account(newUserName, newDisplayName, newPassWord, newType);
             //Cập nhật lại Database
@@ -94,8 +93,7 @@ namespace GUILayer
         //Update Account
         private void btnEditAccount_Click(object sender, EventArgs e)
         {
-            string oldUserName = "", newUserName, newDisplayName, newPassWord;
-            int newType;
+            string oldUserName = "", newUserName, newDisplayName, newPassWord, newType;
             //Dữ liệu cũ thì lấy từ Hàng được chọn, chỉ cần Khoá chính là đủ
             foreach (DataGridViewRow row in dgvAccount.SelectedRows)
             {
@@ -105,8 +103,7 @@ namespace GUILayer
             newUserName = txbUserName.Text;
             newDisplayName = txbDisplayName.Text;
             newPassWord = txbPassWord.Text;
-            string newTypeDetail = cbType.Text;
-            newType = (String.Compare(newTypeDetail, "Admin") == 0) ? 1 : 0;
+            newType = cbType.Text;
             Account updateAccount = new Account(newUserName, newDisplayName, newPassWord, newType);
             //Sửa Database            
             BUS_Account.Instance.Update(updateAccount, oldUserName);
@@ -118,6 +115,7 @@ namespace GUILayer
         private void btnShowTable_Click(object sender, EventArgs e)
         {
             BUS_Table.Instance.ShowDGV(dgvTable);
+
             //Cho phép các Button khác chạy
             btnAddTable.Enabled = true;
             btnEditTable.Enabled = true;
@@ -142,9 +140,9 @@ namespace GUILayer
             }
             int newID = Int32.Parse(txbTableID.Text);
             string newTableName = txbTableName.Text;
-            Table updateTable = new Table(newID, newTableName, "Empty");
+            Table updateTable = new Table(newID, newTableName, "Empty", 0);
             //Sửa Database            
-            BUS_Table.Instance.Update(updateTable, oldID);            
+            BUS_Table.Instance.Update(updateTable, oldID);
             btnShowTable.PerformClick();
         }
 
@@ -152,7 +150,7 @@ namespace GUILayer
         {
             int newTableID = Int32.Parse(txbTableID.Text);
             string newTableName = txbTableName.Text;
-            Table newTable = new Table(newTableID, newTableName, "Empty");
+            Table newTable = new Table(newTableID, newTableName, "Empty", 0);
             //Cập nhật lại Database
             BUS_Table.Instance.Create(newTable);
             btnShowTable.PerformClick();

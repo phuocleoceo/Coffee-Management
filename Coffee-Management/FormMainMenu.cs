@@ -10,7 +10,7 @@ namespace GUILayer
     public partial class FormMainMenu : Form
     {
         /*-----------------------------------------------------------------*/
-        private int Type = FormLogin.Type;
+        private string Type = FormLogin.Type;
         /*-----------------------------------------------------------------*/
         //Khai báo các Hàm
         private Button currentButton;
@@ -27,7 +27,7 @@ namespace GUILayer
         //Phân quyền
         private void Decentralization()
         {
-            if (Type == 1)
+            if (Type == "Admin")
                 btnAdmin.Enabled = true;
             else
                 btnAdmin.Enabled = false;

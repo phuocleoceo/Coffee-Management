@@ -8,7 +8,7 @@ namespace GUILayer
     public partial class FormLogin : Form
     {
         //----------------------------------------------------------------------------------
-        public static int Type;  //Biên lưu vai trò của Account ( 1 Admin  0 Staff )
+        public static string Type;  
         //----------------------------------------------------------------------------------
         public FormLogin()
         {
@@ -22,7 +22,7 @@ namespace GUILayer
             {
                 if (dt.Rows[i][0].ToString() == username && dt.Rows[i][2].ToString() == password)
                 {
-                    Type = (int)dt.Rows[i][3];
+                    Type = dt.Rows[i][3].ToString();
                     return true;
                 }
             }

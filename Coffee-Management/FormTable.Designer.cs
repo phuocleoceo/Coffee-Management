@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTable));
             this.pnlFood = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNameFood = new System.Windows.Forms.Label();
             this.txtPriceFood = new System.Windows.Forms.Label();
             this.gpbFood = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlCategory = new System.Windows.Forms.Panel();
             this.gpbCategory = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,20 +49,6 @@
             this.gpbBill = new System.Windows.Forms.GroupBox();
             this.pnlTable = new System.Windows.Forms.Panel();
             this.gpbTable = new System.Windows.Forms.GroupBox();
-            this.aCCOUNTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tsmMoBan = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmnSubTable3 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.tsmThemMon = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmTraMon = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmThanhToan = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmChuyenBan = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmGopBan = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmInTT = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmnSubTable = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.ofdMedia = new System.Windows.Forms.OpenFileDialog();
             this.btnAddFood = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -76,18 +62,11 @@
             this.btnBlock = new System.Windows.Forms.Button();
             this.grbChucNang = new System.Windows.Forms.GroupBox();
             this.btnPay = new System.Windows.Forms.Button();
-            this.tmsThemMon2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmDatBan = new System.Windows.Forms.ToolStripMenuItem();
-            this.cmnSubTable2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.gpbFood.SuspendLayout();
             this.gpbCategory.SuspendLayout();
             this.gpbBill.SuspendLayout();
             this.gpbTable.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aCCOUNTBindingSource)).BeginInit();
-            this.cmnSubTable3.SuspendLayout();
-            this.cmnSubTable.SuspendLayout();
             this.grbChucNang.SuspendLayout();
-            this.cmnSubTable2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlFood
@@ -141,6 +120,16 @@
             this.gpbFood.TabIndex = 14;
             this.gpbFood.TabStop = false;
             this.gpbFood.Text = "Drink List";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(338, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 18);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "VNĐ";
             // 
             // pnlCategory
             // 
@@ -303,98 +292,6 @@
             this.gpbTable.TabIndex = 11;
             this.gpbTable.TabStop = false;
             this.gpbTable.Text = "Table List";
-            // 
-            // tsmMoBan
-            // 
-            this.tsmMoBan.Name = "tsmMoBan";
-            this.tsmMoBan.ShortcutKeys = System.Windows.Forms.Keys.F12;
-            this.tsmMoBan.Size = new System.Drawing.Size(169, 22);
-            this.tsmMoBan.Text = "Mở khóa bàn";
-            // 
-            // cmnSubTable3
-            // 
-            this.cmnSubTable3.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.cmnSubTable3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmMoBan});
-            this.cmnSubTable3.Name = "cmnSubTable";
-            this.cmnSubTable3.Size = new System.Drawing.Size(170, 26);
-            this.cmnSubTable3.Text = "DATTRUOC";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(338, 49);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 18);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "VNĐ";
-            // 
-            // tsmThemMon
-            // 
-            this.tsmThemMon.Name = "tsmThemMon";
-            this.tsmThemMon.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.tsmThemMon.Size = new System.Drawing.Size(157, 22);
-            this.tsmThemMon.Text = "Thêm món";
-            // 
-            // tsmTraMon
-            // 
-            this.tsmTraMon.Name = "tsmTraMon";
-            this.tsmTraMon.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.tsmTraMon.Size = new System.Drawing.Size(157, 22);
-            this.tsmTraMon.Text = "Trả món";
-            // 
-            // tsmThanhToan
-            // 
-            this.tsmThanhToan.Name = "tsmThanhToan";
-            this.tsmThanhToan.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.tsmThanhToan.Size = new System.Drawing.Size(157, 22);
-            this.tsmThanhToan.Text = "Thanh toán";
-            // 
-            // tsmChuyenBan
-            // 
-            this.tsmChuyenBan.Name = "tsmChuyenBan";
-            this.tsmChuyenBan.ShortcutKeys = System.Windows.Forms.Keys.F4;
-            this.tsmChuyenBan.Size = new System.Drawing.Size(157, 22);
-            this.tsmChuyenBan.Text = "Chuyển bàn";
-            // 
-            // tsmGopBan
-            // 
-            this.tsmGopBan.Name = "tsmGopBan";
-            this.tsmGopBan.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.tsmGopBan.Size = new System.Drawing.Size(157, 22);
-            this.tsmGopBan.Text = "Gộp bàn";
-            // 
-            // tsmInTT
-            // 
-            this.tsmInTT.Name = "tsmInTT";
-            this.tsmInTT.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.tsmInTT.Size = new System.Drawing.Size(157, 22);
-            this.tsmInTT.Text = "In tạm tính";
-            // 
-            // cmnSubTable
-            // 
-            this.cmnSubTable.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.cmnSubTable.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmThemMon,
-            this.tsmTraMon,
-            this.tsmThanhToan,
-            this.tsmChuyenBan,
-            this.tsmGopBan,
-            this.tsmInTT});
-            this.cmnSubTable.Name = "cmnSubTable";
-            this.cmnSubTable.Size = new System.Drawing.Size(158, 136);
-            this.cmnSubTable.Text = "ONLINE";
-            // 
-            // printDialog1
-            // 
-            this.printDialog1.UseEXDialog = true;
-            // 
-            // ofdMedia
-            // 
-            this.ofdMedia.FileName = "Media";
-            this.ofdMedia.Filter = "Mp3|*.mp3|Wav|*.wav|Mp4|*.mp4|3gp|*.3gp";
-            this.ofdMedia.Multiselect = true;
             // 
             // btnAddFood
             // 
@@ -585,30 +482,6 @@
             this.btnPay.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPay.UseVisualStyleBackColor = false;
             // 
-            // tmsThemMon2
-            // 
-            this.tmsThemMon2.Name = "tmsThemMon2";
-            this.tmsThemMon2.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.tmsThemMon2.Size = new System.Drawing.Size(176, 22);
-            this.tmsThemMon2.Text = "Thêm món mới";
-            // 
-            // tsmDatBan
-            // 
-            this.tsmDatBan.Name = "tsmDatBan";
-            this.tsmDatBan.ShortcutKeys = System.Windows.Forms.Keys.F11;
-            this.tsmDatBan.Size = new System.Drawing.Size(176, 22);
-            this.tsmDatBan.Text = "Đặt giữ bàn";
-            // 
-            // cmnSubTable2
-            // 
-            this.cmnSubTable2.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.cmnSubTable2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tmsThemMon2,
-            this.tsmDatBan});
-            this.cmnSubTable2.Name = "cmnSubTable";
-            this.cmnSubTable2.Size = new System.Drawing.Size(177, 48);
-            this.cmnSubTable2.Text = "TRONG";
-            // 
             // FormTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -628,18 +501,13 @@
             this.Name = "FormTable";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form Table";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.gpbFood.ResumeLayout(false);
             this.gpbFood.PerformLayout();
             this.gpbCategory.ResumeLayout(false);
             this.gpbBill.ResumeLayout(false);
             this.gpbBill.PerformLayout();
             this.gpbTable.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.aCCOUNTBindingSource)).EndInit();
-            this.cmnSubTable3.ResumeLayout(false);
-            this.cmnSubTable.ResumeLayout(false);
             this.grbChucNang.ResumeLayout(false);
-            this.cmnSubTable2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -666,19 +534,6 @@
         private System.Windows.Forms.GroupBox gpbBill;
         private System.Windows.Forms.Panel pnlTable;
         private System.Windows.Forms.GroupBox gpbTable;
-        private System.Windows.Forms.BindingSource aCCOUNTBindingSource;
-        private System.Windows.Forms.ToolStripMenuItem tsmMoBan;
-        private System.Windows.Forms.ContextMenuStrip cmnSubTable3;
-        private System.Windows.Forms.ToolStripMenuItem tsmThemMon;
-        private System.Windows.Forms.ToolStripMenuItem tsmTraMon;
-        private System.Windows.Forms.ToolStripMenuItem tsmThanhToan;
-        private System.Windows.Forms.ToolStripMenuItem tsmChuyenBan;
-        private System.Windows.Forms.ToolStripMenuItem tsmGopBan;
-        private System.Windows.Forms.ToolStripMenuItem tsmInTT;
-        private System.Windows.Forms.ContextMenuStrip cmnSubTable;
-        private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.PrintDialog printDialog1;
-        private System.Windows.Forms.OpenFileDialog ofdMedia;
         private System.Windows.Forms.Button btnAddFood;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -692,9 +547,6 @@
         private System.Windows.Forms.Button btnBlock;
         private System.Windows.Forms.GroupBox grbChucNang;
         private System.Windows.Forms.Button btnPay;
-        private System.Windows.Forms.ToolStripMenuItem tmsThemMon2;
-        private System.Windows.Forms.ToolStripMenuItem tsmDatBan;
-        private System.Windows.Forms.ContextMenuStrip cmnSubTable2;
 
         public System.Windows.Forms.MouseEventHandler txtNameMan_MouseClick { get; set; }
     }

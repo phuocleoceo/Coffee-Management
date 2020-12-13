@@ -31,7 +31,6 @@ namespace DataAccessLayer
             {
                 con.Open();
                 cmd.Connection = con;
-                cmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
                 return dt;

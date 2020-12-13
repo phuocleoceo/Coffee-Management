@@ -1,6 +1,8 @@
 ﻿using System.Data;
 using System.Windows.Forms;
 using Model;
+using System.Data.SqlClient;
+using DataAccessLayer;
 
 namespace BusinessLayer
 {
@@ -23,7 +25,14 @@ namespace BusinessLayer
             dgv.Rows.Clear();
             dgv.DataSource = Read();
         }
-        //public abstract DataTable GetDataTableByQuery(string query);
+        public DataTable ExcecuteTable(SqlCommand cmd)
+        {
+            return DataProvider.Instance.ExecuteTable(cmd);
+        }
+        public void ExecuteNonQuery(SqlCommand cmd)
+        {
+            DataProvider.Instance.ExecuteNonQuery(cmd);
+        }
         public abstract void GetList(ManageList<ModelType> list);
         public abstract DataTable Read();
         public abstract void Create(ModelType element);

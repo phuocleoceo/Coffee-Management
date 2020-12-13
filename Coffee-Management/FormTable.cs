@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using BusinessLayer;
 using System.Data.SqlClient;
@@ -13,27 +10,14 @@ namespace GUILayer
 {
     public partial class FormTable : Form
     {
-        //Bill
         string strBill;
         public FormTable()
         {
             InitializeComponent();
-            //Load nhanh danh sach ban va thuc don
-            loaddataTable();
-            loaddataCategory();
+            LoadTable();
+            LoadCatelogy();
         }
-
-        //Su kien thoat from
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Bạn có muốn thoát?", "Thoát", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != System.Windows.Forms.DialogResult.OK)
-            {
-                e.Cancel = true;
-            }
-        }
-
-        //Ham Load TABLE 
-        private void loaddataTable()
+        private void LoadTable()
         {
             try
             {
@@ -42,34 +26,23 @@ namespace GUILayer
                 int x = 10;
                 int y = 10;
                 for (int i = 0; i < table.Rows.Count; i++)
-                {                   
+                {
                     Button btn = new Button()
                     {
-                        Name = "btnTable" + i,
-                        Text = table.Rows[i][1].ToString(), 
-                        Tag = table.Rows[i][2].ToString(), 
+                        Name = "btnTable" + (i + 1),
+                        Text = table.Rows[i][1].ToString(),
+                        //Tag = table.Rows[i][2].ToString(),
                         Width = 100,
                         Height = 50,
                         Location = new Point(x, y),
                     };
-                    //Set trang thai ban
-                    if (table.Rows[i][1].ToString() == "Empty")
+                    if (table.Rows[i][2].ToString() == "Empty")
                     {
                         btn.BackColor = ColorTranslator.FromHtml("snow");
-                        //Ban Trong contextmenu 2
-                        btn.ContextMenuStrip = cmnSubTable2;
                     }
-                    else if (table.Rows[i][1].ToString() == "Online")
+                    else if (table.Rows[i][2].ToString() == "Online")
                     {
                         btn.BackColor = ColorTranslator.FromHtml("lime");
-                        //Ban Trong contextmenu full option
-                        btn.ContextMenuStrip = cmnSubTable;
-                    }
-                    else if (table.Rows[i][1].ToString() == "DATTRUOC")
-                    {
-                        btn.BackColor = ColorTranslator.FromHtml("red");
-                        //Ban Trong contextmenu khoa
-                        btn.ContextMenuStrip = cmnSubTable3;
                     }
                     if (x < pnlTable.Width - 220)
                     {
@@ -81,22 +54,20 @@ namespace GUILayer
                         y += 60;
                     }
                     btn.MouseClick += new MouseEventHandler(btnTable_MouseClick);
-                    btn.MouseHover += new EventHandler(btnTable_MouseHover);
                     pnlTable.Controls.Add(btn);
                 }
             }
             catch
             {
-                MessageBox.Show("Không thể tải bàn!", "Lỗi...");
+                MessageBox.Show("Database is not available ! ");
             }
         }
 
         //Ham load BILL
-        public void loaddataBill()
+        public void LoadBill()
         {
             try
             {
-                //Don rac
                 pnlBill.Controls.Clear();
                 strBill = "";
                 DataTable table = null; //BUS_Table.Instance.loadBillInfo(txtNameTable.Text);
@@ -105,7 +76,7 @@ namespace GUILayer
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
                     //Thêm vào bill
-                    strBill += (i + 1) + ".     " + table.Rows[i][2].ToString() + "  X  " + table.Rows[i][3].ToString()+"\n";
+                    strBill += (i + 1) + ".     " + table.Rows[i][2].ToString() + "  X  " + table.Rows[i][3].ToString() + "\n";
                     Label lbl = new Label()
                     {
                         Name = "btnFB" + i,
@@ -119,13 +90,13 @@ namespace GUILayer
                     pnlBill.Controls.Add(lbl);
                 }
             }
-            catch 
+            catch
             {
             }
         }
-        
+
         //Ham Load CATEGORY
-        private void loaddataCategory()
+        private void LoadCatelogy()
         {
             try
             {
@@ -189,11 +160,6 @@ namespace GUILayer
             }
         }
 
-        private void btnTable_MouseHover(object sender, EventArgs e)
-        {
-            ClickTable(sender, e);
-        }
-
         //Su kien Mouseclick vao btnTABLE
         private void btnTable_MouseClick(object sender, EventArgs e)
         {
@@ -218,7 +184,7 @@ namespace GUILayer
             txtNameTable.Text = ((Button)sender).Text;
             //Tra ve tong tien
             txtTotal.Text = ((Button)sender).Tag.ToString();
-            loaddataBill();
+            LoadBill();
         }
 
         //Su kien click btnCATEGORY
@@ -247,7 +213,7 @@ namespace GUILayer
                 //this.Show();
                 //loaddataCategory();
             }
-            catch{}
+            catch { }
         }
 
         //di den quan ly food
@@ -260,7 +226,7 @@ namespace GUILayer
                 //this.Show();
                 //loaddataCategory();
             }
-            catch{}
+            catch { }
         }
 
         //di den quan ly table
@@ -273,7 +239,7 @@ namespace GUILayer
                 //this.Show();
                 //loaddataTable();
             }
-            catch{}
+            catch { }
         }
 
         //di den thang Account
@@ -285,13 +251,13 @@ namespace GUILayer
                 //frm.ShowDialog();
                 //this.Show();
             }
-            catch{}
+            catch { }
         }
 
         //Neu kich thuoc table thay doi thi load lai table cho phu hop
         private void gpbTable_SizeChanged(object sender, EventArgs e)
         {
-            loaddataTable();
+            LoadTable();
         }
 
 
@@ -461,11 +427,7 @@ namespace GUILayer
         {
             try
             {
-                printDialog1.Document = printDocument1;
-                if (printDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    printDocument1.Print();
-                }
+                
             }
             catch
             {
@@ -552,7 +514,7 @@ namespace GUILayer
             try
             {
                 //provider.Datban("DATTRUOC", txtNameTable.Text);
-                loaddataTable();
+                LoadTable();
             }
             catch { }
         }
@@ -568,9 +530,9 @@ namespace GUILayer
             try
             {
                 //provider.Datban("TRONG",txtNameTable.Text);
-                loaddataTable();
+                LoadTable();
             }
             catch { }
-        }        
+        }
     }
 }

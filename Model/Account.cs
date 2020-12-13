@@ -6,9 +6,9 @@ namespace Model
         private string username;
         private string displayname;
         private string password;
-        private int type;
+        private string type;
         public Account() { }
-        public Account(string username, string displayname, string password, int type)
+        public Account(string username, string displayname, string password, string type)
         {
             this.username = username;
             this.displayname = displayname;
@@ -20,7 +20,7 @@ namespace Model
             this.username = row["UserName"].ToString();
             this.displayname = row["DisplayName"].ToString();
             this.password = row["PassWord"].ToString();
-            this.type = (int)row["Type"];
+            this.type = row["Type"].ToString();
         }
         public string UserName
         {
@@ -37,7 +37,7 @@ namespace Model
             get { return password; }
             set { password = value; }
         }
-        public int Type
+        public string Type
         {
             get { return type; }
             set { type = value; }
