@@ -94,8 +94,6 @@ namespace GUILayer
                 MessageBox.Show("This Bill is not available");
             }
         }
-
-        //Su kien Mouseclick vao btnTABLE
         private void btnTable_MouseClick(object sender, EventArgs e)
         {
             ClickTable(sender, e);
@@ -105,11 +103,11 @@ namespace GUILayer
             //tra ve trang thai ban theo mau sac cua btnTable
             if (((Button)sender).BackColor.ToString() == "Color [Snow]")
             {
-                txtSTT.Text = "EMPTY";
+                txtSTT.Text = "Empty";
             }
             else if (((Button)sender).BackColor.ToString() == "Color [RED]")
             {
-                txtSTT.Text = "ONLINE";
+                txtSTT.Text = "Online";
             }
             //tra ve ten ban
             txtNameTable.Text = ((Button)sender).Text;
@@ -121,7 +119,7 @@ namespace GUILayer
         {
             try
             {
-                if (txtSTT.Text == "ONLINE")
+                if (txtSTT.Text == "Online")
                 {
                     //frmAddFood addF = new frmAddFood(txtNameTable.Text, txtNameFood.Text, txtSTT.Text);
                     //addF.ShowDialog();
@@ -129,7 +127,7 @@ namespace GUILayer
                     //loaddataTable();
                     //loaddataBill();
                 }
-                else if (txtSTT.Text == "TRONG")
+                else if (txtSTT.Text == "Empty")
                 {
                     DialogResult ms = MessageBox.Show("Bàn này đang trống. Mở bàn nhé?", "Lỗi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (ms == DialogResult.Yes)
@@ -144,11 +142,11 @@ namespace GUILayer
             }
             catch { }
         }
-        private void PurchaseFood()
+        private void PurchaseDrink()
         {
             try
             {
-                if (txtSTT.Text == "ONLINE")
+                if (txtSTT.Text == "Online")
                 {
                     //frmPay addF = new frmPay(txtNameTable.Text);
                     //addF.ShowDialog();
@@ -156,11 +154,7 @@ namespace GUILayer
                     //loaddataTable();
                     //loaddataBill();
                 }
-                else if (txtSTT.Text == "DATTRUOC")
-                {
-                    MessageBox.Show("Bàn đã được đặt", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else if (txtSTT.Text == "TRONG")
+                else if (txtSTT.Text == "Empty")
                 {
                     MessageBox.Show("Bàn này đang trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -171,7 +165,7 @@ namespace GUILayer
         {
             try
             {
-                if (txtSTT.Text == "ONLINE")
+                if (txtSTT.Text == "Online")
                 {
                     //ReplaceTable addF = new ReplaceTable(txtNameTable.Text);
                     //addF.ShowDialog();
@@ -179,7 +173,7 @@ namespace GUILayer
                     //loaddataTable();
                     //loaddataBill();
                 }
-                else if (txtSTT.Text == "TRONG")
+                else if (txtSTT.Text == "Empty")
                 {
                     MessageBox.Show("Bàn này đang trống", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
@@ -193,7 +187,7 @@ namespace GUILayer
         }
         private void tsmThanhToan_Click(object sender, EventArgs e)
         {
-            PurchaseFood();
+            PurchaseDrink();
         }
         private void tsmChuyenBan_Click(object sender, EventArgs e)
         {
@@ -235,6 +229,12 @@ namespace GUILayer
             HideGroupBox();
             grbSwitchTable.Visible = true;
             SwitchTable();
+        }
+
+        private void btnPurchase_Click(object sender, EventArgs e)
+        {
+            HideGroupBox();
+            PurchaseDrink();
         }
 
         private void gpbTable_SizeChanged(object sender, EventArgs e)

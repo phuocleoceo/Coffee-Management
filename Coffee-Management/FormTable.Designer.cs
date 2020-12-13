@@ -49,10 +49,38 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnAddDrink = new System.Windows.Forms.Button();
             this.grbAddDrink = new System.Windows.Forms.GroupBox();
+            this.btnAddAD = new System.Windows.Forms.Button();
+            this.txtStatusAD = new System.Windows.Forms.TextBox();
+            this.txtTableAD = new System.Windows.Forms.TextBox();
+            this.cbbDrink = new System.Windows.Forms.ComboBox();
+            this.nUDQuantity = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.grbSwitchTable = new System.Windows.Forms.GroupBox();
+            this.cbbToTable = new System.Windows.Forms.ComboBox();
+            this.cbbFromTable = new System.Windows.Forms.ComboBox();
+            this.btnAcceptSwitch = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.grbInfo = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.gpbBill.SuspendLayout();
             this.gpbTable.SuspendLayout();
             this.grbChucNang.SuspendLayout();
+            this.grbAddDrink.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDQuantity)).BeginInit();
+            this.grbSwitchTable.SuspendLayout();
+            this.grbInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -225,6 +253,7 @@
             this.btnPurchase.TabIndex = 51;
             this.btnPurchase.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnPurchase.UseVisualStyleBackColor = false;
+            this.btnPurchase.Click += new System.EventHandler(this.btnPurchase_Click);
             // 
             // btnSwitchTable
             // 
@@ -299,23 +328,250 @@
             // 
             // grbAddDrink
             // 
-            this.grbAddDrink.Location = new System.Drawing.Point(624, 18);
+            this.grbAddDrink.BackColor = System.Drawing.Color.Transparent;
+            this.grbAddDrink.Controls.Add(this.btnAddAD);
+            this.grbAddDrink.Controls.Add(this.txtStatusAD);
+            this.grbAddDrink.Controls.Add(this.txtTableAD);
+            this.grbAddDrink.Controls.Add(this.cbbDrink);
+            this.grbAddDrink.Controls.Add(this.nUDQuantity);
+            this.grbAddDrink.Controls.Add(this.label11);
+            this.grbAddDrink.Controls.Add(this.label8);
+            this.grbAddDrink.Controls.Add(this.label4);
+            this.grbAddDrink.Controls.Add(this.label3);
+            this.grbAddDrink.Location = new System.Drawing.Point(636, 143);
             this.grbAddDrink.Name = "grbAddDrink";
-            this.grbAddDrink.Size = new System.Drawing.Size(317, 175);
+            this.grbAddDrink.Size = new System.Drawing.Size(305, 186);
             this.grbAddDrink.TabIndex = 16;
             this.grbAddDrink.TabStop = false;
             this.grbAddDrink.Text = "Add Drink : ";
             this.grbAddDrink.Visible = false;
             // 
+            // btnAddAD
+            // 
+            this.btnAddAD.BackColor = System.Drawing.Color.White;
+            this.btnAddAD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddAD.BackgroundImage")));
+            this.btnAddAD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddAD.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnAddAD.Location = new System.Drawing.Point(256, 138);
+            this.btnAddAD.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddAD.Name = "btnAddAD";
+            this.btnAddAD.Size = new System.Drawing.Size(44, 41);
+            this.btnAddAD.TabIndex = 36;
+            this.btnAddAD.UseVisualStyleBackColor = false;
+            // 
+            // txtStatusAD
+            // 
+            this.txtStatusAD.Location = new System.Drawing.Point(107, 65);
+            this.txtStatusAD.Name = "txtStatusAD";
+            this.txtStatusAD.Size = new System.Drawing.Size(123, 30);
+            this.txtStatusAD.TabIndex = 4;
+            // 
+            // txtTableAD
+            // 
+            this.txtTableAD.Location = new System.Drawing.Point(107, 24);
+            this.txtTableAD.Name = "txtTableAD";
+            this.txtTableAD.Size = new System.Drawing.Size(123, 30);
+            this.txtTableAD.TabIndex = 3;
+            // 
+            // cbbDrink
+            // 
+            this.cbbDrink.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbDrink.FormattingEnabled = true;
+            this.cbbDrink.Location = new System.Drawing.Point(109, 104);
+            this.cbbDrink.Name = "cbbDrink";
+            this.cbbDrink.Size = new System.Drawing.Size(121, 28);
+            this.cbbDrink.TabIndex = 2;
+            // 
+            // nUDQuantity
+            // 
+            this.nUDQuantity.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nUDQuantity.Location = new System.Drawing.Point(110, 147);
+            this.nUDQuantity.Name = "nUDQuantity";
+            this.nUDQuantity.Size = new System.Drawing.Size(120, 32);
+            this.nUDQuantity.TabIndex = 1;
+            this.nUDQuantity.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(10, 149);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(90, 20);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Quantity : ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(33, 107);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 20);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Drink : ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(27, 67);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Status : ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(29, 30);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 20);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Table : ";
+            // 
             // grbSwitchTable
             // 
-            this.grbSwitchTable.Location = new System.Drawing.Point(624, 213);
+            this.grbSwitchTable.BackColor = System.Drawing.Color.Transparent;
+            this.grbSwitchTable.Controls.Add(this.cbbToTable);
+            this.grbSwitchTable.Controls.Add(this.cbbFromTable);
+            this.grbSwitchTable.Controls.Add(this.btnAcceptSwitch);
+            this.grbSwitchTable.Controls.Add(this.label13);
+            this.grbSwitchTable.Controls.Add(this.label12);
+            this.grbSwitchTable.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbSwitchTable.Location = new System.Drawing.Point(636, 367);
             this.grbSwitchTable.Name = "grbSwitchTable";
-            this.grbSwitchTable.Size = new System.Drawing.Size(317, 349);
+            this.grbSwitchTable.Size = new System.Drawing.Size(305, 142);
             this.grbSwitchTable.TabIndex = 17;
             this.grbSwitchTable.TabStop = false;
             this.grbSwitchTable.Text = "Switch Table : ";
             this.grbSwitchTable.Visible = false;
+            // 
+            // cbbToTable
+            // 
+            this.cbbToTable.FormattingEnabled = true;
+            this.cbbToTable.Location = new System.Drawing.Point(107, 95);
+            this.cbbToTable.Name = "cbbToTable";
+            this.cbbToTable.Size = new System.Drawing.Size(131, 28);
+            this.cbbToTable.TabIndex = 19;
+            // 
+            // cbbFromTable
+            // 
+            this.cbbFromTable.FormattingEnabled = true;
+            this.cbbFromTable.Location = new System.Drawing.Point(107, 38);
+            this.cbbFromTable.Name = "cbbFromTable";
+            this.cbbFromTable.Size = new System.Drawing.Size(131, 28);
+            this.cbbFromTable.TabIndex = 18;
+            // 
+            // btnAcceptSwitch
+            // 
+            this.btnAcceptSwitch.BackColor = System.Drawing.Color.Silver;
+            this.btnAcceptSwitch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAcceptSwitch.BackgroundImage")));
+            this.btnAcceptSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAcceptSwitch.Location = new System.Drawing.Point(256, 54);
+            this.btnAcceptSwitch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAcceptSwitch.Name = "btnAcceptSwitch";
+            this.btnAcceptSwitch.Size = new System.Drawing.Size(41, 41);
+            this.btnAcceptSwitch.TabIndex = 17;
+            this.btnAcceptSwitch.UseVisualStyleBackColor = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(29, 95);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(44, 20);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "To : ";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(10, 38);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(65, 20);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "From : ";
+            // 
+            // grbInfo
+            // 
+            this.grbInfo.Controls.Add(this.pictureBox3);
+            this.grbInfo.Controls.Add(this.pictureBox2);
+            this.grbInfo.Controls.Add(this.pictureBox1);
+            this.grbInfo.Controls.Add(this.label16);
+            this.grbInfo.Controls.Add(this.label15);
+            this.grbInfo.Controls.Add(this.label14);
+            this.grbInfo.Location = new System.Drawing.Point(636, 20);
+            this.grbInfo.Name = "grbInfo";
+            this.grbInfo.Size = new System.Drawing.Size(297, 110);
+            this.grbInfo.TabIndex = 18;
+            this.grbInfo.TabStop = false;
+            this.grbInfo.Text = "IT Coffee Shop : ";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(52, 53);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(158, 18);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Nguyễn Khoa Hoàng";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(51, 25);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(154, 18);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Trương Minh Phước";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(54, 81);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(102, 18);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Lê Mạnh Duy";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(238, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 25);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(239, 51);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(26, 23);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(239, 80);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(26, 23);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
             // 
             // FormTable
             // 
@@ -323,6 +579,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(953, 578);
+            this.Controls.Add(this.grbInfo);
             this.Controls.Add(this.grbSwitchTable);
             this.Controls.Add(this.grbAddDrink);
             this.Controls.Add(this.gpbTable);
@@ -340,6 +597,16 @@
             this.gpbBill.PerformLayout();
             this.gpbTable.ResumeLayout(false);
             this.grbChucNang.ResumeLayout(false);
+            this.grbAddDrink.ResumeLayout(false);
+            this.grbAddDrink.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nUDQuantity)).EndInit();
+            this.grbSwitchTable.ResumeLayout(false);
+            this.grbSwitchTable.PerformLayout();
+            this.grbInfo.ResumeLayout(false);
+            this.grbInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -366,6 +633,27 @@
         private System.Windows.Forms.Button btnAddDrink;
         private System.Windows.Forms.GroupBox grbAddDrink;
         private System.Windows.Forms.GroupBox grbSwitchTable;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.NumericUpDown nUDQuantity;
+        private System.Windows.Forms.ComboBox cbbDrink;
+        private System.Windows.Forms.TextBox txtStatusAD;
+        private System.Windows.Forms.TextBox txtTableAD;
+        private System.Windows.Forms.Button btnAddAD;
+        private System.Windows.Forms.ComboBox cbbToTable;
+        private System.Windows.Forms.ComboBox cbbFromTable;
+        private System.Windows.Forms.Button btnAcceptSwitch;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.GroupBox grbInfo;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
 
         public System.Windows.Forms.MouseEventHandler txtNameMan_MouseClick { get; set; }
     }
