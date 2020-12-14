@@ -12,7 +12,8 @@ namespace DataAccessLayer
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@TableName", SqlDbType.NVarChar).Value = TableName;
             cmd.Parameters.AddWithValue("@DrinkName", SqlDbType.NVarChar).Value = DrinkName;
-            return int.Parse(DataProvider.Instance.ExecuteScalar(cmd));
+            DataTable table = DataProvider.Instance.ExecuteTable(cmd);
+            return int.Parse(table.Rows[0][0].ToString());
         }
         public DataTable Read(string TableName)
         {
