@@ -50,13 +50,11 @@
             this.btnAddDrink = new System.Windows.Forms.Button();
             this.grbAddDrink = new System.Windows.Forms.GroupBox();
             this.btnAddAD = new System.Windows.Forms.Button();
-            this.txtStatusAD = new System.Windows.Forms.TextBox();
             this.txtTableAD = new System.Windows.Forms.TextBox();
             this.cbbDrinkAD = new System.Windows.Forms.ComboBox();
             this.nUDQuantityAD = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.grbSwitchTable = new System.Windows.Forms.GroupBox();
             this.cbbToTable = new System.Windows.Forms.ComboBox();
@@ -336,18 +334,16 @@
             // 
             this.grbAddDrink.BackColor = System.Drawing.Color.Transparent;
             this.grbAddDrink.Controls.Add(this.btnAddAD);
-            this.grbAddDrink.Controls.Add(this.txtStatusAD);
             this.grbAddDrink.Controls.Add(this.txtTableAD);
             this.grbAddDrink.Controls.Add(this.cbbDrinkAD);
             this.grbAddDrink.Controls.Add(this.nUDQuantityAD);
             this.grbAddDrink.Controls.Add(this.label11);
             this.grbAddDrink.Controls.Add(this.label8);
-            this.grbAddDrink.Controls.Add(this.label4);
             this.grbAddDrink.Controls.Add(this.label3);
             this.grbAddDrink.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbAddDrink.Location = new System.Drawing.Point(624, 143);
+            this.grbAddDrink.Location = new System.Drawing.Point(624, 151);
             this.grbAddDrink.Name = "grbAddDrink";
-            this.grbAddDrink.Size = new System.Drawing.Size(324, 186);
+            this.grbAddDrink.Size = new System.Drawing.Size(324, 165);
             this.grbAddDrink.TabIndex = 16;
             this.grbAddDrink.TabStop = false;
             this.grbAddDrink.Text = "Add Drink : ";
@@ -361,20 +357,13 @@
             this.btnAddAD.FlatAppearance.BorderSize = 0;
             this.btnAddAD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddAD.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAddAD.Location = new System.Drawing.Point(280, 138);
+            this.btnAddAD.Location = new System.Drawing.Point(280, 103);
             this.btnAddAD.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddAD.Name = "btnAddAD";
             this.btnAddAD.Size = new System.Drawing.Size(41, 41);
             this.btnAddAD.TabIndex = 36;
             this.btnAddAD.UseVisualStyleBackColor = false;
             this.btnAddAD.Click += new System.EventHandler(this.btnAddAD_Click);
-            // 
-            // txtStatusAD
-            // 
-            this.txtStatusAD.Location = new System.Drawing.Point(100, 65);
-            this.txtStatusAD.Name = "txtStatusAD";
-            this.txtStatusAD.Size = new System.Drawing.Size(166, 26);
-            this.txtStatusAD.TabIndex = 4;
             // 
             // txtTableAD
             // 
@@ -387,7 +376,7 @@
             // 
             this.cbbDrinkAD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbDrinkAD.FormattingEnabled = true;
-            this.cbbDrinkAD.Location = new System.Drawing.Point(101, 104);
+            this.cbbDrinkAD.Location = new System.Drawing.Point(101, 69);
             this.cbbDrinkAD.Name = "cbbDrinkAD";
             this.cbbDrinkAD.Size = new System.Drawing.Size(164, 27);
             this.cbbDrinkAD.TabIndex = 2;
@@ -395,7 +384,7 @@
             // nUDQuantityAD
             // 
             this.nUDQuantityAD.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nUDQuantityAD.Location = new System.Drawing.Point(103, 147);
+            this.nUDQuantityAD.Location = new System.Drawing.Point(103, 112);
             this.nUDQuantityAD.Name = "nUDQuantityAD";
             this.nUDQuantityAD.Size = new System.Drawing.Size(163, 32);
             this.nUDQuantityAD.TabIndex = 1;
@@ -409,7 +398,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(10, 149);
+            this.label11.Location = new System.Drawing.Point(10, 114);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 20);
             this.label11.TabIndex = 0;
@@ -419,21 +408,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(33, 107);
+            this.label8.Location = new System.Drawing.Point(33, 72);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 20);
             this.label8.TabIndex = 0;
             this.label8.Text = "Drink : ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(27, 67);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Status : ";
             // 
             // label3
             // 
@@ -454,7 +433,7 @@
             this.grbSwitchTable.Controls.Add(this.label13);
             this.grbSwitchTable.Controls.Add(this.label12);
             this.grbSwitchTable.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbSwitchTable.Location = new System.Drawing.Point(636, 367);
+            this.grbSwitchTable.Location = new System.Drawing.Point(627, 365);
             this.grbSwitchTable.Name = "grbSwitchTable";
             this.grbSwitchTable.Size = new System.Drawing.Size(305, 142);
             this.grbSwitchTable.TabIndex = 17;
@@ -648,11 +627,9 @@
         private System.Windows.Forms.GroupBox grbSwitchTable;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown nUDQuantityAD;
         private System.Windows.Forms.ComboBox cbbDrinkAD;
-        private System.Windows.Forms.TextBox txtStatusAD;
         private System.Windows.Forms.TextBox txtTableAD;
         private System.Windows.Forms.Button btnAddAD;
         private System.Windows.Forms.ComboBox cbbToTable;

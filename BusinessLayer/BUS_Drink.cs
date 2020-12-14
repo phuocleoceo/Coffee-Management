@@ -30,9 +30,5 @@ namespace BusinessLayer
         {
             DAL_Drink.Instance.Update(updateDrink, oldDrinkID);
         }
-        public float GetPrice(string DrinkName)
-        {
-            return DAL_Drink.Instance.GetPrice(DrinkName);
-        }
     }
 }

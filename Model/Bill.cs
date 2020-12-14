@@ -12,16 +12,16 @@ namespace Model
         string tablename, drinkname;
         int counts;
         public Bill() { }
-        public Bill(string tableID, string drinkID,int counts)
+        public Bill(string tablename, string drinkname,int counts)
         {
-            this.tablename = tableID;
-            this.drinkname = drinkID;
-            this.Counts = counts;
+            this.tablename = tablename;
+            this.drinkname = drinkname;
+            this.counts = counts;
         }
         public Bill(DataRow row)
         {
-            this.tablename = row["TableID"].ToString();
-            this.drinkname = row["DrinkID"].ToString();
+            this.tablename = row["TableName"].ToString();
+            this.drinkname = row["DrinkName"].ToString();
             this.counts = (int)row["Counts"];
         }
         public string TableName
