@@ -209,8 +209,7 @@ namespace GUILayer
             }
             catch { }
         }
-        //Xu ly trong GroupBox Add Drink
-        bool isDrink = false;
+        //Xu ly trong GroupBox Add Drink        
         private void LoadDataForAddDrinkGRB()
         {
             txtTableAD.Text = txtNameTable.Text;
@@ -257,6 +256,7 @@ namespace GUILayer
             }
             return 0;
         }
+        bool isDrink = false;
         //Kiem tra xem mon da ton tai chua , neu co roi thi true
         public void isCountDrink()
         {
@@ -281,13 +281,7 @@ namespace GUILayer
                 if (txtSTT.Text == "Empty")
                 {
                     SetTableOnline();
-                    AddNewDrink();
-                    HideGroupBox();  ///
-                    LoadTable();
-                    LoadBill();
-                    //Do khong the goi duoc phuong thuc ClickTable de cap nhat lai Total Price
-                    float DrinkTotal = float.Parse(txtTotal.Text) + getPrice() * float.Parse(nUDQuantityAD.Value.ToString());
-                    txtTotal.Text = DrinkTotal.ToString();
+                    AddNewDrink();                    
                 }
                 else if (txtSTT.Text == "Online")
                 {
@@ -297,23 +291,19 @@ namespace GUILayer
                     {
                         //Neu mon chua co thi them mon
                         AddNewDrink();
-                        HideGroupBox(); ///
-                        LoadBill();
-                        LoadTable();
-                        float DrinkTotal = float.Parse(txtTotal.Text) + getPrice() * float.Parse(nUDQuantityAD.Value.ToString());
-                        txtTotal.Text = DrinkTotal.ToString();
                     }
                     else
                     {
                         //Neu mon co roi thi tang so luong
-                        IncreaseDrink();
-                        HideGroupBox(); ////
-                        LoadBill();
-                        LoadTable();
-                        float DrinkTotal = float.Parse(txtTotal.Text) + getPrice() * float.Parse(nUDQuantityAD.Value.ToString());
-                        txtTotal.Text = DrinkTotal.ToString();
+                        IncreaseDrink();                        
                     }
                 }
+                HideGroupBox();  
+                LoadTable();
+                LoadBill();
+                //Do khong the goi duoc phuong thuc ClickTable de cap nhat lai Total Price
+                float DrinkTotal = float.Parse(txtTotal.Text) + getPrice() * float.Parse(nUDQuantityAD.Value.ToString());
+                txtTotal.Text = DrinkTotal.ToString();
                 MessageBox.Show("Add Drink Successful ! ", "Great", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch
