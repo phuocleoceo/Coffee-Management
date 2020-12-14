@@ -26,7 +26,7 @@ namespace GUILayer
             grbSwitchTable.Visible = false;
         }
         /*---------------------------------TABLE + BILL-----------------------------------------------*/
-        
+
         // Load danh sach Table
         private void LoadTable()
         {
@@ -66,44 +66,44 @@ namespace GUILayer
                     }
                     btn.MouseClick += new MouseEventHandler(btnTable_MouseClick);
                     pnlTable.Controls.Add(btn);
-                }            
-
-                    //pnlTable.Controls.Clear();
-                    //DataTable table = BUS_Table.Instance.Read();
-                    //int x = 10;
-                    //int y = 10;
-                    //for (int i = 0; i < table.Rows.Count; i++)
-                    //{
-                    //    Button btn = new Button()
-                    //    {
-                    //        Name = "btnTable" + (i + 1),
-                    //        Text = table.Rows[i][1].ToString(),
-                    //        Tag = table.Rows[i][3].ToString(),
-                    //        Width = 100,
-                    //        Height = 50,
-                    //        Location = new Point(x, y),
-                    //    };
-                    //    if (table.Rows[i][2].ToString() == "Empty")
-                    //    {
-                    //        btn.BackColor = ColorTranslator.FromHtml("snow");
-                    //    }
-                    //    else if (table.Rows[i][2].ToString() == "Online")
-                    //    {
-                    //        btn.BackColor = ColorTranslator.FromHtml("red");
-                    //    }
-                    //    if (x < pnlTable.Width - 220)
-                    //    {
-                    //        x += 110;
-                    //    }
-                    //    else
-                    //    {
-                    //        x = 10;
-                    //        y += 60;
-                    //    }
-                    //    btn.MouseClick += new MouseEventHandler(btnTable_MouseClick);
-                    //    pnlTable.Controls.Add(btn);
-                    //}
                 }
+
+                //pnlTable.Controls.Clear();
+                //DataTable table = BUS_Table.Instance.Read();
+                //int x = 10;
+                //int y = 10;
+                //for (int i = 0; i < table.Rows.Count; i++)
+                //{
+                //    Button btn = new Button()
+                //    {
+                //        Name = "btnTable" + (i + 1),
+                //        Text = table.Rows[i][1].ToString(),
+                //        Tag = table.Rows[i][3].ToString(),
+                //        Width = 100,
+                //        Height = 50,
+                //        Location = new Point(x, y),
+                //    };
+                //    if (table.Rows[i][2].ToString() == "Empty")
+                //    {
+                //        btn.BackColor = ColorTranslator.FromHtml("snow");
+                //    }
+                //    else if (table.Rows[i][2].ToString() == "Online")
+                //    {
+                //        btn.BackColor = ColorTranslator.FromHtml("red");
+                //    }
+                //    if (x < pnlTable.Width - 220)
+                //    {
+                //        x += 110;
+                //    }
+                //    else
+                //    {
+                //        x = 10;
+                //        y += 60;
+                //    }
+                //    btn.MouseClick += new MouseEventHandler(btnTable_MouseClick);
+                //    pnlTable.Controls.Add(btn);
+                //}
+            }
             catch
             {
                 MessageBox.Show("Database is not available ! ");
@@ -152,7 +152,7 @@ namespace GUILayer
                 //    pnlBill.Controls.Add(lbl);
                 //}
             }
-            catch 
+            catch
             {
                 MessageBox.Show("This Bill is not available");
             }
@@ -185,16 +185,11 @@ namespace GUILayer
         }
 
         /*---------------------------------ADD DRINK-----------------------------------------------*/
-        
+
         //Xu lu khi chon chuc nang Add Drink
         private void btnAddDrink_Click(object sender, EventArgs e)
         {
             HideGroupBox();
-            AddDrink();
-        }
-        //Them do uong
-        private void AddDrink()
-        {
             try
             {
                 if (txtSTT.Text == "Online")
@@ -214,7 +209,6 @@ namespace GUILayer
             }
             catch { }
         }
-
         //Xu ly trong GroupBox Add Drink
         bool isDrink = false;
         private void LoadDataForAddDrinkGRB()
@@ -256,7 +250,7 @@ namespace GUILayer
         private float getPrice()
         {
             BUS_Drink.Instance.GetList(listDrink);
-            for(int i = 0; i < listDrink.Count; i++)
+            for (int i = 0; i < listDrink.Count; i++)
             {
                 if (listDrink[i].Name == cbbDrinkAD.Text)
                     return listDrink[i].Price;
@@ -288,8 +282,12 @@ namespace GUILayer
                 {
                     SetTableOnline();
                     AddNewDrink();
+                    HideGroupBox();  ///
                     LoadTable();
                     LoadBill();
+                    //Do khong the goi duoc phuong thuc ClickTable de cap nhat lai Total Price
+                    float DrinkTotal = float.Parse(txtTotal.Text) + getPrice() * float.Parse(nUDQuantityAD.Value.ToString());
+                    txtTotal.Text = DrinkTotal.ToString();
                 }
                 else if (txtSTT.Text == "Online")
                 {
@@ -299,17 +297,21 @@ namespace GUILayer
                     {
                         //Neu mon chua co thi them mon
                         AddNewDrink();
-                        HideGroupBox();
-                        LoadTable();
+                        HideGroupBox(); ///
                         LoadBill();
+                        LoadTable();
+                        float DrinkTotal = float.Parse(txtTotal.Text) + getPrice() * float.Parse(nUDQuantityAD.Value.ToString());
+                        txtTotal.Text = DrinkTotal.ToString();
                     }
                     else
                     {
                         //Neu mon co roi thi tang so luong
                         IncreaseDrink();
-                        HideGroupBox();
-                        LoadTable();
+                        HideGroupBox(); ////
                         LoadBill();
+                        LoadTable();
+                        float DrinkTotal = float.Parse(txtTotal.Text) + getPrice() * float.Parse(nUDQuantityAD.Value.ToString());
+                        txtTotal.Text = DrinkTotal.ToString();
                     }
                 }
                 MessageBox.Show("Add Drink Successful ! ", "Great", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -367,7 +369,7 @@ namespace GUILayer
                     {
                         BUS_Table.Instance.ClearTable(txtNameTable.Text);
                         BUS_Bill.Instance.ClearBill(txtNameTable.Text);
-                        MessageBox.Show("Purchase success !  " + txtNameTable.Text, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);                        
+                        MessageBox.Show("Purchase success !  " + txtNameTable.Text, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     LoadTable();
                     LoadBill();
