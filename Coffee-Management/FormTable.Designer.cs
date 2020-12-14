@@ -69,6 +69,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.printDialogBill = new System.Windows.Forms.PrintDialog();
+            this.printDocumentBill = new System.Drawing.Printing.PrintDocument();
             this.gpbBill.SuspendLayout();
             this.gpbTable.SuspendLayout();
             this.grbChucNang.SuspendLayout();
@@ -190,6 +192,7 @@
             this.btnPrint.Size = new System.Drawing.Size(32, 34);
             this.btnPrint.TabIndex = 15;
             this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // pnlTable
             // 
@@ -565,6 +568,14 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Trương Minh Phước";
             // 
+            // printDialogBill
+            // 
+            this.printDialogBill.UseEXDialog = true;
+            // 
+            // printDocumentBill
+            // 
+            this.printDocumentBill.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocumentBill_PrintPage);
+            // 
             // FormTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -644,6 +655,8 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PrintDialog printDialogBill;
+        private System.Drawing.Printing.PrintDocument printDocumentBill;
 
         public System.Windows.Forms.MouseEventHandler txtNameMan_MouseClick { get; set; }
     }

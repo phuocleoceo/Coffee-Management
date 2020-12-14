@@ -1,10 +1,10 @@
 ﻿using System;
 using Model;
 using System.Data;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using BusinessLayer;
-using System.Data.SqlClient;
 
 namespace GUILayer
 {
@@ -67,42 +67,6 @@ namespace GUILayer
                     btn.MouseClick += new MouseEventHandler(btnTable_MouseClick);
                     pnlTable.Controls.Add(btn);
                 }
-
-                //pnlTable.Controls.Clear();
-                //DataTable table = BUS_Table.Instance.Read();
-                //int x = 10;
-                //int y = 10;
-                //for (int i = 0; i < table.Rows.Count; i++)
-                //{
-                //    Button btn = new Button()
-                //    {
-                //        Name = "btnTable" + (i + 1),
-                //        Text = table.Rows[i][1].ToString(),
-                //        Tag = table.Rows[i][3].ToString(),
-                //        Width = 100,
-                //        Height = 50,
-                //        Location = new Point(x, y),
-                //    };
-                //    if (table.Rows[i][2].ToString() == "Empty")
-                //    {
-                //        btn.BackColor = ColorTranslator.FromHtml("snow");
-                //    }
-                //    else if (table.Rows[i][2].ToString() == "Online")
-                //    {
-                //        btn.BackColor = ColorTranslator.FromHtml("red");
-                //    }
-                //    if (x < pnlTable.Width - 220)
-                //    {
-                //        x += 110;
-                //    }
-                //    else
-                //    {
-                //        x = 10;
-                //        y += 60;
-                //    }
-                //    btn.MouseClick += new MouseEventHandler(btnTable_MouseClick);
-                //    pnlTable.Controls.Add(btn);
-                //}
             }
             catch
             {
@@ -132,25 +96,6 @@ namespace GUILayer
                     y += 25;
                     pnlBill.Controls.Add(lbl);
                 }
-
-                //pnlBill.Controls.Clear();
-                //strBill = "";
-                //DataTable table = BUS_Bill.Instance.Read(txtNameTable.Text);
-                //int y = 10;
-                //for (int i = 0; i < table.Rows.Count; i++)
-                //{
-                //    strBill += (i + 1) + ".     " + table.Rows[i][2].ToString() + "  X  " + table.Rows[i][3].ToString() + "\n";
-                //    Label lbl = new Label()
-                //    {
-                //        Name = "btnFB" + i,
-                //        Text = (i + 1) + ".     " + table.Rows[i][2].ToString() + "  X  " + table.Rows[i][3].ToString(),
-                //        Width = pnlBill.Width - 20,
-                //        Height = 20,
-                //        Location = new Point(5, y)
-                //    };
-                //    y += 25;
-                //    pnlBill.Controls.Add(lbl);
-                //}
             }
             catch
             {
@@ -281,7 +226,7 @@ namespace GUILayer
                 if (txtSTT.Text == "Empty")
                 {
                     SetTableOnline();
-                    AddNewDrink();                    
+                    AddNewDrink();
                 }
                 else if (txtSTT.Text == "Online")
                 {
@@ -295,10 +240,10 @@ namespace GUILayer
                     else
                     {
                         //Neu mon co roi thi tang so luong
-                        IncreaseDrink();                        
+                        IncreaseDrink();
                     }
                 }
-                HideGroupBox();  
+                HideGroupBox();
                 LoadTable();
                 LoadBill();
                 //Do khong the goi duoc phuong thuc ClickTable de cap nhat lai Total Price
@@ -372,5 +317,34 @@ namespace GUILayer
             catch { }
         }
 
+        /*-------------------------------PRINT BILL------------------------------------------------*/
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                printDialogBill.Document = printDocumentBill;
+                if (printDialogBill.ShowDialog() == DialogResult.OK)
+                {
+                    printDocumentBill.Print();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Can't print Bill !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void printDocumentBill_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            DateTimePicker datetime=new DateTimePicker();
+            string HoaDon = "";
+            HoaDon += "\n" + "IT Coffee Shop" + "\n";
+            HoaDon += "\n" + "Address : Danang University of Technology" + "\n\n\n";
+            HoaDon += "\n" + "Bill " + txtNameTable.Text + "        \n\n\n";
+            HoaDon += strBill;
+            HoaDon += "\n\n\nTime: " + datetime.Value.ToShortTimeString() + ". " + datetime.Value.ToShortDateString() + "\n";
+            HoaDon += "\nTotal Price : " + txtTotal.Text + " VNĐ\n";
+            e.Graphics.DrawString(HoaDon, new Font("Arial", 15, FontStyle.Bold), Brushes.Black, 100, 200);
+        }
     }
 }
