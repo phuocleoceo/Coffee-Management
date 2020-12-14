@@ -299,6 +299,7 @@ namespace GUILayer
                     {
                         //Neu mon chua co thi them mon
                         AddNewDrink();
+                        HideGroupBox();
                         LoadTable();
                         LoadBill();
                     }
@@ -306,6 +307,7 @@ namespace GUILayer
                     {
                         //Neu mon co roi thi tang so luong
                         IncreaseDrink();
+                        HideGroupBox();
                         LoadTable();
                         LoadBill();
                     }
