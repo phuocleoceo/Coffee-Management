@@ -196,7 +196,7 @@ namespace GUILayer
                 if (txtSTT.Text == "Online")
                 {
                     grbAddDrink.Visible = true;
-                    LoadDataForAddDrinkGRB();                    
+                    LoadDataForAddDrinkGRB();
                 }
                 else if (txtSTT.Text == "Empty")
                 {
@@ -232,7 +232,8 @@ namespace GUILayer
         //Tinh tong tien
         private void setTotal()
         {
-            BUS_Table.Instance.SetTotal(txtNameTable.Text, float.Parse(txtTotal.Text));
+            float DrinkTotal = getPrice() * float.Parse(nUDQuantityAD.Value.ToString());
+            BUS_Table.Instance.SetTotal(txtNameTable.Text, DrinkTotal);
         }
         //Them do uong moi
         private void AddNewDrink()
