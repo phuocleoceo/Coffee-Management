@@ -103,20 +103,20 @@
             // 
             this.txbUserName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txbUserName.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbUserName.Location = new System.Drawing.Point(155, 179);
             this.txbUserName.Name = "txbUserName";
-            this.txbUserName.Size = new System.Drawing.Size(440, 27);
+            this.txbUserName.Size = new System.Drawing.Size(440, 29);
             this.txbUserName.TabIndex = 0;
             // 
             // txbPassWord
             // 
             this.txbPassWord.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txbPassWord.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txbPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbPassWord.Location = new System.Drawing.Point(155, 244);
             this.txbPassWord.Name = "txbPassWord";
-            this.txbPassWord.Size = new System.Drawing.Size(440, 27);
+            this.txbPassWord.Size = new System.Drawing.Size(440, 29);
             this.txbPassWord.TabIndex = 1;
             this.txbPassWord.UseSystemPasswordChar = true;
             // 
@@ -139,7 +139,7 @@
             this.btnShowPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowPass.ForeColor = System.Drawing.Color.Transparent;
             this.btnShowPass.Image = global::GUILayer.Properties.Resources.eye_open2;
-            this.btnShowPass.Location = new System.Drawing.Point(558, 243);
+            this.btnShowPass.Location = new System.Drawing.Point(558, 245);
             this.btnShowPass.Name = "btnShowPass";
             this.btnShowPass.Size = new System.Drawing.Size(37, 27);
             this.btnShowPass.TabIndex = 14;
@@ -153,7 +153,7 @@
             this.btnHidePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHidePass.ForeColor = System.Drawing.Color.Transparent;
             this.btnHidePass.Image = global::GUILayer.Properties.Resources.eye_close;
-            this.btnHidePass.Location = new System.Drawing.Point(558, 244);
+            this.btnHidePass.Location = new System.Drawing.Point(558, 245);
             this.btnHidePass.Name = "btnHidePass";
             this.btnHidePass.Size = new System.Drawing.Size(37, 27);
             this.btnHidePass.TabIndex = 13;
