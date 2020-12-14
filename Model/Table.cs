@@ -20,7 +20,7 @@ namespace Model
             this.id = (int)row["id"];
             this.name = row["Name"].ToString();
             this.status = row["Status"].ToString();
-            this.total = (float)row["Total"];
+            this.total = float.Parse(row["Total"].ToString());
         }
         public int ID
         {

@@ -83,12 +83,6 @@
     <Compile Include="FormMainMenu.Designer.cs">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTableBackup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTableBackup.Designer.cs">
-      <DependentUpon>FormTableBackup.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormReporting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,9 +105,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormTableBackup.resx">
-      <DependentUpon>FormTableBackup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReporting.resx">
       <DependentUpon>FormReporting.cs</DependentUpon>

@@ -10,6 +10,14 @@ namespace BusinessLayer
         {
             return DAL_Bill.Instance.Read(TableName);
         }
+        public void GetList(ManageList<Bill> list,string TableName)
+        {
+            list.Clear();
+            foreach (DataRow row in Read(TableName).Rows)
+            {
+                list.Add(new Bill(row));
+            }
+        }
         public override DataTable Read()
         {
             throw new System.NotImplementedException();

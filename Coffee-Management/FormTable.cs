@@ -23,32 +23,32 @@ namespace GUILayer
             grbSwitchTable.Visible = false;
         }
         /*---------------------------------TABLE + BILL-----------------------------------------------*/
-
+        private ManageList<Table> listTable = new ManageList<Table>();
         // Load danh sach Table
         private void LoadTable()
         {
             try
             {
                 pnlTable.Controls.Clear();
-                DataTable table = BUS_Table.Instance.Read();
+                BUS_Table.Instance.GetList(listTable);
                 int x = 10;
                 int y = 10;
-                for (int i = 0; i < table.Rows.Count; i++)
+                for (int i = 0; i < listTable.Count; i++)
                 {
                     Button btn = new Button()
                     {
                         Name = "btnTable" + (i + 1),
-                        Text = table.Rows[i][1].ToString(),
-                        Tag = table.Rows[i][3].ToString(),
+                        Text = listTable[i].Name,
+                        Tag = listTable[i].Total.ToString(),
                         Width = 100,
                         Height = 50,
                         Location = new Point(x, y),
                     };
-                    if (table.Rows[i][2].ToString() == "Empty")
+                    if (listTable[i].Status == "Empty")
                     {
                         btn.BackColor = ColorTranslator.FromHtml("snow");
                     }
-                    else if (table.Rows[i][2].ToString() == "Online")
+                    else if (listTable[i].Status == "Online")
                     {
                         btn.BackColor = ColorTranslator.FromHtml("red");
                     }
@@ -63,6 +63,41 @@ namespace GUILayer
                     }
                     btn.MouseClick += new MouseEventHandler(btnTable_MouseClick);
                     pnlTable.Controls.Add(btn);
+
+                    //pnlTable.Controls.Clear();
+                    //DataTable table = BUS_Table.Instance.Read();
+                    //int x = 10;
+                    //int y = 10;
+                    //for (int i = 0; i < table.Rows.Count; i++)
+                    //{
+                    //    Button btn = new Button()
+                    //    {
+                    //        Name = "btnTable" + (i + 1),
+                    //        Text = table.Rows[i][1].ToString(),
+                    //        Tag = table.Rows[i][3].ToString(),
+                    //        Width = 100,
+                    //        Height = 50,
+                    //        Location = new Point(x, y),
+                    //    };
+                    //    if (table.Rows[i][2].ToString() == "Empty")
+                    //    {
+                    //        btn.BackColor = ColorTranslator.FromHtml("snow");
+                    //    }
+                    //    else if (table.Rows[i][2].ToString() == "Online")
+                    //    {
+                    //        btn.BackColor = ColorTranslator.FromHtml("red");
+                    //    }
+                    //    if (x < pnlTable.Width - 220)
+                    //    {
+                    //        x += 110;
+                    //    }
+                    //    else
+                    //    {
+                    //        x = 10;
+                    //        y += 60;
+                    //    }
+                    //    btn.MouseClick += new MouseEventHandler(btnTable_MouseClick);
+                    //    pnlTable.Controls.Add(btn);
                 }
             }
             catch
@@ -71,21 +106,22 @@ namespace GUILayer
             }
         }
         // Load Bill
+        private ManageList<Bill> listBill = new ManageList<Bill>();
         public void LoadBill()
         {
             try
             {
                 pnlBill.Controls.Clear();
                 strBill = "";
-                DataTable table = BUS_Bill.Instance.Read(txtNameTable.Text);
+                BUS_Bill.Instance.GetList(listBill, txtNameTable.Text);
                 int y = 10;
-                for (int i = 0; i < table.Rows.Count; i++)
+                for (int i = 0; i < listBill.Count; i++)
                 {
-                    strBill += (i + 1) + ".     " + table.Rows[i][2].ToString() + "  X  " + table.Rows[i][3].ToString() + "\n";
+                    strBill += (i + 1) + ".     " + listBill[i].DrinkName + "  X  " + listBill[i].Counts.ToString() + "\n";
                     Label lbl = new Label()
                     {
                         Name = "btnFB" + i,
-                        Text = (i + 1) + ".     " + table.Rows[i][2].ToString() + "  X  " + table.Rows[i][3].ToString(),
+                        Text = (i + 1) + ".     " + listBill[i].DrinkName + "  X  " + listBill[i].Counts.ToString(),
                         Width = pnlBill.Width - 20,
                         Height = 20,
                         Location = new Point(5, y)
@@ -93,6 +129,25 @@ namespace GUILayer
                     y += 25;
                     pnlBill.Controls.Add(lbl);
                 }
+
+                //pnlBill.Controls.Clear();
+                //strBill = "";
+                //DataTable table = BUS_Bill.Instance.Read(txtNameTable.Text);
+                //int y = 10;
+                //for (int i = 0; i < table.Rows.Count; i++)
+                //{
+                //    strBill += (i + 1) + ".     " + table.Rows[i][2].ToString() + "  X  " + table.Rows[i][3].ToString() + "\n";
+                //    Label lbl = new Label()
+                //    {
+                //        Name = "btnFB" + i,
+                //        Text = (i + 1) + ".     " + table.Rows[i][2].ToString() + "  X  " + table.Rows[i][3].ToString(),
+                //        Width = pnlBill.Width - 20,
+                //        Height = 20,
+                //        Location = new Point(5, y)
+                //    };
+                //    y += 25;
+                //    pnlBill.Controls.Add(lbl);
+                //}
             }
             catch
             {
@@ -120,18 +175,16 @@ namespace GUILayer
             //Tra ve tong tien
             txtTotal.Text = ((Button)sender).Tag.ToString();
             LoadBill();
-        }      
+        }
         private void gpbTable_SizeChanged(object sender, EventArgs e)
         {
             LoadTable();
         }
 
         /*---------------------------------ADD DRINK-----------------------------------------------*/
-
         private void btnAddDrink_Click(object sender, EventArgs e)
         {
             HideGroupBox();
-            grbAddDrink.Visible = true;
             AddDrink();
         }
         //Them do uong
@@ -141,16 +194,17 @@ namespace GUILayer
             {
                 if (txtSTT.Text == "Online")
                 {
+                    grbAddDrink.Visible = true;
                     LoadDataForAddDrinkGRB();
                     LoadTable();
                     LoadBill();
-
                 }
                 else if (txtSTT.Text == "Empty")
                 {
                     DialogResult ms = MessageBox.Show("This Table Is Now Empty !. Open It?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (ms == DialogResult.Yes)
                     {
+                        grbAddDrink.Visible = true;
                         LoadDataForAddDrinkGRB();
                         LoadTable();
                         LoadBill();
@@ -177,7 +231,6 @@ namespace GUILayer
         private void btnSwitchTable_Click(object sender, EventArgs e)
         {
             HideGroupBox();
-            grbSwitchTable.Visible = true;
             SwitchTable();
         }
         // Chuyen ban
@@ -187,6 +240,7 @@ namespace GUILayer
             {
                 if (txtSTT.Text == "Online")
                 {
+                    grbSwitchTable.Visible = true;
                     //ReplaceTable addF = new ReplaceTable(txtNameTable.Text);
                     //addF.ShowDialog();
                     //this.Show();
@@ -229,6 +283,6 @@ namespace GUILayer
             }
             catch { }
         }
-        
+
     }
 }
