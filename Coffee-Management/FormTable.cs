@@ -29,26 +29,61 @@ namespace GUILayer
         {
             try
             {
+                //pnlTable.Controls.Clear();
+                //BUS_Table.Instance.GetList(listTable);
+                //int x = 10;
+                //int y = 10;
+                //for (int i = 0; i < listTable.Count; i++)
+                //{
+                //    Button btn = new Button()
+                //    {
+                //        Name = "btnTable" + (i + 1),
+                //        Text = listTable[i].Name,
+                //        Tag = listTable[i].Total.ToString(),
+                //        Width = 100,
+                //        Height = 50,
+                //        Location = new Point(x, y),
+                //    };
+                //    if (listTable[i].Status == "Empty")
+                //    {
+                //        btn.BackColor = ColorTranslator.FromHtml("snow");
+                //    }
+                //    else if (listTable[i].Status == "Online")
+                //    {
+                //        btn.BackColor = ColorTranslator.FromHtml("red");
+                //    }
+                //    if (x < pnlTable.Width - 220)
+                //    {
+                //        x += 110;
+                //    }
+                //    else
+                //    {
+                //        x = 10;
+                //        y += 60;
+                //    }
+                //    btn.MouseClick += new MouseEventHandler(btnTable_MouseClick);
+                //    pnlTable.Controls.Add(btn);
+
                 pnlTable.Controls.Clear();
-                BUS_Table.Instance.GetList(listTable);
+                DataTable table = BUS_Table.Instance.Read();
                 int x = 10;
                 int y = 10;
-                for (int i = 0; i < listTable.Count; i++)
+                for (int i = 0; i < table.Rows.Count; i++)
                 {
                     Button btn = new Button()
                     {
                         Name = "btnTable" + (i + 1),
-                        Text = listTable[i].Name,
-                        Tag = listTable[i].Total.ToString(),
+                        Text = table.Rows[i][1].ToString(),
+                        Tag = table.Rows[i][3].ToString(),
                         Width = 100,
                         Height = 50,
                         Location = new Point(x, y),
                     };
-                    if (listTable[i].Status == "Empty")
+                    if (table.Rows[i][2].ToString() == "Empty")
                     {
                         btn.BackColor = ColorTranslator.FromHtml("snow");
                     }
-                    else if (listTable[i].Status == "Online")
+                    else if (table.Rows[i][2].ToString() == "Online")
                     {
                         btn.BackColor = ColorTranslator.FromHtml("red");
                     }
@@ -63,41 +98,6 @@ namespace GUILayer
                     }
                     btn.MouseClick += new MouseEventHandler(btnTable_MouseClick);
                     pnlTable.Controls.Add(btn);
-
-                    //pnlTable.Controls.Clear();
-                    //DataTable table = BUS_Table.Instance.Read();
-                    //int x = 10;
-                    //int y = 10;
-                    //for (int i = 0; i < table.Rows.Count; i++)
-                    //{
-                    //    Button btn = new Button()
-                    //    {
-                    //        Name = "btnTable" + (i + 1),
-                    //        Text = table.Rows[i][1].ToString(),
-                    //        Tag = table.Rows[i][3].ToString(),
-                    //        Width = 100,
-                    //        Height = 50,
-                    //        Location = new Point(x, y),
-                    //    };
-                    //    if (table.Rows[i][2].ToString() == "Empty")
-                    //    {
-                    //        btn.BackColor = ColorTranslator.FromHtml("snow");
-                    //    }
-                    //    else if (table.Rows[i][2].ToString() == "Online")
-                    //    {
-                    //        btn.BackColor = ColorTranslator.FromHtml("red");
-                    //    }
-                    //    if (x < pnlTable.Width - 220)
-                    //    {
-                    //        x += 110;
-                    //    }
-                    //    else
-                    //    {
-                    //        x = 10;
-                    //        y += 60;
-                    //    }
-                    //    btn.MouseClick += new MouseEventHandler(btnTable_MouseClick);
-                    //    pnlTable.Controls.Add(btn);
                 }
             }
             catch
@@ -111,36 +111,17 @@ namespace GUILayer
         {
             try
             {
-                pnlBill.Controls.Clear();
-                strBill = "";
-                BUS_Bill.Instance.GetList(listBill, txtNameTable.Text);
-                int y = 10;
-                for (int i = 0; i < listBill.Count; i++)
-                {
-                    strBill += (i + 1) + ".     " + listBill[i].DrinkName + "  X  " + listBill[i].Counts.ToString() + "\n";
-                    Label lbl = new Label()
-                    {
-                        Name = "btnFB" + i,
-                        Text = (i + 1) + ".     " + listBill[i].DrinkName + "  X  " + listBill[i].Counts.ToString(),
-                        Width = pnlBill.Width - 20,
-                        Height = 20,
-                        Location = new Point(5, y)
-                    };
-                    y += 25;
-                    pnlBill.Controls.Add(lbl);
-                }
-
                 //pnlBill.Controls.Clear();
                 //strBill = "";
-                //DataTable table = BUS_Bill.Instance.Read(txtNameTable.Text);
+                //BUS_Bill.Instance.GetList(listBill, txtNameTable.Text);
                 //int y = 10;
-                //for (int i = 0; i < table.Rows.Count; i++)
+                //for (int i = 0; i < listBill.Count; i++)
                 //{
-                //    strBill += (i + 1) + ".     " + table.Rows[i][2].ToString() + "  X  " + table.Rows[i][3].ToString() + "\n";
+                //    strBill += (i + 1) + ".     " + listBill[i].DrinkName + "  X  " + listBill[i].Counts.ToString() + "\n";
                 //    Label lbl = new Label()
                 //    {
                 //        Name = "btnFB" + i,
-                //        Text = (i + 1) + ".     " + table.Rows[i][2].ToString() + "  X  " + table.Rows[i][3].ToString(),
+                //        Text = (i + 1) + ".     " + listBill[i].DrinkName + "  X  " + listBill[i].Counts.ToString(),
                 //        Width = pnlBill.Width - 20,
                 //        Height = 20,
                 //        Location = new Point(5, y)
@@ -148,6 +129,25 @@ namespace GUILayer
                 //    y += 25;
                 //    pnlBill.Controls.Add(lbl);
                 //}
+
+                pnlBill.Controls.Clear();
+                strBill = "";
+                DataTable table = BUS_Bill.Instance.Read(txtNameTable.Text);
+                int y = 10;
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    strBill += (i + 1) + ".     " + table.Rows[i][2].ToString() + "  X  " + table.Rows[i][3].ToString() + "\n";
+                    Label lbl = new Label()
+                    {
+                        Name = "btnFB" + i,
+                        Text = (i + 1) + ".     " + table.Rows[i][2].ToString() + "  X  " + table.Rows[i][3].ToString(),
+                        Width = pnlBill.Width - 20,
+                        Height = 20,
+                        Location = new Point(5, y)
+                    };
+                    y += 25;
+                    pnlBill.Controls.Add(lbl);
+                }
             }
             catch
             {
@@ -166,7 +166,7 @@ namespace GUILayer
             {
                 txtSTT.Text = "Empty";
             }
-            else if (((Button)sender).BackColor.ToString() == "Color [RED]")
+            else if (((Button)sender).BackColor.ToString() == "Color [Red]")
             {
                 txtSTT.Text = "Online";
             }
@@ -182,6 +182,7 @@ namespace GUILayer
         }
 
         /*---------------------------------ADD DRINK-----------------------------------------------*/
+        //Xu lu khi chon chuc nang Add Drink
         private void btnAddDrink_Click(object sender, EventArgs e)
         {
             HideGroupBox();
@@ -195,9 +196,7 @@ namespace GUILayer
                 if (txtSTT.Text == "Online")
                 {
                     grbAddDrink.Visible = true;
-                    LoadDataForAddDrinkGRB();
-                    LoadTable();
-                    LoadBill();
+                    LoadDataForAddDrinkGRB();                    
                 }
                 else if (txtSTT.Text == "Empty")
                 {
@@ -206,14 +205,14 @@ namespace GUILayer
                     {
                         grbAddDrink.Visible = true;
                         LoadDataForAddDrinkGRB();
-                        LoadTable();
-                        LoadBill();
                     }
                 }
             }
             catch { }
         }
 
+        //Xu ly trong GroupBox Add Drink
+        bool isDrink = false;
         private void LoadDataForAddDrinkGRB()
         {
             txtTableAD.Text = txtNameTable.Text;
@@ -225,7 +224,89 @@ namespace GUILayer
                 cbbDrinkAD.Items.Add(listDrink[i].Name);
             }
         }
-
+        //Chuyen trang thai Table sang Online
+        private void SetTableOnline()
+        {
+            BUS_Table.Instance.SetTableOnline(txtNameTable.Text);
+        }
+        //Tinh tong tien
+        private void setTotal()
+        {
+            BUS_Table.Instance.SetTotal(txtNameTable.Text, float.Parse(txtTotal.Text));
+        }
+        //Them do uong moi
+        private void AddNewDrink()
+        {
+            Bill bill = new Bill(txtTableAD.Text, cbbDrinkAD.Text, Int32.Parse(nUDQuantityAD.Value.ToString()));
+            BUS_Bill.Instance.Create(bill);
+            setTotal();
+        }
+        //Tang so do uong
+        private void IncreaseDrink()
+        {
+            Bill bill = new Bill(txtTableAD.Text, cbbDrinkAD.Text, Int32.Parse(nUDQuantityAD.Value.ToString()));
+            BUS_Bill.Instance.Update(bill, 0);
+            setTotal();
+        }
+        //Lay gia do uong
+        private float getPrice()
+        {
+            return BUS_Drink.Instance.GetPrice(cbbDrinkAD.Text);
+        }
+        //Kiem tra xem mon da ton tai chua , neu co roi thi true
+        public void isCountDrink()
+        {
+            try
+            {
+                int CountDrink = BUS_Bill.Instance.GetCountDrink(txtTableAD.Text, cbbDrinkAD.Text);
+                if (CountDrink > 0)
+                {
+                    isDrink = true;
+                }
+            }
+            catch
+            {
+                isDrink = false;
+            }
+        }
+        //Submit AddDrink GRB
+        private void btnAddAD_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtSTT.Text == "Empty")
+                {
+                    SetTableOnline();
+                    AddNewDrink();
+                    LoadTable();
+                    LoadBill();
+                }
+                else if (txtSTT.Text == "Online")
+                {
+                    //Ban dang hoat dong. chi them mon
+                    isCountDrink();
+                    if (isDrink == false)
+                    {
+                        //Neu mon chua co thi them mon
+                        AddNewDrink();
+                        LoadTable();
+                        LoadBill();
+                    }
+                    else
+                    {
+                        //Neu mon co roi thi tang so luong
+                        IncreaseDrink();
+                        LoadTable();
+                        LoadBill();
+                    }
+                }
+                MessageBox.Show("Add Drink Successful ! ", "Great", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
+                MessageBox.Show("Add Drink Fail !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         /*---------------------------------SWITCH TABLE--------------------------------------------*/
 
         private void btnSwitchTable_Click(object sender, EventArgs e)

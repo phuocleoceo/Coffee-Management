@@ -40,5 +40,12 @@ namespace DataAccessLayer
             cmd.CommandType = CommandType.StoredProcedure;
             return DataProvider.Instance.ExecuteTable(cmd);
         }
+        public float GetPrice(string DrinkName)
+        {
+            SqlCommand cmd = new SqlCommand("GetPrice");
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("DrinkName", SqlDbType.NVarChar).Value = DrinkName;
+            return float.Parse(DataProvider.Instance.ExecuteScalar(cmd));
+        }
     }
 }

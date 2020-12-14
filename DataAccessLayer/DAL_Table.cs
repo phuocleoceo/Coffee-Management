@@ -38,5 +38,20 @@ namespace DataAccessLayer
             cmd.CommandType = CommandType.StoredProcedure;
             return DataProvider.Instance.ExecuteTable(cmd);
         }
+        public void SetTableOnline(string TableName)
+        {
+            SqlCommand cmd = new SqlCommand("SetTableOnline");
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@TableName", SqlDbType.NVarChar).Value = TableName;
+            DataProvider.Instance.ExecuteNonQuery(cmd);
+        }
+        public void SetTotal(string TableName,float Total)
+        {
+            SqlCommand cmd = new SqlCommand("SetTotal");
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@TableName", SqlDbType.NVarChar).Value = TableName;
+            cmd.Parameters.AddWithValue("@Total", SqlDbType.Real).Value = Total;
+            DataProvider.Instance.ExecuteNonQuery(cmd);
+        }
     }
 }

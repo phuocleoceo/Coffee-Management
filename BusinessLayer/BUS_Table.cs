@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Data.SqlClient;
 using Model;
 using DataAccessLayer;
 
@@ -29,6 +30,14 @@ namespace BusinessLayer
         public override void Update(Table updateTable, int oldTableID)
         {
             DAL_Table.Instance.Update(updateTable, oldTableID);
+        }
+        public void SetTableOnline(string TableName)
+        {
+            DAL_Table.Instance.SetTableOnline(TableName);
+        }
+        public void SetTotal(string TableName, float Total)
+        {
+            DAL_Table.Instance.SetTotal(TableName, Total);
         }
     }
 }

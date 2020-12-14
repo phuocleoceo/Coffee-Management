@@ -62,5 +62,23 @@ namespace DataAccessLayer
                 con.Close();
             }
         }
+        public string ExecuteScalar(SqlCommand cmd)
+        {
+            try
+            {
+                con.Open();
+                cmd.Connection = con;
+                return cmd.ExecuteScalar().ToString();
+            }
+            catch (SqlException)
+            {
+                MessageBox.Show("Duplicate PK Value ! ");
+                return "";
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 }

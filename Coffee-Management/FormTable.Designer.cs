@@ -367,6 +367,7 @@
             this.btnAddAD.Size = new System.Drawing.Size(41, 41);
             this.btnAddAD.TabIndex = 36;
             this.btnAddAD.UseVisualStyleBackColor = false;
+            this.btnAddAD.Click += new System.EventHandler(this.btnAddAD_Click);
             // 
             // txtStatusAD
             // 
