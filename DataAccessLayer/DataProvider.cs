@@ -37,6 +37,7 @@ namespace DataAccessLayer
             }
             catch (SqlException)
             {
+                //MessageBox.Show(e.Message);
                 MessageBox.Show("Duplicate PK Value ! ");
                 return null;
             }

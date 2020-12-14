@@ -1,5 +1,4 @@
 ﻿using Model;
-using System;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -13,7 +12,7 @@ namespace DataAccessLayer
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@TableName", SqlDbType.NVarChar).Value = TableName;
             cmd.Parameters.AddWithValue("@DrinkName", SqlDbType.NVarChar).Value = DrinkName;
-            return Int32.Parse(DataProvider.Instance.ExecuteScalar(cmd));
+            return int.Parse(DataProvider.Instance.ExecuteScalar(cmd));
         }
         public DataTable Read(string TableName)
         {
