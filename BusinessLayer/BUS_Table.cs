@@ -39,5 +39,9 @@ namespace BusinessLayer
         {
             DAL_Table.Instance.SetTotal(TableName, Total);
         }
+        public void ClearTable(string TableName)
+        {
+            DAL_Table.Instance.ClearTable(TableName);
+        }
     }
 }

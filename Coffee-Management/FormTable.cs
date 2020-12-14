@@ -351,12 +351,15 @@ namespace GUILayer
             {
                 if (txtSTT.Text == "Online")
                 {
-                    //frmPay addF = new frmPay(txtNameTable.Text);
-                    //addF.ShowDialog();
-                    //this.Show();
+                    DialogResult ms = MessageBox.Show("Comfirm Purchase : " + txtNameTable.Text + "\nTotal Price: " + txtTotal.Text + " VND", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.None);
+                    if (ms == DialogResult.Yes)
+                    {
+                        BUS_Table.Instance.ClearTable(txtNameTable.Text);
+                        BUS_Bill.Instance.ClearBill(txtNameTable.Text);
+                        MessageBox.Show("Purchase success !  " + txtNameTable.Text, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);                        
+                    }
                     LoadTable();
                     LoadBill();
-
                 }
                 else if (txtSTT.Text == "Empty")
                 {

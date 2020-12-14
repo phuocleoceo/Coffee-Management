@@ -53,5 +53,12 @@ namespace DataAccessLayer
             cmd.Parameters.AddWithValue("@Total", SqlDbType.Real).Value = Total;
             DataProvider.Instance.ExecuteNonQuery(cmd);
         }
+        public void ClearTable(string TableName)
+        {
+            SqlCommand cmd = new SqlCommand("ClearTable");
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@TableName", SqlDbType.NVarChar).Value = TableName;
+            DataProvider.Instance.ExecuteNonQuery(cmd);
+        }
     }
 }

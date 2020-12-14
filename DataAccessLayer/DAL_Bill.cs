@@ -41,6 +41,13 @@ namespace DataAccessLayer
             cmd.Parameters.AddWithValue("@Counts", SqlDbType.Int).Value = bill.Counts;
             DataProvider.Instance.ExecuteNonQuery(cmd);
         }
+        public void ClearBill(string TableName)
+        {
+            SqlCommand cmd = new SqlCommand("ClearBill");
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@TableName", SqlDbType.NVarChar).Value = TableName;
+            DataProvider.Instance.ExecuteNonQuery(cmd);
+        }
         public override DataTable Read()
         {
             throw new System.NotImplementedException();

@@ -17,7 +17,7 @@ namespace BusinessLayer
             {
                 list.Add(new Bill(row));
             }
-        }        
+        }
         public override void Create(Bill newBill)
         {
             DAL_Bill.Instance.Create(newBill);
@@ -25,6 +25,10 @@ namespace BusinessLayer
         public int GetCountDrink(string TableName, string DrinkName)
         {
             return DAL_Bill.Instance.GetCountDrink(TableName, DrinkName);
+        }
+        public void ClearBill(string TableName)
+        {
+            DAL_Bill.Instance.ClearBill(TableName);
         }
 
         public override void Update(Bill updateBill, int oldBillID)
