@@ -312,17 +312,17 @@ namespace GUILayer
                     {
                         BUS_Table.Instance.ClearTable(txtNameTable.Text);
                         BUS_Bill.Instance.ClearBill(txtNameTable.Text);
+                        txtSTT.Text = "Empty";
+                        txtTotal.Text = "0";
                         MessageBox.Show("Purchase success !  " + txtNameTable.Text, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    }                    
                     LoadTable();
                     LoadBill();
                 }
                 else if (txtSTT.Text == "Empty")
                 {
                     MessageBox.Show("This Table Is Now Empty !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                txtSTT.Text = "Empty";
-                txtTotal.Text = "0";
+                }                
             }
             catch { }
         }
