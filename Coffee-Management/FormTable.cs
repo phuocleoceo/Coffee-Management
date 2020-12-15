@@ -10,6 +10,7 @@ namespace GUILayer
 {
     public partial class FormTable : Form
     {
+        private ManageList<DrinkType> listDrinkType = new ManageList<DrinkType>();
         private ManageList<Drink> listDrink = new ManageList<Drink>();
         private ManageList<Table> listTable = new ManageList<Table>();
         private ManageList<Bill> listBill = new ManageList<Bill>();
@@ -154,15 +155,26 @@ namespace GUILayer
             }
             catch { }
         }
+        private void cbbDrinkTypeAD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string DrinkTypeSelected = cbbDrinkTypeAD.Text;
+            cbbDrinkAD.Items.Clear();
+            BUS_Drink.Instance.GetList(listDrink);
+            for (int i = 0; i < listDrink.Count; i++)
+            {
+                if (listDrink[i].Type == DrinkTypeSelected)
+                    cbbDrinkAD.Items.Add(listDrink[i].Name);
+            }
+        }
         //Xu ly trong GroupBox Add Drink        
         private void LoadDataForAddDrinkGRB()
         {
             txtTableAD.Text = txtNameTable.Text;
-            ManageList<Drink> listDrink = new ManageList<Drink>();
-            BUS_Drink.Instance.GetList(listDrink);
-            for (int i = 0; i < listDrink.Count; i++)
+            BUS_DrinkType.Instance.GetList(listDrinkType);
+            cbbDrinkTypeAD.Items.Clear();
+            for (int i = 0; i < listDrinkType.Count; i++)
             {
-                cbbDrinkAD.Items.Add(listDrink[i].Name);
+                cbbDrinkTypeAD.Items.Add(listDrinkType[i].Name);
             }
         }
         //Chuyen trang thai Table sang Online
@@ -336,7 +348,7 @@ namespace GUILayer
 
         private void printDocumentBill_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            DateTimePicker datetime=new DateTimePicker();
+            DateTimePicker datetime = new DateTimePicker();
             string HoaDon = "";
             HoaDon += "\n" + "IT Coffee Shop" + "\n";
             HoaDon += "\n" + "Address : Danang University of Technology" + "\n\n\n";
