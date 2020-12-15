@@ -261,6 +261,7 @@ namespace GUILayer
                 //Do khong the goi duoc phuong thuc ClickTable de cap nhat lai Total Price
                 float DrinkTotal = float.Parse(txtTotal.Text) + getPrice() * float.Parse(nUDQuantityAD.Value.ToString());
                 txtTotal.Text = DrinkTotal.ToString();
+                txtSTT.Text = "Online";
                 MessageBox.Show("Add Drink Successful ! ", "Great", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch
@@ -302,11 +303,6 @@ namespace GUILayer
         private void btnPurchase_Click(object sender, EventArgs e)
         {
             HideGroupBox();
-            PurchaseDrink();
-        }
-        //Thanh toan
-        private void PurchaseDrink()
-        {
             try
             {
                 if (txtSTT.Text == "Online")
@@ -325,10 +321,11 @@ namespace GUILayer
                 {
                     MessageBox.Show("This Table Is Now Empty !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                txtSTT.Text = "Empty";
+                txtTotal.Text = "0";
             }
             catch { }
         }
-
         /*-------------------------------PRINT BILL------------------------------------------------*/
         private void btnPrint_Click(object sender, EventArgs e)
         {
