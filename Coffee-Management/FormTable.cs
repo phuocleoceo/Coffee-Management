@@ -74,6 +74,7 @@ namespace GUILayer
                 MessageBox.Show("Database is not available ! ");
             }
         }
+
         // Load Bill        
         public void LoadBill()
         {
@@ -103,6 +104,7 @@ namespace GUILayer
                 MessageBox.Show("This Bill is not available");
             }
         }
+
         //Khi Click vao Table
         private void btnTable_MouseClick(object sender, EventArgs e)
         {
@@ -155,10 +157,12 @@ namespace GUILayer
             }
             catch { }
         }
+
         private void cbbDrinkTypeAD_SelectedIndexChanged(object sender, EventArgs e)
         {
             string DrinkTypeSelected = cbbDrinkTypeAD.Text;
             cbbDrinkAD.Items.Clear();
+            cbbDrinkAD.Text = "";
             BUS_Drink.Instance.GetList(listDrink);
             for (int i = 0; i < listDrink.Count; i++)
             {
@@ -166,6 +170,7 @@ namespace GUILayer
                     cbbDrinkAD.Items.Add(listDrink[i].Name);
             }
         }
+
         //Xu ly trong GroupBox Add Drink        
         private void LoadDataForAddDrinkGRB()
         {
@@ -177,17 +182,20 @@ namespace GUILayer
                 cbbDrinkTypeAD.Items.Add(listDrinkType[i].Name);
             }
         }
+
         //Chuyen trang thai Table sang Online
         private void SetTableOnline()
         {
             BUS_Table.Instance.SetTableOnline(txtNameTable.Text);
         }
+
         //Tinh tong tien
         private void setTotal()
         {
             float DrinkTotal = getPrice() * float.Parse(nUDQuantityAD.Value.ToString());
             BUS_Table.Instance.SetTotal(txtNameTable.Text, DrinkTotal);
         }
+
         //Them do uong moi
         private void AddNewDrink()
         {
@@ -195,6 +203,7 @@ namespace GUILayer
             BUS_Bill.Instance.Create(bill);
             setTotal();
         }
+
         //Tang so do uong
         private void IncreaseDrink()
         {
@@ -202,6 +211,7 @@ namespace GUILayer
             BUS_Bill.Instance.Update(bill, 0);
             setTotal();
         }
+
         //Lay gia do uong
         private float getPrice()
         {
@@ -213,6 +223,7 @@ namespace GUILayer
             }
             return 0;
         }
+
         bool isDrink = false;
         //Kiem tra xem mon da ton tai chua , neu co roi thi true
         public void isCountDrink()
@@ -230,6 +241,7 @@ namespace GUILayer
                 isDrink = false;
             }
         }
+
         //Submit AddDrink GRB
         private void btnAddAD_Click(object sender, EventArgs e)
         {
@@ -270,23 +282,27 @@ namespace GUILayer
             }
         }
         /*---------------------------------SWITCH TABLE--------------------------------------------*/
+        private void LoadDataForSwitchTableGRB()
+        {
+            cbbFromTable.Text = txtNameTable.Text;
+            BUS_Table.Instance.GetList(listTable);
+            for (int i = 0; i < listTable.Count; i++)
+            {
+                if (listTable[i].Name == cbbFromTable.Text) continue;
+                else cbbToTable.Items.Add(listTable[i].Name);
+            }
+        }
 
         private void btnSwitchTable_Click(object sender, EventArgs e)
         {
             HideGroupBox();
-            SwitchTable();
-        }
-        // Chuyen ban
-        private void SwitchTable()
-        {
             try
             {
                 if (txtSTT.Text == "Online")
                 {
                     grbSwitchTable.Visible = true;
-                    //ReplaceTable addF = new ReplaceTable(txtNameTable.Text);
-                    //addF.ShowDialog();
-                    //this.Show();
+                    LoadDataForSwitchTableGRB();
+
                     LoadTable();
                     LoadBill();
                 }
@@ -307,7 +323,7 @@ namespace GUILayer
             {
                 if (txtSTT.Text == "Online")
                 {
-                    DialogResult ms = MessageBox.Show("Comfirm Purchase : " + txtNameTable.Text + "\nTotal Price: " + txtTotal.Text + " VND", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.None);
+                    DialogResult ms = MessageBox.Show("Comfirm Purchase : " + txtNameTable.Text + "\n\nTotal Price: " + txtTotal.Text + " VND", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.None);
                     if (ms == DialogResult.Yes)
                     {
                         BUS_Table.Instance.ClearTable(txtNameTable.Text);
@@ -315,14 +331,14 @@ namespace GUILayer
                         txtSTT.Text = "Empty";
                         txtTotal.Text = "0";
                         MessageBox.Show("Purchase success !  " + txtNameTable.Text, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }                    
+                    }
                     LoadTable();
                     LoadBill();
                 }
                 else if (txtSTT.Text == "Empty")
                 {
                     MessageBox.Show("This Table Is Now Empty !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }                
+                }
             }
             catch { }
         }
