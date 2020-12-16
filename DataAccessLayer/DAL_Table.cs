@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace DataAccessLayer
 {
-    public class DAL_Table : DAL<DAL_Table, Table, int>
+    public sealed class DAL_Table : DAL<DAL_Table, Table, int>
     {
         public override void Create(Table newTable)
         {

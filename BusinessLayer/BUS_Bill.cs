@@ -4,7 +4,7 @@ using DataAccessLayer;
 
 namespace BusinessLayer
 {
-    public class BUS_Bill : BUS<BUS_Bill, Bill, int>
+    public sealed class BUS_Bill : BUS<BUS_Bill, Bill, int>
     {
         public DataTable Read(string TableName)
         {

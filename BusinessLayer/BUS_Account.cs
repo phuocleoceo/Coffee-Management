@@ -4,7 +4,7 @@ using DataAccessLayer;
 
 namespace BusinessLayer
 {
-    public class BUS_Account : BUS<BUS_Account, Account, string>
+    public sealed class BUS_Account : BUS<BUS_Account, Account, string>
     {
         public override DataTable Read()
         {

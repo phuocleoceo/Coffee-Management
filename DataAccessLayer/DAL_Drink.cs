@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace DataAccessLayer
 {
-    public class DAL_Drink : DAL<DAL_Drink, Drink, int>
+    public sealed class DAL_Drink : DAL<DAL_Drink, Drink, int>
     {
         public override void Create(Drink newDrink)
         {

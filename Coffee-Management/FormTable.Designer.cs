@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTable));
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnlBill = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,16 +48,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnAddDrink = new System.Windows.Forms.Button();
             this.grbAddDrink = new System.Windows.Forms.GroupBox();
+            this.cbbDrinkTypeAD = new System.Windows.Forms.ComboBox();
             this.btnAddAD = new System.Windows.Forms.Button();
             this.txtTableAD = new System.Windows.Forms.TextBox();
             this.cbbDrinkAD = new System.Windows.Forms.ComboBox();
             this.nUDQuantityAD = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.grbSwitchTable = new System.Windows.Forms.GroupBox();
             this.cbbToTable = new System.Windows.Forms.ComboBox();
-            this.cbbFromTable = new System.Windows.Forms.ComboBox();
             this.btnAcceptSwitch = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -71,8 +71,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.printDialogBill = new System.Windows.Forms.PrintDialog();
             this.printDocumentBill = new System.Drawing.Printing.PrintDocument();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbbDrinkTypeAD = new System.Windows.Forms.ComboBox();
+            this.txtFromTable = new System.Windows.Forms.TextBox();
             this.gpbBill.SuspendLayout();
             this.gpbTable.SuspendLayout();
             this.grbChucNang.SuspendLayout();
@@ -89,19 +88,11 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 395);
+            this.label1.Location = new System.Drawing.Point(27, 399);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Price : ";
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(10, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Table : ";
             // 
             // pnlBill
             // 
@@ -109,16 +100,16 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlBill.AutoScroll = true;
-            this.pnlBill.Location = new System.Drawing.Point(20, 86);
+            this.pnlBill.Location = new System.Drawing.Point(13, 81);
             this.pnlBill.Name = "pnlBill";
-            this.pnlBill.Size = new System.Drawing.Size(296, 304);
+            this.pnlBill.Size = new System.Drawing.Size(307, 308);
             this.pnlBill.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(60, 62);
+            this.label5.Location = new System.Drawing.Point(60, 60);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(207, 18);
             this.label5.TabIndex = 10;
@@ -129,7 +120,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(268, 395);
+            this.label6.Location = new System.Drawing.Point(268, 399);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(39, 18);
             this.label6.TabIndex = 14;
@@ -138,7 +129,8 @@
             // txtTotal
             // 
             this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotal.Location = new System.Drawing.Point(117, 391);
+            this.txtTotal.Font = new System.Drawing.Font("Lucida Sans Unicode", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(117, 395);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(134, 24);
             this.txtTotal.TabIndex = 18;
@@ -147,7 +139,7 @@
             // txtSTT
             // 
             this.txtSTT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSTT.Location = new System.Drawing.Point(184, 22);
+            this.txtSTT.Location = new System.Drawing.Point(188, 22);
             this.txtSTT.Name = "txtSTT";
             this.txtSTT.Size = new System.Drawing.Size(79, 29);
             this.txtSTT.TabIndex = 17;
@@ -155,7 +147,7 @@
             // 
             // txtNameTable
             // 
-            this.txtNameTable.Location = new System.Drawing.Point(78, 21);
+            this.txtNameTable.Location = new System.Drawing.Point(38, 22);
             this.txtNameTable.Name = "txtNameTable";
             this.txtNameTable.Size = new System.Drawing.Size(74, 27);
             this.txtNameTable.TabIndex = 16;
@@ -172,12 +164,11 @@
             this.gpbBill.Controls.Add(this.label6);
             this.gpbBill.Controls.Add(this.label5);
             this.gpbBill.Controls.Add(this.pnlBill);
-            this.gpbBill.Controls.Add(this.label2);
             this.gpbBill.Controls.Add(this.label1);
             this.gpbBill.ForeColor = System.Drawing.Color.Black;
             this.gpbBill.Location = new System.Drawing.Point(283, 142);
             this.gpbBill.Name = "gpbBill";
-            this.gpbBill.Size = new System.Drawing.Size(332, 420);
+            this.gpbBill.Size = new System.Drawing.Size(332, 424);
             this.gpbBill.TabIndex = 12;
             this.gpbBill.TabStop = false;
             this.gpbBill.Text = "Bill";
@@ -350,11 +341,21 @@
             this.grbAddDrink.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbAddDrink.Location = new System.Drawing.Point(624, 151);
             this.grbAddDrink.Name = "grbAddDrink";
-            this.grbAddDrink.Size = new System.Drawing.Size(324, 210);
+            this.grbAddDrink.Size = new System.Drawing.Size(324, 221);
             this.grbAddDrink.TabIndex = 16;
             this.grbAddDrink.TabStop = false;
             this.grbAddDrink.Text = "Add Drink : ";
             this.grbAddDrink.Visible = false;
+            // 
+            // cbbDrinkTypeAD
+            // 
+            this.cbbDrinkTypeAD.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbDrinkTypeAD.FormattingEnabled = true;
+            this.cbbDrinkTypeAD.Location = new System.Drawing.Point(89, 72);
+            this.cbbDrinkTypeAD.Name = "cbbDrinkTypeAD";
+            this.cbbDrinkTypeAD.Size = new System.Drawing.Size(177, 29);
+            this.cbbDrinkTypeAD.TabIndex = 37;
+            this.cbbDrinkTypeAD.SelectedIndexChanged += new System.EventHandler(this.cbbDrinkTypeAD_SelectedIndexChanged);
             // 
             // btnAddAD
             // 
@@ -364,7 +365,7 @@
             this.btnAddAD.FlatAppearance.BorderSize = 0;
             this.btnAddAD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddAD.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAddAD.Location = new System.Drawing.Point(280, 154);
+            this.btnAddAD.Location = new System.Drawing.Point(280, 164);
             this.btnAddAD.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddAD.Name = "btnAddAD";
             this.btnAddAD.Size = new System.Drawing.Size(41, 41);
@@ -374,26 +375,28 @@
             // 
             // txtTableAD
             // 
-            this.txtTableAD.Location = new System.Drawing.Point(94, 24);
+            this.txtTableAD.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTableAD.Location = new System.Drawing.Point(89, 24);
             this.txtTableAD.Name = "txtTableAD";
-            this.txtTableAD.Size = new System.Drawing.Size(173, 26);
+            this.txtTableAD.ReadOnly = true;
+            this.txtTableAD.Size = new System.Drawing.Size(177, 29);
             this.txtTableAD.TabIndex = 3;
             // 
             // cbbDrinkAD
             // 
-            this.cbbDrinkAD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbDrinkAD.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbDrinkAD.FormattingEnabled = true;
-            this.cbbDrinkAD.Location = new System.Drawing.Point(94, 115);
+            this.cbbDrinkAD.Location = new System.Drawing.Point(89, 121);
             this.cbbDrinkAD.Name = "cbbDrinkAD";
-            this.cbbDrinkAD.Size = new System.Drawing.Size(172, 27);
+            this.cbbDrinkAD.Size = new System.Drawing.Size(178, 29);
             this.cbbDrinkAD.TabIndex = 2;
             // 
             // nUDQuantityAD
             // 
-            this.nUDQuantityAD.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nUDQuantityAD.Location = new System.Drawing.Point(94, 163);
+            this.nUDQuantityAD.Font = new System.Drawing.Font("Lucida Sans Unicode", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nUDQuantityAD.Location = new System.Drawing.Point(89, 170);
             this.nUDQuantityAD.Name = "nUDQuantityAD";
-            this.nUDQuantityAD.Size = new System.Drawing.Size(173, 32);
+            this.nUDQuantityAD.Size = new System.Drawing.Size(177, 34);
             this.nUDQuantityAD.TabIndex = 1;
             this.nUDQuantityAD.Value = new decimal(new int[] {
             1,
@@ -405,17 +408,27 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(6, 165);
+            this.label11.Location = new System.Drawing.Point(2, 173);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(90, 20);
             this.label11.TabIndex = 0;
             this.label11.Text = "Quantity : ";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(28, 74);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 20);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Type :";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(28, 118);
+            this.label8.Location = new System.Drawing.Point(23, 123);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 20);
             this.label8.TabIndex = 0;
@@ -425,7 +438,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 30);
+            this.label3.Location = new System.Drawing.Point(20, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 20);
             this.label3.TabIndex = 0;
@@ -434,15 +447,15 @@
             // grbSwitchTable
             // 
             this.grbSwitchTable.BackColor = System.Drawing.Color.Transparent;
+            this.grbSwitchTable.Controls.Add(this.txtFromTable);
             this.grbSwitchTable.Controls.Add(this.cbbToTable);
-            this.grbSwitchTable.Controls.Add(this.cbbFromTable);
             this.grbSwitchTable.Controls.Add(this.btnAcceptSwitch);
             this.grbSwitchTable.Controls.Add(this.label13);
             this.grbSwitchTable.Controls.Add(this.label12);
             this.grbSwitchTable.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbSwitchTable.Location = new System.Drawing.Point(627, 393);
+            this.grbSwitchTable.Location = new System.Drawing.Point(627, 399);
             this.grbSwitchTable.Name = "grbSwitchTable";
-            this.grbSwitchTable.Size = new System.Drawing.Size(305, 142);
+            this.grbSwitchTable.Size = new System.Drawing.Size(314, 142);
             this.grbSwitchTable.TabIndex = 17;
             this.grbSwitchTable.TabStop = false;
             this.grbSwitchTable.Text = "Switch Table : ";
@@ -450,19 +463,12 @@
             // 
             // cbbToTable
             // 
+            this.cbbToTable.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbToTable.FormattingEnabled = true;
-            this.cbbToTable.Location = new System.Drawing.Point(107, 95);
+            this.cbbToTable.Location = new System.Drawing.Point(107, 93);
             this.cbbToTable.Name = "cbbToTable";
-            this.cbbToTable.Size = new System.Drawing.Size(131, 27);
+            this.cbbToTable.Size = new System.Drawing.Size(131, 29);
             this.cbbToTable.TabIndex = 19;
-            // 
-            // cbbFromTable
-            // 
-            this.cbbFromTable.FormattingEnabled = true;
-            this.cbbFromTable.Location = new System.Drawing.Point(107, 38);
-            this.cbbFromTable.Name = "cbbFromTable";
-            this.cbbFromTable.Size = new System.Drawing.Size(131, 27);
-            this.cbbFromTable.TabIndex = 18;
             // 
             // btnAcceptSwitch
             // 
@@ -471,18 +477,19 @@
             this.btnAcceptSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnAcceptSwitch.FlatAppearance.BorderSize = 0;
             this.btnAcceptSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAcceptSwitch.Location = new System.Drawing.Point(256, 54);
+            this.btnAcceptSwitch.Location = new System.Drawing.Point(259, 46);
             this.btnAcceptSwitch.Margin = new System.Windows.Forms.Padding(2);
             this.btnAcceptSwitch.Name = "btnAcceptSwitch";
-            this.btnAcceptSwitch.Size = new System.Drawing.Size(41, 41);
+            this.btnAcceptSwitch.Size = new System.Drawing.Size(49, 63);
             this.btnAcceptSwitch.TabIndex = 17;
             this.btnAcceptSwitch.UseVisualStyleBackColor = false;
+            this.btnAcceptSwitch.Click += new System.EventHandler(this.btnAcceptSwitch_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(29, 95);
+            this.label13.Location = new System.Drawing.Point(34, 95);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(44, 20);
             this.label13.TabIndex = 0;
@@ -492,7 +499,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(10, 38);
+            this.label12.Location = new System.Drawing.Point(16, 37);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(65, 20);
             this.label12.TabIndex = 0;
@@ -580,24 +587,14 @@
             // 
             this.printDocumentBill.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocumentBill_PrintPage);
             // 
-            // label4
+            // txtFromTable
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(33, 72);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 20);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Type :";
-            // 
-            // cbbDrinkTypeAD
-            // 
-            this.cbbDrinkTypeAD.FormattingEnabled = true;
-            this.cbbDrinkTypeAD.Location = new System.Drawing.Point(94, 71);
-            this.cbbDrinkTypeAD.Name = "cbbDrinkTypeAD";
-            this.cbbDrinkTypeAD.Size = new System.Drawing.Size(172, 27);
-            this.cbbDrinkTypeAD.TabIndex = 37;
-            this.cbbDrinkTypeAD.SelectedIndexChanged += new System.EventHandler(this.cbbDrinkTypeAD_SelectedIndexChanged);
+            this.txtFromTable.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFromTable.Location = new System.Drawing.Point(107, 35);
+            this.txtFromTable.Name = "txtFromTable";
+            this.txtFromTable.ReadOnly = true;
+            this.txtFromTable.Size = new System.Drawing.Size(131, 29);
+            this.txtFromTable.TabIndex = 20;
             // 
             // FormTable
             // 
@@ -639,7 +636,6 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Panel pnlBill;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -667,7 +663,6 @@
         private System.Windows.Forms.TextBox txtTableAD;
         private System.Windows.Forms.Button btnAddAD;
         private System.Windows.Forms.ComboBox cbbToTable;
-        private System.Windows.Forms.ComboBox cbbFromTable;
         private System.Windows.Forms.Button btnAcceptSwitch;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -682,6 +677,7 @@
         private System.Drawing.Printing.PrintDocument printDocumentBill;
         private System.Windows.Forms.ComboBox cbbDrinkTypeAD;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtFromTable;
 
         public System.Windows.Forms.MouseEventHandler txtNameMan_MouseClick { get; set; }
     }

@@ -5,7 +5,7 @@ using DataAccessLayer;
 
 namespace BusinessLayer
 {
-    public class BUS_Table : BUS<BUS_Table, Table, int>
+    public sealed class BUS_Table : BUS<BUS_Table, Table, int>
     {
         public override DataTable Read()
         {

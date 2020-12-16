@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace DataAccessLayer
 {
-    public class DAL_Bill : DAL<DAL_Bill, Bill, int>
+    public sealed class DAL_Bill : DAL<DAL_Bill, Bill, int>
     {
         public int GetCountDrink(string TableName, string DrinkName)
         {

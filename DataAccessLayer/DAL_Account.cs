@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace DataAccessLayer
 {
-    public class DAL_Account : DAL<DAL_Account, Account, string>
+    public sealed class DAL_Account : DAL<DAL_Account, Account, string>
     {
         public override void Create(Account newAccount)
         {

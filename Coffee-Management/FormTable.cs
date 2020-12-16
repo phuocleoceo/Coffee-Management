@@ -284,12 +284,13 @@ namespace GUILayer
         /*---------------------------------SWITCH TABLE--------------------------------------------*/
         private void LoadDataForSwitchTableGRB()
         {
-            cbbFromTable.Text = txtNameTable.Text;
+            txtFromTable.Text = txtNameTable.Text;
+            cbbToTable.Items.Clear();
             BUS_Table.Instance.GetList(listTable);
             for (int i = 0; i < listTable.Count; i++)
             {
-                if (listTable[i].Name == cbbFromTable.Text) continue;
-                else cbbToTable.Items.Add(listTable[i].Name);
+                if (listTable[i].Name != txtFromTable.Text)
+                    cbbToTable.Items.Add(listTable[i].Name);
             }
         }
 
@@ -302,9 +303,6 @@ namespace GUILayer
                 {
                     grbSwitchTable.Visible = true;
                     LoadDataForSwitchTableGRB();
-
-                    LoadTable();
-                    LoadBill();
                 }
                 else if (txtSTT.Text == "Empty")
                 {
@@ -312,6 +310,39 @@ namespace GUILayer
                 }
             }
             catch { }
+        }
+
+        //Kiem tra xem Ban Dich co dang Online khong
+        private bool CheckTableToSwitch()
+        {
+            BUS_Table.Instance.GetList(listTable);
+            for (int i = 0; i < listTable.Count; i++)
+            {
+                if (listTable[i].Name == cbbToTable.Text)
+                {
+                    if (listTable[i].Total == 0)
+                        return true;
+                }
+            }
+            return false;
+        }
+
+        //Submit chuyen ban
+        private void btnAcceptSwitch_Click(object sender, EventArgs e)
+        {
+            if (CheckTableToSwitch())
+            {
+                DialogResult ms = MessageBox.Show("Do you want to switch table " + txtFromTable.Text + " to " + cbbToTable.Text + " ?", "Submit", MessageBoxButtons.YesNo);
+                if (ms == DialogResult.Yes)
+                {
+                    //moveTable();
+                    MessageBox.Show("Switch Table Successfully !", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Switch Table Fail !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /*---------------------------------PURCHASE------------------------------------------------*/
@@ -371,5 +402,6 @@ namespace GUILayer
             HoaDon += "\nTotal Price : " + txtTotal.Text + " VNĐ\n";
             e.Graphics.DrawString(HoaDon, new Font("Arial", 15, FontStyle.Bold), Brushes.Black, 100, 200);
         }
+
     }
 }
