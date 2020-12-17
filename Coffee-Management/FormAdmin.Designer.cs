@@ -34,9 +34,6 @@
             this.dgvAccount = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
             this.btnShowAccount = new System.Windows.Forms.Button();
-            this.panel16 = new System.Windows.Forms.Panel();
-            this.cbType = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
@@ -74,6 +71,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.nmDrinkPrice = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnSearchDrink = new System.Windows.Forms.Button();
             this.dgvDrink = new System.Windows.Forms.DataGridView();
             this.txbSearchDrinkName = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -90,10 +88,11 @@
             this.btnDeleteDrink = new System.Windows.Forms.Button();
             this.btnAddDrink = new System.Windows.Forms.Button();
             this.tcAdmin = new System.Windows.Forms.TabControl();
-            this.btnSearchDrink = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbType = new System.Windows.Forms.ComboBox();
+            this.panel16 = new System.Windows.Forms.Panel();
             this.tpAccount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).BeginInit();
-            this.panel16.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel20.SuspendLayout();
             this.tpTable.SuspendLayout();
@@ -112,6 +111,7 @@
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tcAdmin.SuspendLayout();
+            this.panel16.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -135,10 +135,10 @@
             this.tpAccount.Controls.Add(this.btnAddAccount);
             this.tpAccount.Controls.Add(this.panel18);
             this.tpAccount.Controls.Add(this.panel20);
-            this.tpAccount.Location = new System.Drawing.Point(4, 32);
+            this.tpAccount.Location = new System.Drawing.Point(4, 28);
             this.tpAccount.Name = "tpAccount";
             this.tpAccount.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAccount.Size = new System.Drawing.Size(927, 557);
+            this.tpAccount.Size = new System.Drawing.Size(927, 561);
             this.tpAccount.TabIndex = 4;
             this.tpAccount.Text = "Account";
             this.tpAccount.UseVisualStyleBackColor = true;
@@ -148,7 +148,7 @@
             this.txbPassWord.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txbPassWord.Location = new System.Drawing.Point(404, 84);
             this.txbPassWord.Name = "txbPassWord";
-            this.txbPassWord.Size = new System.Drawing.Size(159, 31);
+            this.txbPassWord.Size = new System.Drawing.Size(159, 26);
             this.txbPassWord.TabIndex = 7;
             this.txbPassWord.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -175,7 +175,7 @@
             this.label13.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(303, 86);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(115, 28);
+            this.label13.Size = new System.Drawing.Size(92, 22);
             this.label13.TabIndex = 0;
             this.label13.Text = "PassWord";
             // 
@@ -192,37 +192,6 @@
             this.btnShowAccount.Text = "Show Acc";
             this.btnShowAccount.UseVisualStyleBackColor = false;
             this.btnShowAccount.Click += new System.EventHandler(this.btnShowAccount_Click);
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.cbType);
-            this.panel16.Controls.Add(this.label8);
-            this.panel16.Location = new System.Drawing.Point(303, 7);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(269, 55);
-            this.panel16.TabIndex = 2;
-            // 
-            // cbType
-            // 
-            this.cbType.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbType.FormattingEnabled = true;
-            this.cbType.Items.AddRange(new object[] {
-            "Admin",
-            "Staff"});
-            this.cbType.Location = new System.Drawing.Point(101, 12);
-            this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(159, 31);
-            this.cbType.TabIndex = 6;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(17, 17);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 28);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Type";
             // 
             // btnEditAccount
             // 
@@ -280,7 +249,7 @@
             this.txbDisplayName.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txbDisplayName.Location = new System.Drawing.Point(110, 15);
             this.txbDisplayName.Name = "txbDisplayName";
-            this.txbDisplayName.Size = new System.Drawing.Size(159, 31);
+            this.txbDisplayName.Size = new System.Drawing.Size(159, 26);
             this.txbDisplayName.TabIndex = 5;
             this.txbDisplayName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -290,7 +259,7 @@
             this.label9.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(3, 17);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(117, 28);
+            this.label9.Size = new System.Drawing.Size(92, 22);
             this.label9.TabIndex = 0;
             this.label9.Text = "Full Name";
             // 
@@ -308,7 +277,7 @@
             this.txbUserName.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txbUserName.Location = new System.Drawing.Point(110, 18);
             this.txbUserName.Name = "txbUserName";
-            this.txbUserName.Size = new System.Drawing.Size(159, 31);
+            this.txbUserName.Size = new System.Drawing.Size(159, 26);
             this.txbUserName.TabIndex = 4;
             this.txbUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -318,7 +287,7 @@
             this.label10.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(3, 18);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(125, 28);
+            this.label10.Size = new System.Drawing.Size(98, 22);
             this.label10.TabIndex = 0;
             this.label10.Text = "User Name";
             // 
@@ -331,10 +300,10 @@
             this.tpTable.Controls.Add(this.panel10);
             this.tpTable.Controls.Add(this.dgvTable);
             this.tpTable.Controls.Add(this.panel11);
-            this.tpTable.Location = new System.Drawing.Point(4, 32);
+            this.tpTable.Location = new System.Drawing.Point(4, 28);
             this.tpTable.Name = "tpTable";
             this.tpTable.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTable.Size = new System.Drawing.Size(927, 557);
+            this.tpTable.Size = new System.Drawing.Size(927, 561);
             this.tpTable.TabIndex = 3;
             this.tpTable.Text = "Table";
             this.tpTable.UseVisualStyleBackColor = true;
@@ -409,7 +378,7 @@
             this.txbTableName.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txbTableName.Location = new System.Drawing.Point(141, 12);
             this.txbTableName.Name = "txbTableName";
-            this.txbTableName.Size = new System.Drawing.Size(174, 31);
+            this.txbTableName.Size = new System.Drawing.Size(174, 26);
             this.txbTableName.TabIndex = 5;
             this.txbTableName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -419,7 +388,7 @@
             this.label5.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 32);
+            this.label5.Size = new System.Drawing.Size(121, 25);
             this.label5.TabIndex = 0;
             this.label5.Text = "Table Name ";
             // 
@@ -454,7 +423,7 @@
             this.txbTableID.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txbTableID.Location = new System.Drawing.Point(51, 12);
             this.txbTableID.Name = "txbTableID";
-            this.txbTableID.Size = new System.Drawing.Size(155, 31);
+            this.txbTableID.Size = new System.Drawing.Size(155, 26);
             this.txbTableID.TabIndex = 4;
             this.txbTableID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -464,7 +433,7 @@
             this.label6.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(3, 10);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 32);
+            this.label6.Size = new System.Drawing.Size(33, 25);
             this.label6.TabIndex = 0;
             this.label6.Text = "ID";
             // 
@@ -477,10 +446,10 @@
             this.tpDrinkType.Controls.Add(this.dgvDrinkType);
             this.tpDrinkType.Controls.Add(this.btnDeleteDrinkType);
             this.tpDrinkType.Controls.Add(this.btnAddDrinkType);
-            this.tpDrinkType.Location = new System.Drawing.Point(4, 32);
+            this.tpDrinkType.Location = new System.Drawing.Point(4, 28);
             this.tpDrinkType.Name = "tpDrinkType";
             this.tpDrinkType.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDrinkType.Size = new System.Drawing.Size(927, 557);
+            this.tpDrinkType.Size = new System.Drawing.Size(927, 561);
             this.tpDrinkType.TabIndex = 2;
             this.tpDrinkType.Text = "Drink Type";
             this.tpDrinkType.UseVisualStyleBackColor = true;
@@ -489,9 +458,9 @@
             // 
             this.panel22.Controls.Add(this.txbDrinkTypeName);
             this.panel22.Controls.Add(this.label11);
-            this.panel22.Location = new System.Drawing.Point(481, 15);
+            this.panel22.Location = new System.Drawing.Point(505, 15);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(408, 46);
+            this.panel22.Size = new System.Drawing.Size(397, 46);
             this.panel22.TabIndex = 1;
             // 
             // txbDrinkTypeName
@@ -500,7 +469,7 @@
             this.txbDrinkTypeName.Font = new System.Drawing.Font("Cambria", 12F);
             this.txbDrinkTypeName.Location = new System.Drawing.Point(155, 9);
             this.txbDrinkTypeName.Name = "txbDrinkTypeName";
-            this.txbDrinkTypeName.Size = new System.Drawing.Size(235, 31);
+            this.txbDrinkTypeName.Size = new System.Drawing.Size(235, 26);
             this.txbDrinkTypeName.TabIndex = 5;
             this.txbDrinkTypeName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -510,7 +479,7 @@
             this.label11.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(36, 10);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(87, 32);
+            this.label11.Size = new System.Drawing.Size(68, 25);
             this.label11.TabIndex = 0;
             this.label11.Text = "Name ";
             // 
@@ -521,7 +490,7 @@
             this.btnShowDrinkType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowDrinkType.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowDrinkType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnShowDrinkType.Location = new System.Drawing.Point(17, 54);
+            this.btnShowDrinkType.Location = new System.Drawing.Point(25, 54);
             this.btnShowDrinkType.Name = "btnShowDrinkType";
             this.btnShowDrinkType.Size = new System.Drawing.Size(124, 79);
             this.btnShowDrinkType.TabIndex = 3;
@@ -533,7 +502,7 @@
             // 
             this.panel23.Controls.Add(this.txbDrinkTypeID);
             this.panel23.Controls.Add(this.label12);
-            this.panel23.Location = new System.Drawing.Point(157, 15);
+            this.panel23.Location = new System.Drawing.Point(194, 15);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(284, 46);
             this.panel23.TabIndex = 0;
@@ -544,7 +513,7 @@
             this.txbDrinkTypeID.Font = new System.Drawing.Font("Cambria", 12F);
             this.txbDrinkTypeID.Location = new System.Drawing.Point(42, 9);
             this.txbDrinkTypeID.Name = "txbDrinkTypeID";
-            this.txbDrinkTypeID.Size = new System.Drawing.Size(235, 31);
+            this.txbDrinkTypeID.Size = new System.Drawing.Size(235, 26);
             this.txbDrinkTypeID.TabIndex = 4;
             this.txbDrinkTypeID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -554,7 +523,7 @@
             this.label12.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(3, 9);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(42, 32);
+            this.label12.Size = new System.Drawing.Size(33, 25);
             this.label12.TabIndex = 0;
             this.label12.Text = "ID";
             // 
@@ -565,7 +534,7 @@
             this.btnEditDrinkType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditDrinkType.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditDrinkType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEditDrinkType.Location = new System.Drawing.Point(17, 291);
+            this.btnEditDrinkType.Location = new System.Drawing.Point(25, 291);
             this.btnEditDrinkType.Name = "btnEditDrinkType";
             this.btnEditDrinkType.Size = new System.Drawing.Size(124, 79);
             this.btnEditDrinkType.TabIndex = 1;
@@ -579,13 +548,13 @@
             this.dgvDrinkType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDrinkType.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvDrinkType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDrinkType.Location = new System.Drawing.Point(157, 67);
+            this.dgvDrinkType.Location = new System.Drawing.Point(175, 67);
             this.dgvDrinkType.Name = "dgvDrinkType";
             this.dgvDrinkType.ReadOnly = true;
             this.dgvDrinkType.RowHeadersVisible = false;
             this.dgvDrinkType.RowHeadersWidth = 51;
             this.dgvDrinkType.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDrinkType.Size = new System.Drawing.Size(762, 484);
+            this.dgvDrinkType.Size = new System.Drawing.Size(744, 484);
             this.dgvDrinkType.TabIndex = 6;
             this.dgvDrinkType.SelectionChanged += new System.EventHandler(this.dgvDrinkType_SelectionChanged);
             // 
@@ -596,7 +565,7 @@
             this.btnDeleteDrinkType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteDrinkType.Font = new System.Drawing.Font("Cambria", 15.75F);
             this.btnDeleteDrinkType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDeleteDrinkType.Location = new System.Drawing.Point(17, 414);
+            this.btnDeleteDrinkType.Location = new System.Drawing.Point(25, 414);
             this.btnDeleteDrinkType.Name = "btnDeleteDrinkType";
             this.btnDeleteDrinkType.Size = new System.Drawing.Size(124, 95);
             this.btnDeleteDrinkType.TabIndex = 2;
@@ -611,7 +580,7 @@
             this.btnAddDrinkType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddDrinkType.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddDrinkType.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddDrinkType.Location = new System.Drawing.Point(17, 168);
+            this.btnAddDrinkType.Location = new System.Drawing.Point(25, 168);
             this.btnAddDrinkType.Name = "btnAddDrinkType";
             this.btnAddDrinkType.Size = new System.Drawing.Size(124, 79);
             this.btnAddDrinkType.TabIndex = 0;
@@ -632,10 +601,10 @@
             this.tpDrink.Controls.Add(this.btnEditDrink);
             this.tpDrink.Controls.Add(this.btnDeleteDrink);
             this.tpDrink.Controls.Add(this.btnAddDrink);
-            this.tpDrink.Location = new System.Drawing.Point(4, 32);
+            this.tpDrink.Location = new System.Drawing.Point(4, 28);
             this.tpDrink.Name = "tpDrink";
             this.tpDrink.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDrink.Size = new System.Drawing.Size(927, 557);
+            this.tpDrink.Size = new System.Drawing.Size(927, 561);
             this.tpDrink.TabIndex = 1;
             this.tpDrink.Text = "Drink";
             this.tpDrink.UseVisualStyleBackColor = true;
@@ -644,9 +613,9 @@
             // 
             this.panel8.Controls.Add(this.nmDrinkPrice);
             this.panel8.Controls.Add(this.label4);
-            this.panel8.Location = new System.Drawing.Point(643, 416);
+            this.panel8.Location = new System.Drawing.Point(660, 416);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(275, 46);
+            this.panel8.Size = new System.Drawing.Size(258, 46);
             this.panel8.TabIndex = 3;
             // 
             // nmDrinkPrice
@@ -657,14 +626,14 @@
             0,
             0,
             0});
-            this.nmDrinkPrice.Location = new System.Drawing.Point(89, 8);
+            this.nmDrinkPrice.Location = new System.Drawing.Point(69, 8);
             this.nmDrinkPrice.Maximum = new decimal(new int[] {
             -727379968,
             232,
             0,
             0});
             this.nmDrinkPrice.Name = "nmDrinkPrice";
-            this.nmDrinkPrice.Size = new System.Drawing.Size(183, 31);
+            this.nmDrinkPrice.Size = new System.Drawing.Size(183, 26);
             this.nmDrinkPrice.TabIndex = 4;
             this.nmDrinkPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -674,9 +643,24 @@
             this.label4.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 7);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 32);
+            this.label4.Size = new System.Drawing.Size(58, 25);
             this.label4.TabIndex = 0;
             this.label4.Text = "Price";
+            // 
+            // btnSearchDrink
+            // 
+            this.btnSearchDrink.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearchDrink.BackgroundImage = global::GUILayer.Properties.Resources.kinhlup1_jpg;
+            this.btnSearchDrink.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSearchDrink.FlatAppearance.BorderSize = 0;
+            this.btnSearchDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchDrink.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchDrink.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSearchDrink.Location = new System.Drawing.Point(669, 58);
+            this.btnSearchDrink.Name = "btnSearchDrink";
+            this.btnSearchDrink.Size = new System.Drawing.Size(39, 43);
+            this.btnSearchDrink.TabIndex = 1;
+            this.btnSearchDrink.UseVisualStyleBackColor = false;
             // 
             // dgvDrink
             // 
@@ -685,13 +669,13 @@
             this.dgvDrink.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDrink.BackgroundColor = System.Drawing.Color.White;
             this.dgvDrink.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDrink.Location = new System.Drawing.Point(140, 14);
+            this.dgvDrink.Location = new System.Drawing.Point(146, 14);
             this.dgvDrink.Name = "dgvDrink";
             this.dgvDrink.ReadOnly = true;
             this.dgvDrink.RowHeadersVisible = false;
             this.dgvDrink.RowHeadersWidth = 51;
             this.dgvDrink.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDrink.Size = new System.Drawing.Size(497, 537);
+            this.dgvDrink.Size = new System.Drawing.Size(508, 537);
             this.dgvDrink.TabIndex = 9;
             this.dgvDrink.SelectionChanged += new System.EventHandler(this.dgvDrink_SelectionChanged);
             // 
@@ -700,7 +684,7 @@
             this.txbSearchDrinkName.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txbSearchDrinkName.Location = new System.Drawing.Point(732, 70);
             this.txbSearchDrinkName.Name = "txbSearchDrinkName";
-            this.txbSearchDrinkName.Size = new System.Drawing.Size(183, 31);
+            this.txbSearchDrinkName.Size = new System.Drawing.Size(183, 26);
             this.txbSearchDrinkName.TabIndex = 0;
             this.txbSearchDrinkName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -708,27 +692,27 @@
             // 
             this.panel7.Controls.Add(this.cbDrinkType);
             this.panel7.Controls.Add(this.label3);
-            this.panel7.Location = new System.Drawing.Point(643, 326);
+            this.panel7.Location = new System.Drawing.Point(660, 326);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(275, 46);
+            this.panel7.Size = new System.Drawing.Size(258, 46);
             this.panel7.TabIndex = 2;
             // 
             // cbDrinkType
             // 
             this.cbDrinkType.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cbDrinkType.FormattingEnabled = true;
-            this.cbDrinkType.Location = new System.Drawing.Point(89, 9);
+            this.cbDrinkType.Location = new System.Drawing.Point(70, 9);
             this.cbDrinkType.Name = "cbDrinkType";
-            this.cbDrinkType.Size = new System.Drawing.Size(183, 31);
+            this.cbDrinkType.Size = new System.Drawing.Size(183, 27);
             this.cbDrinkType.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 9);
+            this.label3.Location = new System.Drawing.Point(7, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 32);
+            this.label3.Size = new System.Drawing.Size(56, 25);
             this.label3.TabIndex = 0;
             this.label3.Text = "Type";
             // 
@@ -739,7 +723,7 @@
             this.btnShowDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowDrink.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowDrink.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnShowDrink.Location = new System.Drawing.Point(10, 45);
+            this.btnShowDrink.Location = new System.Drawing.Point(16, 46);
             this.btnShowDrink.Name = "btnShowDrink";
             this.btnShowDrink.Size = new System.Drawing.Size(114, 70);
             this.btnShowDrink.TabIndex = 5;
@@ -751,15 +735,15 @@
             // 
             this.panel6.Controls.Add(this.txbDrinkName);
             this.panel6.Controls.Add(this.label2);
-            this.panel6.Location = new System.Drawing.Point(643, 216);
+            this.panel6.Location = new System.Drawing.Point(660, 216);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(275, 74);
+            this.panel6.Size = new System.Drawing.Size(258, 74);
             this.panel6.TabIndex = 1;
             // 
             // txbDrinkName
             // 
             this.txbDrinkName.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txbDrinkName.Location = new System.Drawing.Point(89, 3);
+            this.txbDrinkName.Location = new System.Drawing.Point(69, 9);
             this.txbDrinkName.Multiline = true;
             this.txbDrinkName.Name = "txbDrinkName";
             this.txbDrinkName.Size = new System.Drawing.Size(183, 54);
@@ -770,9 +754,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 15.75F);
-            this.label2.Location = new System.Drawing.Point(2, 20);
+            this.label2.Location = new System.Drawing.Point(4, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 32);
+            this.label2.Size = new System.Drawing.Size(63, 25);
             this.label2.TabIndex = 0;
             this.label2.Text = "Name";
             // 
@@ -780,17 +764,17 @@
             // 
             this.panel5.Controls.Add(this.txbDrinkID);
             this.panel5.Controls.Add(this.label1);
-            this.panel5.Location = new System.Drawing.Point(643, 130);
+            this.panel5.Location = new System.Drawing.Point(660, 130);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(275, 46);
+            this.panel5.Size = new System.Drawing.Size(258, 46);
             this.panel5.TabIndex = 3;
             // 
             // txbDrinkID
             // 
             this.txbDrinkID.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txbDrinkID.Location = new System.Drawing.Point(89, 12);
+            this.txbDrinkID.Location = new System.Drawing.Point(69, 10);
             this.txbDrinkID.Name = "txbDrinkID";
-            this.txbDrinkID.Size = new System.Drawing.Size(183, 31);
+            this.txbDrinkID.Size = new System.Drawing.Size(183, 26);
             this.txbDrinkID.TabIndex = 1;
             this.txbDrinkID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -798,9 +782,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 13);
+            this.label1.Location = new System.Drawing.Point(14, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 32);
+            this.label1.Size = new System.Drawing.Size(33, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
@@ -811,7 +795,7 @@
             this.btnEditDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditDrink.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditDrink.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnEditDrink.Location = new System.Drawing.Point(10, 277);
+            this.btnEditDrink.Location = new System.Drawing.Point(16, 278);
             this.btnEditDrink.Name = "btnEditDrink";
             this.btnEditDrink.Size = new System.Drawing.Size(114, 81);
             this.btnEditDrink.TabIndex = 7;
@@ -826,7 +810,7 @@
             this.btnDeleteDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteDrink.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteDrink.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDeleteDrink.Location = new System.Drawing.Point(10, 402);
+            this.btnDeleteDrink.Location = new System.Drawing.Point(16, 403);
             this.btnDeleteDrink.Name = "btnDeleteDrink";
             this.btnDeleteDrink.Size = new System.Drawing.Size(114, 81);
             this.btnDeleteDrink.TabIndex = 8;
@@ -841,7 +825,7 @@
             this.btnAddDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddDrink.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddDrink.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAddDrink.Location = new System.Drawing.Point(10, 159);
+            this.btnAddDrink.Location = new System.Drawing.Point(16, 160);
             this.btnAddDrink.Name = "btnAddDrink";
             this.btnAddDrink.Size = new System.Drawing.Size(114, 74);
             this.btnAddDrink.TabIndex = 6;
@@ -864,24 +848,40 @@
             this.tcAdmin.Size = new System.Drawing.Size(935, 593);
             this.tcAdmin.TabIndex = 0;
             // 
-            // btnSearchDrink
+            // label8
             // 
-            this.btnSearchDrink.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearchDrink.BackgroundImage = global::GUILayer.Properties.Resources.kinhlup1_jpg;
-            this.btnSearchDrink.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnSearchDrink.FlatAppearance.BorderSize = 0;
-            this.btnSearchDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchDrink.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchDrink.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSearchDrink.Location = new System.Drawing.Point(651, 60);
-            this.btnSearchDrink.Name = "btnSearchDrink";
-            this.btnSearchDrink.Size = new System.Drawing.Size(39, 43);
-            this.btnSearchDrink.TabIndex = 1;
-            this.btnSearchDrink.UseVisualStyleBackColor = false;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(17, 17);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 22);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Type";
+            // 
+            // cbType
+            // 
+            this.cbType.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Items.AddRange(new object[] {
+            "Admin",
+            "Staff"});
+            this.cbType.Location = new System.Drawing.Point(101, 12);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(159, 27);
+            this.cbType.TabIndex = 6;
+            // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.cbType);
+            this.panel16.Controls.Add(this.label8);
+            this.panel16.Location = new System.Drawing.Point(303, 7);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(269, 55);
+            this.panel16.TabIndex = 2;
             // 
             // FormAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(935, 597);
             this.Controls.Add(this.tcAdmin);
@@ -894,8 +894,6 @@
             this.tpAccount.ResumeLayout(false);
             this.tpAccount.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).EndInit();
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel20.ResumeLayout(false);
@@ -925,6 +923,8 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.tcAdmin.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -937,9 +937,6 @@
         private System.Windows.Forms.DataGridView dgvAccount;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnShowAccount;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.ComboBox cbType;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnEditAccount;
         private System.Windows.Forms.Button btnDeleteAccount;
         private System.Windows.Forms.Button btnAddAccount;
@@ -994,5 +991,8 @@
         private System.Windows.Forms.Button btnDeleteDrink;
         private System.Windows.Forms.Button btnAddDrink;
         private System.Windows.Forms.TabControl tcAdmin;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.ComboBox cbType;
+        private System.Windows.Forms.Label label8;
     }
 }

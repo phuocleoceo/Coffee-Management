@@ -65,7 +65,7 @@ namespace DataAccessLayer
             SqlCommand cmd = new SqlCommand("MoveTable");
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@TableNameFrom", SqlDbType.NVarChar).Value = TableFrom;
-            cmd.Parameters.AddWithValue("@TableNameTo", SqlDbType.NVarChar).Value = TableFrom;
+            cmd.Parameters.AddWithValue("@TableNameTo", SqlDbType.NVarChar).Value = TableTo;
             cmd.Parameters.AddWithValue("@Total", SqlDbType.Real).Value = Total;
             DataProvider.Instance.ExecuteNonQuery(cmd);
         }

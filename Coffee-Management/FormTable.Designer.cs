@@ -58,6 +58,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.grbSwitchTable = new System.Windows.Forms.GroupBox();
+            this.txtFromTable = new System.Windows.Forms.TextBox();
             this.cbbToTable = new System.Windows.Forms.ComboBox();
             this.btnAcceptSwitch = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -71,7 +72,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.printDialogBill = new System.Windows.Forms.PrintDialog();
             this.printDocumentBill = new System.Drawing.Printing.PrintDocument();
-            this.txtFromTable = new System.Windows.Forms.TextBox();
             this.gpbBill.SuspendLayout();
             this.gpbTable.SuspendLayout();
             this.grbChucNang.SuspendLayout();
@@ -242,7 +242,7 @@
             this.btnPurchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPurchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnPurchase.Image = global::GUILayer.Properties.Resources.Money1;
-            this.btnPurchase.Location = new System.Drawing.Point(217, 51);
+            this.btnPurchase.Location = new System.Drawing.Point(223, 51);
             this.btnPurchase.Margin = new System.Windows.Forms.Padding(5);
             this.btnPurchase.Name = "btnPurchase";
             this.btnPurchase.Size = new System.Drawing.Size(51, 47);
@@ -261,10 +261,10 @@
             this.btnSwitchTable.FlatAppearance.BorderSize = 0;
             this.btnSwitchTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSwitchTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSwitchTable.Location = new System.Drawing.Point(122, 51);
+            this.btnSwitchTable.Location = new System.Drawing.Point(131, 49);
             this.btnSwitchTable.Margin = new System.Windows.Forms.Padding(5);
             this.btnSwitchTable.Name = "btnSwitchTable";
-            this.btnSwitchTable.Size = new System.Drawing.Size(51, 47);
+            this.btnSwitchTable.Size = new System.Drawing.Size(51, 49);
             this.btnSwitchTable.TabIndex = 47;
             this.btnSwitchTable.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSwitchTable.UseVisualStyleBackColor = false;
@@ -276,7 +276,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(104, 19);
+            this.label10.Location = new System.Drawing.Point(110, 16);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(96, 34);
             this.label10.TabIndex = 50;
@@ -289,7 +289,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(181, 17);
+            this.label9.Location = new System.Drawing.Point(187, 16);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(122, 34);
             this.label9.TabIndex = 49;
@@ -302,7 +302,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(12, 17);
+            this.label7.Location = new System.Drawing.Point(18, 16);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 34);
             this.label7.TabIndex = 48;
@@ -318,7 +318,7 @@
             this.btnAddDrink.FlatAppearance.BorderSize = 0;
             this.btnAddDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddDrink.Image = global::GUILayer.Properties.Resources.cart;
-            this.btnAddDrink.Location = new System.Drawing.Point(30, 51);
+            this.btnAddDrink.Location = new System.Drawing.Point(40, 51);
             this.btnAddDrink.Margin = new System.Windows.Forms.Padding(5);
             this.btnAddDrink.Name = "btnAddDrink";
             this.btnAddDrink.Size = new System.Drawing.Size(51, 47);
@@ -461,6 +461,15 @@
             this.grbSwitchTable.Text = "Switch Table : ";
             this.grbSwitchTable.Visible = false;
             // 
+            // txtFromTable
+            // 
+            this.txtFromTable.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFromTable.Location = new System.Drawing.Point(107, 35);
+            this.txtFromTable.Name = "txtFromTable";
+            this.txtFromTable.ReadOnly = true;
+            this.txtFromTable.Size = new System.Drawing.Size(131, 29);
+            this.txtFromTable.TabIndex = 20;
+            // 
             // cbbToTable
             // 
             this.cbbToTable.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -586,15 +595,6 @@
             // printDocumentBill
             // 
             this.printDocumentBill.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocumentBill_PrintPage);
-            // 
-            // txtFromTable
-            // 
-            this.txtFromTable.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFromTable.Location = new System.Drawing.Point(107, 35);
-            this.txtFromTable.Name = "txtFromTable";
-            this.txtFromTable.ReadOnly = true;
-            this.txtFromTable.Size = new System.Drawing.Size(131, 29);
-            this.txtFromTable.TabIndex = 20;
             // 
             // FormTable
             // 

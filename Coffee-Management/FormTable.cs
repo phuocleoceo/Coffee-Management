@@ -76,7 +76,7 @@ namespace GUILayer
         }
 
         // Load Bill        
-        public void LoadBill()
+        private void LoadBill()
         {
             try
             {
@@ -108,10 +108,6 @@ namespace GUILayer
         //Khi Click vao Table
         private void btnTable_MouseClick(object sender, EventArgs e)
         {
-            ClickTable(sender, e);
-        }
-        private void ClickTable(object sender, EventArgs e)
-        {
             //tra ve trang thai ban theo mau sac cua btnTable
             if (((Button)sender).BackColor.ToString() == "Color [Snow]")
             {
@@ -127,11 +123,6 @@ namespace GUILayer
             txtTotal.Text = ((Button)sender).Tag.ToString();
             LoadBill();
         }
-        private void gpbTable_SizeChanged(object sender, EventArgs e)
-        {
-            LoadTable();
-        }
-
         /*---------------------------------ADD DRINK-----------------------------------------------*/
 
         //Xu lu khi chon chuc nang Add Drink
@@ -208,7 +199,7 @@ namespace GUILayer
         private void IncreaseDrink()
         {
             Bill bill = new Bill(txtTableAD.Text, cbbDrinkAD.Text, Int32.Parse(nUDQuantityAD.Value.ToString()));
-            BUS_Bill.Instance.Update(bill, 0);
+            BUS_Bill.Instance.Update(bill,"");
             setTotal();
         }
 
@@ -313,6 +304,18 @@ namespace GUILayer
             catch { }
         }
 
+        private void MoveTable()
+        {
+            float TotalSWT = 0;
+            string TableFrom = txtFromTable.Text;
+            string TableTo = cbbToTable.Text;
+            for(int i = 0; i < listTable.Count; i++)
+            {
+                if (listTable[i].Name == TableFrom) TotalSWT = listTable[i].Total;
+            }
+            BUS_Bill.Instance.UpdateTableInBill(TableFrom, TableTo);
+            BUS_Table.Instance.MoveTable(TableFrom, TableTo, TotalSWT);
+        }
         //Submit chuyen ban
         private void btnAcceptSwitch_Click(object sender, EventArgs e)
         {
@@ -321,9 +324,10 @@ namespace GUILayer
                 DialogResult ms = MessageBox.Show("Do you want to switch table " + txtFromTable.Text + " to " + cbbToTable.Text + " ?", "Submit", MessageBoxButtons.YesNo);
                 if (ms == DialogResult.Yes)
                 {
-                    BUS_Bill.Instance.GetList(listBill);
-                    //move Table
-
+                    MoveTable();
+                    HideGroupBox();
+                    LoadTable();
+                    LoadBill();
                     MessageBox.Show("Switch Table Successfully !", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -346,7 +350,7 @@ namespace GUILayer
                     if (ms == DialogResult.Yes)
                     {
                         BUS_Table.Instance.ClearTable(txtNameTable.Text);
-                        BUS_Bill.Instance.ClearBill(txtNameTable.Text);
+                        BUS_Bill.Instance.Delete(txtNameTable.Text);
                         txtSTT.Text = "Empty";
                         txtTotal.Text = "0";
                         MessageBox.Show("Purchase success !  " + txtNameTable.Text, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -390,6 +394,5 @@ namespace GUILayer
             HoaDon += "\nTotal Price : " + txtTotal.Text + " VNĐ\n";
             e.Graphics.DrawString(HoaDon, new Font("Arial", 15, FontStyle.Bold), Brushes.Black, 100, 200);
         }
-
     }
 }
