@@ -90,7 +90,7 @@ namespace GUILayer
                     Label lbl = new Label()
                     {
                         Name = "btnFB" + i,
-                        Text = (i + 1) + ".     " + listBill[i].DrinkName + "  X  " + listBill[i].Counts.ToString(),
+                        Text = "         " + (i + 1) + ".     " + listBill[i].DrinkName + "  X  " + listBill[i].Counts.ToString(),
                         Width = pnlBill.Width - 20,
                         Height = 20,
                         Location = new Point(5, y)
@@ -287,9 +287,10 @@ namespace GUILayer
             txtFromTable.Text = txtNameTable.Text;
             cbbToTable.Items.Clear();
             BUS_Table.Instance.GetList(listTable);
+            //Chi cho phep nhung ban khac Ban hien tai va hien dang Empty
             for (int i = 0; i < listTable.Count; i++)
             {
-                if (listTable[i].Name != txtFromTable.Text)
+                if ((listTable[i].Name != txtFromTable.Text) && (listTable[i].Total == 0))
                     cbbToTable.Items.Add(listTable[i].Name);
             }
         }
@@ -312,34 +313,21 @@ namespace GUILayer
             catch { }
         }
 
-        //Kiem tra xem Ban Dich co dang Online khong
-        private bool CheckTableToSwitch()
-        {
-            BUS_Table.Instance.GetList(listTable);
-            for (int i = 0; i < listTable.Count; i++)
-            {
-                if (listTable[i].Name == cbbToTable.Text)
-                {
-                    if (listTable[i].Total == 0)
-                        return true;
-                }
-            }
-            return false;
-        }
-
         //Submit chuyen ban
         private void btnAcceptSwitch_Click(object sender, EventArgs e)
         {
-            if (CheckTableToSwitch())
+            try
             {
                 DialogResult ms = MessageBox.Show("Do you want to switch table " + txtFromTable.Text + " to " + cbbToTable.Text + " ?", "Submit", MessageBoxButtons.YesNo);
                 if (ms == DialogResult.Yes)
                 {
-                    //moveTable();
+                    BUS_Bill.Instance.GetList(listBill);
+                    //move Table
+
                     MessageBox.Show("Switch Table Successfully !", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            else
+            catch
             {
                 MessageBox.Show("Switch Table Fail !", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

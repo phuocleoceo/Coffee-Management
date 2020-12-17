@@ -45,7 +45,7 @@ namespace DataAccessLayer
             cmd.Parameters.AddWithValue("@TableName", SqlDbType.NVarChar).Value = TableName;
             DataProvider.Instance.ExecuteNonQuery(cmd);
         }
-        public void SetTotal(string TableName,float Total)
+        public void SetTotal(string TableName, float Total)
         {
             SqlCommand cmd = new SqlCommand("SetTotal");
             cmd.CommandType = CommandType.StoredProcedure;
@@ -58,6 +58,15 @@ namespace DataAccessLayer
             SqlCommand cmd = new SqlCommand("ClearTable");
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@TableName", SqlDbType.NVarChar).Value = TableName;
+            DataProvider.Instance.ExecuteNonQuery(cmd);
+        }
+        public void MoveTable(string TableFrom, string TableTo, float Total)
+        {
+            SqlCommand cmd = new SqlCommand("MoveTable");
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@TableNameFrom", SqlDbType.NVarChar).Value = TableFrom;
+            cmd.Parameters.AddWithValue("@TableNameTo", SqlDbType.NVarChar).Value = TableFrom;
+            cmd.Parameters.AddWithValue("@Total", SqlDbType.Real).Value = Total;
             DataProvider.Instance.ExecuteNonQuery(cmd);
         }
     }

@@ -100,9 +100,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlBill.AutoScroll = true;
-            this.pnlBill.Location = new System.Drawing.Point(13, 81);
+            this.pnlBill.Location = new System.Drawing.Point(9, 81);
             this.pnlBill.Name = "pnlBill";
-            this.pnlBill.Size = new System.Drawing.Size(307, 308);
+            this.pnlBill.Size = new System.Drawing.Size(314, 308);
             this.pnlBill.TabIndex = 9;
             // 
             // label5

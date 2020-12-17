@@ -43,5 +43,9 @@ namespace BusinessLayer
         {
             DAL_Table.Instance.ClearTable(TableName);
         }
+        public void MoveTable(string TableFrom, string TableTo, float Total)
+        {
+            DAL_Table.Instance.MoveTable(TableFrom, TableTo, Total);
+        }
     }
 }
