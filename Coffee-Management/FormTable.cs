@@ -277,6 +277,7 @@ namespace GUILayer
         {
             txtFromTable.Text = txtNameTable.Text;
             cbbToTable.Items.Clear();
+            cbbToTable.Text = "";
             BUS_Table.Instance.GetList(listTable);
             //Chi cho phep nhung ban khac Ban hien tai va hien dang Empty
             for (int i = 0; i < listTable.Count; i++)
