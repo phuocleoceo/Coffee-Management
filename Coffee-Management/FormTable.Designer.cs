@@ -453,7 +453,7 @@
             this.grbSwitchTable.Controls.Add(this.label13);
             this.grbSwitchTable.Controls.Add(this.label12);
             this.grbSwitchTable.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbSwitchTable.Location = new System.Drawing.Point(627, 399);
+            this.grbSwitchTable.Location = new System.Drawing.Point(627, 392);
             this.grbSwitchTable.Name = "grbSwitchTable";
             this.grbSwitchTable.Size = new System.Drawing.Size(314, 142);
             this.grbSwitchTable.TabIndex = 17;

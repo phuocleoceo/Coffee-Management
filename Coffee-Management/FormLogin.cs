@@ -10,7 +10,8 @@ namespace GUILayer
     {
         //----------------------------------------------------------------------------------
         private ManageList<Account> listAccount = new ManageList<Account>();
-        public static string Type;  
+        public static string Type;
+        public static string Cashier;
         //----------------------------------------------------------------------------------
         public FormLogin()
         {
@@ -25,6 +26,7 @@ namespace GUILayer
                 if(username==listAccount[i].UserName && password == listAccount[i].PassWord)
                 {
                     Type = listAccount[i].Type;
+                    Cashier = listAccount[i].DisplayName;
                     return true;
                 }                
             }

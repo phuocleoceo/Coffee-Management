@@ -40,6 +40,7 @@ namespace DataAccessLayer
             cmd.Parameters.AddWithValue("@TableName", SqlDbType.NVarChar).Value = bill.TableName;
             cmd.Parameters.AddWithValue("@DrinkName", SqlDbType.NVarChar).Value = bill.DrinkName;
             cmd.Parameters.AddWithValue("@Counts", SqlDbType.Int).Value = bill.Counts;
+            cmd.Parameters.AddWithValue("@CashierDN", SqlDbType.NVarChar).Value = bill.Cashier;
             DataProvider.Instance.ExecuteNonQuery(cmd);
         }
 

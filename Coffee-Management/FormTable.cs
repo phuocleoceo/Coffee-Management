@@ -14,7 +14,7 @@ namespace GUILayer
         private ManageList<Drink> listDrink = new ManageList<Drink>();
         private ManageList<Table> listTable = new ManageList<Table>();
         private ManageList<Bill> listBill = new ManageList<Bill>();
-        string strBill;
+        string strBill, strCashier;
         public FormTable()
         {
             InitializeComponent();
@@ -96,6 +96,7 @@ namespace GUILayer
                         Location = new Point(5, y)
                     };
                     y += 25;
+                    strCashier = listBill[i].Cashier;
                     pnlBill.Controls.Add(lbl);
                 }
             }
@@ -190,7 +191,7 @@ namespace GUILayer
         //Them do uong moi
         private void AddNewDrink()
         {
-            Bill bill = new Bill(txtTableAD.Text, cbbDrinkAD.Text, Int32.Parse(nUDQuantityAD.Value.ToString()));
+            Bill bill = new Bill(txtTableAD.Text, cbbDrinkAD.Text, Int32.Parse(nUDQuantityAD.Value.ToString()), FormLogin.Cashier);
             BUS_Bill.Instance.Create(bill);
             setTotal();
         }
@@ -198,8 +199,8 @@ namespace GUILayer
         //Tang so do uong
         private void IncreaseDrink()
         {
-            Bill bill = new Bill(txtTableAD.Text, cbbDrinkAD.Text, Int32.Parse(nUDQuantityAD.Value.ToString()));
-            BUS_Bill.Instance.Update(bill,"");
+            Bill bill = new Bill(txtTableAD.Text, cbbDrinkAD.Text, Int32.Parse(nUDQuantityAD.Value.ToString()), FormLogin.Cashier);
+            BUS_Bill.Instance.Update(bill, "");
             setTotal();
         }
 
@@ -310,7 +311,7 @@ namespace GUILayer
             float TotalSWT = 0;
             string TableFrom = txtFromTable.Text;
             string TableTo = cbbToTable.Text;
-            for(int i = 0; i < listTable.Count; i++)
+            for (int i = 0; i < listTable.Count; i++)
             {
                 if (listTable[i].Name == TableFrom) TotalSWT = listTable[i].Total;
             }
@@ -392,8 +393,10 @@ namespace GUILayer
             HoaDon += "\n" + "Bill " + txtNameTable.Text + "        \n\n\n";
             HoaDon += strBill;
             HoaDon += "\n\n\nTime: " + datetime.Value.ToShortTimeString() + ". " + datetime.Value.ToShortDateString() + "\n";
+            HoaDon += "Cashier : " + strCashier + "\n";
             HoaDon += "\nTotal Price : " + txtTotal.Text + " VNĐ\n";
             e.Graphics.DrawString(HoaDon, new Font("Arial", 15, FontStyle.Bold), Brushes.Black, 100, 200);
         }
+
     }
 }
