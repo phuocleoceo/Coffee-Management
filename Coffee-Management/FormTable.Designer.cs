@@ -37,19 +37,14 @@
             this.txtSTT = new System.Windows.Forms.Label();
             this.txtNameTable = new System.Windows.Forms.Label();
             this.gpbBill = new System.Windows.Forms.GroupBox();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.pnlTable = new System.Windows.Forms.Panel();
             this.gpbTable = new System.Windows.Forms.GroupBox();
             this.grbChucNang = new System.Windows.Forms.GroupBox();
-            this.btnPurchase = new System.Windows.Forms.Button();
-            this.btnSwitchTable = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnAddDrink = new System.Windows.Forms.Button();
             this.grbAddDrink = new System.Windows.Forms.GroupBox();
             this.cbbDrinkTypeAD = new System.Windows.Forms.ComboBox();
-            this.btnAddAD = new System.Windows.Forms.Button();
             this.txtTableAD = new System.Windows.Forms.TextBox();
             this.cbbDrinkAD = new System.Windows.Forms.ComboBox();
             this.nUDQuantityAD = new System.Windows.Forms.NumericUpDown();
@@ -60,18 +55,23 @@
             this.grbSwitchTable = new System.Windows.Forms.GroupBox();
             this.txtFromTable = new System.Windows.Forms.TextBox();
             this.cbbToTable = new System.Windows.Forms.ComboBox();
-            this.btnAcceptSwitch = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.grbInfo = new System.Windows.Forms.GroupBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.printDialogBill = new System.Windows.Forms.PrintDialog();
             this.printDocumentBill = new System.Drawing.Printing.PrintDocument();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAcceptSwitch = new System.Windows.Forms.Button();
+            this.btnAddAD = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnPurchase = new System.Windows.Forms.Button();
+            this.btnSwitchTable = new System.Windows.Forms.Button();
+            this.btnAddDrink = new System.Windows.Forms.Button();
             this.gpbBill.SuspendLayout();
             this.gpbTable.SuspendLayout();
             this.grbChucNang.SuspendLayout();
@@ -90,7 +90,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(27, 399);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 18);
+            this.label1.Size = new System.Drawing.Size(74, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "Price : ";
             // 
@@ -111,7 +111,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(60, 60);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(207, 18);
+            this.label5.Size = new System.Drawing.Size(258, 24);
             this.label5.TabIndex = 10;
             this.label5.Text = "ID             Drink           Quantity";
             // 
@@ -122,7 +122,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(268, 399);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 18);
+            this.label6.Size = new System.Drawing.Size(50, 24);
             this.label6.TabIndex = 14;
             this.label6.Text = "VNĐ";
             // 
@@ -166,26 +166,12 @@
             this.gpbBill.Controls.Add(this.pnlBill);
             this.gpbBill.Controls.Add(this.label1);
             this.gpbBill.ForeColor = System.Drawing.Color.Black;
-            this.gpbBill.Location = new System.Drawing.Point(283, 142);
+            this.gpbBill.Location = new System.Drawing.Point(279, 142);
             this.gpbBill.Name = "gpbBill";
             this.gpbBill.Size = new System.Drawing.Size(332, 424);
             this.gpbBill.TabIndex = 12;
             this.gpbBill.TabStop = false;
             this.gpbBill.Text = "Bill";
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.BackColor = System.Drawing.Color.White;
-            this.btnPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.BackgroundImage")));
-            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPrint.Location = new System.Drawing.Point(284, 21);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(32, 34);
-            this.btnPrint.TabIndex = 15;
-            this.btnPrint.UseVisualStyleBackColor = false;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // pnlTable
             // 
@@ -226,49 +212,11 @@
             this.grbChucNang.Controls.Add(this.label9);
             this.grbChucNang.Controls.Add(this.label7);
             this.grbChucNang.Controls.Add(this.btnAddDrink);
-            this.grbChucNang.Location = new System.Drawing.Point(292, 19);
+            this.grbChucNang.Location = new System.Drawing.Point(279, 25);
             this.grbChucNang.Name = "grbChucNang";
-            this.grbChucNang.Size = new System.Drawing.Size(311, 111);
+            this.grbChucNang.Size = new System.Drawing.Size(332, 111);
             this.grbChucNang.TabIndex = 15;
             this.grbChucNang.TabStop = false;
-            // 
-            // btnPurchase
-            // 
-            this.btnPurchase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnPurchase.BackColor = System.Drawing.Color.White;
-            this.btnPurchase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPurchase.FlatAppearance.BorderSize = 0;
-            this.btnPurchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPurchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnPurchase.Image = global::GUILayer.Properties.Resources.Money1;
-            this.btnPurchase.Location = new System.Drawing.Point(223, 51);
-            this.btnPurchase.Margin = new System.Windows.Forms.Padding(5);
-            this.btnPurchase.Name = "btnPurchase";
-            this.btnPurchase.Size = new System.Drawing.Size(51, 47);
-            this.btnPurchase.TabIndex = 51;
-            this.btnPurchase.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPurchase.UseVisualStyleBackColor = false;
-            this.btnPurchase.Click += new System.EventHandler(this.btnPurchase_Click);
-            // 
-            // btnSwitchTable
-            // 
-            this.btnSwitchTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSwitchTable.BackColor = System.Drawing.Color.White;
-            this.btnSwitchTable.BackgroundImage = global::GUILayer.Properties.Resources._switch;
-            this.btnSwitchTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSwitchTable.FlatAppearance.BorderSize = 0;
-            this.btnSwitchTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSwitchTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnSwitchTable.Location = new System.Drawing.Point(131, 49);
-            this.btnSwitchTable.Margin = new System.Windows.Forms.Padding(5);
-            this.btnSwitchTable.Name = "btnSwitchTable";
-            this.btnSwitchTable.Size = new System.Drawing.Size(51, 49);
-            this.btnSwitchTable.TabIndex = 47;
-            this.btnSwitchTable.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSwitchTable.UseVisualStyleBackColor = false;
-            this.btnSwitchTable.Click += new System.EventHandler(this.btnSwitchTable_Click);
             // 
             // label10
             // 
@@ -289,7 +237,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(187, 16);
+            this.label9.Location = new System.Drawing.Point(204, 16);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(122, 34);
             this.label9.TabIndex = 49;
@@ -302,29 +250,12 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(18, 16);
+            this.label7.Location = new System.Drawing.Point(6, 16);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(94, 34);
             this.label7.TabIndex = 48;
             this.label7.Text = "Add Drink";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnAddDrink
-            // 
-            this.btnAddDrink.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAddDrink.BackColor = System.Drawing.Color.White;
-            this.btnAddDrink.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddDrink.FlatAppearance.BorderSize = 0;
-            this.btnAddDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddDrink.Image = global::GUILayer.Properties.Resources.cart;
-            this.btnAddDrink.Location = new System.Drawing.Point(40, 51);
-            this.btnAddDrink.Margin = new System.Windows.Forms.Padding(5);
-            this.btnAddDrink.Name = "btnAddDrink";
-            this.btnAddDrink.Size = new System.Drawing.Size(51, 47);
-            this.btnAddDrink.TabIndex = 46;
-            this.btnAddDrink.UseVisualStyleBackColor = false;
-            this.btnAddDrink.Click += new System.EventHandler(this.btnAddDrink_Click);
             // 
             // grbAddDrink
             // 
@@ -339,7 +270,7 @@
             this.grbAddDrink.Controls.Add(this.label8);
             this.grbAddDrink.Controls.Add(this.label3);
             this.grbAddDrink.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbAddDrink.Location = new System.Drawing.Point(624, 151);
+            this.grbAddDrink.Location = new System.Drawing.Point(617, 162);
             this.grbAddDrink.Name = "grbAddDrink";
             this.grbAddDrink.Size = new System.Drawing.Size(324, 221);
             this.grbAddDrink.TabIndex = 16;
@@ -353,25 +284,9 @@
             this.cbbDrinkTypeAD.FormattingEnabled = true;
             this.cbbDrinkTypeAD.Location = new System.Drawing.Point(89, 72);
             this.cbbDrinkTypeAD.Name = "cbbDrinkTypeAD";
-            this.cbbDrinkTypeAD.Size = new System.Drawing.Size(177, 29);
+            this.cbbDrinkTypeAD.Size = new System.Drawing.Size(177, 34);
             this.cbbDrinkTypeAD.TabIndex = 37;
             this.cbbDrinkTypeAD.SelectedIndexChanged += new System.EventHandler(this.cbbDrinkTypeAD_SelectedIndexChanged);
-            // 
-            // btnAddAD
-            // 
-            this.btnAddAD.BackColor = System.Drawing.Color.White;
-            this.btnAddAD.BackgroundImage = global::GUILayer.Properties.Resources.plus;
-            this.btnAddAD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddAD.FlatAppearance.BorderSize = 0;
-            this.btnAddAD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddAD.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAddAD.Location = new System.Drawing.Point(280, 164);
-            this.btnAddAD.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddAD.Name = "btnAddAD";
-            this.btnAddAD.Size = new System.Drawing.Size(41, 41);
-            this.btnAddAD.TabIndex = 36;
-            this.btnAddAD.UseVisualStyleBackColor = false;
-            this.btnAddAD.Click += new System.EventHandler(this.btnAddAD_Click);
             // 
             // txtTableAD
             // 
@@ -379,7 +294,7 @@
             this.txtTableAD.Location = new System.Drawing.Point(89, 24);
             this.txtTableAD.Name = "txtTableAD";
             this.txtTableAD.ReadOnly = true;
-            this.txtTableAD.Size = new System.Drawing.Size(177, 29);
+            this.txtTableAD.Size = new System.Drawing.Size(177, 34);
             this.txtTableAD.TabIndex = 3;
             // 
             // cbbDrinkAD
@@ -388,7 +303,7 @@
             this.cbbDrinkAD.FormattingEnabled = true;
             this.cbbDrinkAD.Location = new System.Drawing.Point(89, 121);
             this.cbbDrinkAD.Name = "cbbDrinkAD";
-            this.cbbDrinkAD.Size = new System.Drawing.Size(178, 29);
+            this.cbbDrinkAD.Size = new System.Drawing.Size(178, 34);
             this.cbbDrinkAD.TabIndex = 2;
             // 
             // nUDQuantityAD
@@ -396,7 +311,7 @@
             this.nUDQuantityAD.Font = new System.Drawing.Font("Lucida Sans Unicode", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nUDQuantityAD.Location = new System.Drawing.Point(89, 170);
             this.nUDQuantityAD.Name = "nUDQuantityAD";
-            this.nUDQuantityAD.Size = new System.Drawing.Size(177, 34);
+            this.nUDQuantityAD.Size = new System.Drawing.Size(177, 41);
             this.nUDQuantityAD.TabIndex = 1;
             this.nUDQuantityAD.Value = new decimal(new int[] {
             1,
@@ -410,7 +325,7 @@
             this.label11.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(2, 173);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(90, 20);
+            this.label11.Size = new System.Drawing.Size(109, 23);
             this.label11.TabIndex = 0;
             this.label11.Text = "Quantity : ";
             // 
@@ -420,7 +335,7 @@
             this.label4.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(28, 74);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 20);
+            this.label4.Size = new System.Drawing.Size(69, 23);
             this.label4.TabIndex = 0;
             this.label4.Text = "Type :";
             // 
@@ -430,7 +345,7 @@
             this.label8.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(23, 123);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 20);
+            this.label8.Size = new System.Drawing.Size(81, 23);
             this.label8.TabIndex = 0;
             this.label8.Text = "Drink : ";
             // 
@@ -440,7 +355,7 @@
             this.label3.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(20, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 20);
+            this.label3.Size = new System.Drawing.Size(82, 23);
             this.label3.TabIndex = 0;
             this.label3.Text = "Table : ";
             // 
@@ -453,9 +368,9 @@
             this.grbSwitchTable.Controls.Add(this.label13);
             this.grbSwitchTable.Controls.Add(this.label12);
             this.grbSwitchTable.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbSwitchTable.Location = new System.Drawing.Point(627, 392);
+            this.grbSwitchTable.Location = new System.Drawing.Point(617, 389);
             this.grbSwitchTable.Name = "grbSwitchTable";
-            this.grbSwitchTable.Size = new System.Drawing.Size(314, 142);
+            this.grbSwitchTable.Size = new System.Drawing.Size(324, 142);
             this.grbSwitchTable.TabIndex = 17;
             this.grbSwitchTable.TabStop = false;
             this.grbSwitchTable.Text = "Switch Table : ";
@@ -467,7 +382,7 @@
             this.txtFromTable.Location = new System.Drawing.Point(107, 35);
             this.txtFromTable.Name = "txtFromTable";
             this.txtFromTable.ReadOnly = true;
-            this.txtFromTable.Size = new System.Drawing.Size(131, 29);
+            this.txtFromTable.Size = new System.Drawing.Size(131, 34);
             this.txtFromTable.TabIndex = 20;
             // 
             // cbbToTable
@@ -476,23 +391,8 @@
             this.cbbToTable.FormattingEnabled = true;
             this.cbbToTable.Location = new System.Drawing.Point(107, 93);
             this.cbbToTable.Name = "cbbToTable";
-            this.cbbToTable.Size = new System.Drawing.Size(131, 29);
+            this.cbbToTable.Size = new System.Drawing.Size(131, 34);
             this.cbbToTable.TabIndex = 19;
-            // 
-            // btnAcceptSwitch
-            // 
-            this.btnAcceptSwitch.BackColor = System.Drawing.Color.White;
-            this.btnAcceptSwitch.BackgroundImage = global::GUILayer.Properties.Resources.down;
-            this.btnAcceptSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAcceptSwitch.FlatAppearance.BorderSize = 0;
-            this.btnAcceptSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAcceptSwitch.Location = new System.Drawing.Point(259, 46);
-            this.btnAcceptSwitch.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAcceptSwitch.Name = "btnAcceptSwitch";
-            this.btnAcceptSwitch.Size = new System.Drawing.Size(49, 63);
-            this.btnAcceptSwitch.TabIndex = 17;
-            this.btnAcceptSwitch.UseVisualStyleBackColor = false;
-            this.btnAcceptSwitch.Click += new System.EventHandler(this.btnAcceptSwitch_Click);
             // 
             // label13
             // 
@@ -500,7 +400,7 @@
             this.label13.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(34, 95);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(44, 20);
+            this.label13.Size = new System.Drawing.Size(53, 23);
             this.label13.TabIndex = 0;
             this.label13.Text = "To : ";
             // 
@@ -510,7 +410,7 @@
             this.label12.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(16, 37);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(65, 20);
+            this.label12.Size = new System.Drawing.Size(78, 23);
             this.label12.TabIndex = 0;
             this.label12.Text = "From : ";
             // 
@@ -529,6 +429,41 @@
             this.grbInfo.TabIndex = 18;
             this.grbInfo.TabStop = false;
             this.grbInfo.Text = "IT Coffee Shop : ";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(54, 81);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(134, 24);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Lê Mạnh Duy";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(52, 53);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(204, 24);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Nguyễn Khoa Hoàng";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(51, 25);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(204, 24);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Trương Minh Phước";
+            // 
+            // printDialogBill
+            // 
+            this.printDialogBill.UseEXDialog = true;
+            // 
+            // printDocumentBill
+            // 
+            this.printDocumentBill.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocumentBill_PrintPage);
             // 
             // pictureBox3
             // 
@@ -561,44 +496,111 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // label16
+            // btnAcceptSwitch
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(54, 81);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(109, 19);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Lê Mạnh Duy";
+            this.btnAcceptSwitch.BackColor = System.Drawing.Color.White;
+            this.btnAcceptSwitch.BackgroundImage = global::GUILayer.Properties.Resources.down;
+            this.btnAcceptSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAcceptSwitch.FlatAppearance.BorderSize = 0;
+            this.btnAcceptSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcceptSwitch.Location = new System.Drawing.Point(266, 46);
+            this.btnAcceptSwitch.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAcceptSwitch.Name = "btnAcceptSwitch";
+            this.btnAcceptSwitch.Size = new System.Drawing.Size(49, 63);
+            this.btnAcceptSwitch.TabIndex = 17;
+            this.btnAcceptSwitch.UseVisualStyleBackColor = false;
+            this.btnAcceptSwitch.Click += new System.EventHandler(this.btnAcceptSwitch_Click);
             // 
-            // label15
+            // btnAddAD
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(52, 53);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(169, 19);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Nguyễn Khoa Hoàng";
+            this.btnAddAD.BackColor = System.Drawing.Color.White;
+            this.btnAddAD.BackgroundImage = global::GUILayer.Properties.Resources.plus;
+            this.btnAddAD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddAD.FlatAppearance.BorderSize = 0;
+            this.btnAddAD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddAD.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnAddAD.Location = new System.Drawing.Point(273, 166);
+            this.btnAddAD.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddAD.Name = "btnAddAD";
+            this.btnAddAD.Size = new System.Drawing.Size(41, 41);
+            this.btnAddAD.TabIndex = 36;
+            this.btnAddAD.UseVisualStyleBackColor = false;
+            this.btnAddAD.Click += new System.EventHandler(this.btnAddAD_Click);
             // 
-            // label14
+            // btnPrint
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(51, 25);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(165, 19);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Trương Minh Phước";
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.BackColor = System.Drawing.Color.White;
+            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Image = global::GUILayer.Properties.Resources.Glossy_Sticker_Icons1__Converted_;
+            this.btnPrint.Location = new System.Drawing.Point(280, 5);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(55, 46);
+            this.btnPrint.TabIndex = 15;
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
-            // printDialogBill
+            // btnPurchase
             // 
-            this.printDialogBill.UseEXDialog = true;
+            this.btnPurchase.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnPurchase.BackColor = System.Drawing.Color.White;
+            this.btnPurchase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPurchase.FlatAppearance.BorderSize = 0;
+            this.btnPurchase.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPurchase.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnPurchase.Image = global::GUILayer.Properties.Resources.Money1;
+            this.btnPurchase.Location = new System.Drawing.Point(240, 51);
+            this.btnPurchase.Margin = new System.Windows.Forms.Padding(5);
+            this.btnPurchase.Name = "btnPurchase";
+            this.btnPurchase.Size = new System.Drawing.Size(51, 47);
+            this.btnPurchase.TabIndex = 51;
+            this.btnPurchase.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPurchase.UseVisualStyleBackColor = false;
+            this.btnPurchase.Click += new System.EventHandler(this.btnPurchase_Click);
             // 
-            // printDocumentBill
+            // btnSwitchTable
             // 
-            this.printDocumentBill.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocumentBill_PrintPage);
+            this.btnSwitchTable.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnSwitchTable.BackColor = System.Drawing.Color.White;
+            this.btnSwitchTable.BackgroundImage = global::GUILayer.Properties.Resources._switch;
+            this.btnSwitchTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSwitchTable.FlatAppearance.BorderSize = 0;
+            this.btnSwitchTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSwitchTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnSwitchTable.Location = new System.Drawing.Point(134, 55);
+            this.btnSwitchTable.Margin = new System.Windows.Forms.Padding(5);
+            this.btnSwitchTable.Name = "btnSwitchTable";
+            this.btnSwitchTable.Size = new System.Drawing.Size(45, 40);
+            this.btnSwitchTable.TabIndex = 47;
+            this.btnSwitchTable.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSwitchTable.UseVisualStyleBackColor = false;
+            this.btnSwitchTable.Click += new System.EventHandler(this.btnSwitchTable_Click);
+            // 
+            // btnAddDrink
+            // 
+            this.btnAddDrink.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAddDrink.BackColor = System.Drawing.Color.White;
+            this.btnAddDrink.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAddDrink.FlatAppearance.BorderSize = 0;
+            this.btnAddDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddDrink.Image = global::GUILayer.Properties.Resources.cart;
+            this.btnAddDrink.Location = new System.Drawing.Point(31, 51);
+            this.btnAddDrink.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAddDrink.Name = "btnAddDrink";
+            this.btnAddDrink.Size = new System.Drawing.Size(51, 47);
+            this.btnAddDrink.TabIndex = 46;
+            this.btnAddDrink.UseVisualStyleBackColor = false;
+            this.btnAddDrink.Click += new System.EventHandler(this.btnAddDrink_Click);
             // 
             // FormTable
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(953, 578);

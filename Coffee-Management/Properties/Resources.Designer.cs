@@ -83,29 +83,9 @@ namespace GUILayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap accountlogo1 {
+        public static System.Drawing.Bitmap calendar2 {
             get {
-                object obj = ResourceManager.GetObject("accountlogo1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap accountprofile {
-            get {
-                object obj = ResourceManager.GetObject("accountprofile", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap accountprofile1 {
-            get {
-                object obj = ResourceManager.GetObject("accountprofile1", resourceCulture);
+                object obj = ResourceManager.GetObject("calendar2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,26 +133,6 @@ namespace GUILayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Close2 {
-            get {
-                object obj = ResourceManager.GetObject("Close2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Close3 {
-            get {
-                object obj = ResourceManager.GetObject("Close3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap coffe {
             get {
                 object obj = ResourceManager.GetObject("coffe", resourceCulture);
@@ -183,9 +143,9 @@ namespace GUILayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap coffe1 {
+        public static System.Drawing.Bitmap cup3 {
             get {
-                object obj = ResourceManager.GetObject("coffe1", resourceCulture);
+                object obj = ResourceManager.GetObject("cup3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,16 +173,6 @@ namespace GUILayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap eye_open {
-            get {
-                object obj = ResourceManager.GetObject("eye_open", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap eye_open2 {
             get {
                 object obj = ResourceManager.GetObject("eye_open2", resourceCulture);
@@ -243,19 +193,9 @@ namespace GUILayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap kinhlup {
+        public static System.Drawing.Bitmap Glossy_Sticker_Icons1__Converted_ {
             get {
-                object obj = ResourceManager.GetObject("kinhlup", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap kinhlup1 {
-            get {
-                object obj = ResourceManager.GetObject("kinhlup1", resourceCulture);
+                object obj = ResourceManager.GetObject("Glossy Sticker Icons1 [Converted]", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,9 +213,9 @@ namespace GUILayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap Money {
+        public static System.Drawing.Bitmap logo1 {
             get {
-                object obj = ResourceManager.GetObject("Money", resourceCulture);
+                object obj = ResourceManager.GetObject("logo1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,39 +233,9 @@ namespace GUILayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap PassHide {
-            get {
-                object obj = ResourceManager.GetObject("PassHide", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap PassShow {
-            get {
-                object obj = ResourceManager.GetObject("PassShow", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap plus {
             get {
                 object obj = ResourceManager.GetObject("plus", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap Xclose {
-            get {
-                object obj = ResourceManager.GetObject("Xclose", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -48,8 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -114,18 +113,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -136,40 +135,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\accountlogo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\coffe1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\accountlogo1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\coffe.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\chart1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\accountprofile.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\accountprofile1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\kinhlup.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\kinhlup1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\kinhlup1.jpg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PassHide.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PassShow.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
@@ -198,28 +170,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Xclose.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Money.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Money1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cart.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Close.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Close1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Close2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Close3.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\switch.png" />
@@ -231,13 +185,22 @@
     <None Include="Resources\plus.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\eye_open.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\eye_open2.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eye_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Glossy Sticker Icons1 [Converted].png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.ico" />
+    <Content Include="LogoApp.ico" />
+    <None Include="Resources\accountlogo.png" />
+    <None Include="Resources\cup3.png" />
+    <None Include="Resources\calendar2.png" />
+    <None Include="Resources\Close.png" />
+    <None Include="Resources\logo1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
