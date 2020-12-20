@@ -34,6 +34,9 @@
             this.dgvAccount = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
             this.btnShowAccount = new System.Windows.Forms.Button();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.cbType = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.btnDeleteAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
@@ -88,11 +91,9 @@
             this.btnDeleteDrink = new System.Windows.Forms.Button();
             this.btnAddDrink = new System.Windows.Forms.Button();
             this.tcAdmin = new System.Windows.Forms.TabControl();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cbType = new System.Windows.Forms.ComboBox();
-            this.panel16 = new System.Windows.Forms.Panel();
             this.tpAccount.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).BeginInit();
+            this.panel16.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel20.SuspendLayout();
             this.tpTable.SuspendLayout();
@@ -111,7 +112,6 @@
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.tcAdmin.SuspendLayout();
-            this.panel16.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -182,6 +182,7 @@
             // btnShowAccount
             // 
             this.btnShowAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnShowAccount.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowAccount.Font = new System.Drawing.Font("Cambria", 15.75F);
             this.btnShowAccount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -193,9 +194,41 @@
             this.btnShowAccount.UseVisualStyleBackColor = false;
             this.btnShowAccount.Click += new System.EventHandler(this.btnShowAccount_Click);
             // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.cbType);
+            this.panel16.Controls.Add(this.label8);
+            this.panel16.Location = new System.Drawing.Point(303, 7);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(269, 55);
+            this.panel16.TabIndex = 2;
+            // 
+            // cbType
+            // 
+            this.cbType.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Items.AddRange(new object[] {
+            "Admin",
+            "Staff"});
+            this.cbType.Location = new System.Drawing.Point(101, 12);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(159, 27);
+            this.cbType.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(17, 17);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 22);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Type";
+            // 
             // btnEditAccount
             // 
             this.btnEditAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnEditAccount.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditAccount.Font = new System.Drawing.Font("Cambria", 15.75F);
             this.btnEditAccount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -210,6 +243,7 @@
             // btnDeleteAccount
             // 
             this.btnDeleteAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnDeleteAccount.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteAccount.Font = new System.Drawing.Font("Cambria", 15.75F);
             this.btnDeleteAccount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -224,6 +258,7 @@
             // btnAddAccount
             // 
             this.btnAddAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnAddAccount.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddAccount.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddAccount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -311,6 +346,7 @@
             // btnShowTable
             // 
             this.btnShowTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnShowTable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowTable.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowTable.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -325,6 +361,7 @@
             // btnEditTable
             // 
             this.btnEditTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnEditTable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditTable.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditTable.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -339,6 +376,7 @@
             // btnDeleteTable
             // 
             this.btnDeleteTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnDeleteTable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteTable.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteTable.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -353,6 +391,7 @@
             // btnAddTable
             // 
             this.btnAddTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnAddTable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddTable.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTable.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -486,6 +525,7 @@
             // btnShowDrinkType
             // 
             this.btnShowDrinkType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnShowDrinkType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowDrinkType.FlatAppearance.BorderSize = 0;
             this.btnShowDrinkType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowDrinkType.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -530,6 +570,7 @@
             // btnEditDrinkType
             // 
             this.btnEditDrinkType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnEditDrinkType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditDrinkType.FlatAppearance.BorderSize = 0;
             this.btnEditDrinkType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditDrinkType.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -561,6 +602,7 @@
             // btnDeleteDrinkType
             // 
             this.btnDeleteDrinkType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnDeleteDrinkType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteDrinkType.FlatAppearance.BorderSize = 0;
             this.btnDeleteDrinkType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteDrinkType.Font = new System.Drawing.Font("Cambria", 15.75F);
@@ -576,6 +618,7 @@
             // btnAddDrinkType
             // 
             this.btnAddDrinkType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnAddDrinkType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddDrinkType.FlatAppearance.BorderSize = 0;
             this.btnAddDrinkType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddDrinkType.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -601,6 +644,7 @@
             this.tpDrink.Controls.Add(this.btnEditDrink);
             this.tpDrink.Controls.Add(this.btnDeleteDrink);
             this.tpDrink.Controls.Add(this.btnAddDrink);
+            this.tpDrink.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tpDrink.Location = new System.Drawing.Point(4, 28);
             this.tpDrink.Name = "tpDrink";
             this.tpDrink.Padding = new System.Windows.Forms.Padding(3);
@@ -652,6 +696,7 @@
             this.btnSearchDrink.BackColor = System.Drawing.Color.Transparent;
             this.btnSearchDrink.BackgroundImage = global::GUILayer.Properties.Resources.kinhlup1_jpg;
             this.btnSearchDrink.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSearchDrink.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearchDrink.FlatAppearance.BorderSize = 0;
             this.btnSearchDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchDrink.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -719,6 +764,7 @@
             // btnShowDrink
             // 
             this.btnShowDrink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnShowDrink.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowDrink.FlatAppearance.BorderSize = 0;
             this.btnShowDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowDrink.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -791,6 +837,7 @@
             // btnEditDrink
             // 
             this.btnEditDrink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnEditDrink.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditDrink.FlatAppearance.BorderSize = 0;
             this.btnEditDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditDrink.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -806,6 +853,7 @@
             // btnDeleteDrink
             // 
             this.btnDeleteDrink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnDeleteDrink.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDeleteDrink.FlatAppearance.BorderSize = 0;
             this.btnDeleteDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteDrink.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -821,6 +869,7 @@
             // btnAddDrink
             // 
             this.btnAddDrink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.btnAddDrink.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddDrink.FlatAppearance.BorderSize = 0;
             this.btnAddDrink.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddDrink.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -848,37 +897,6 @@
             this.tcAdmin.Size = new System.Drawing.Size(935, 593);
             this.tcAdmin.TabIndex = 0;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(17, 17);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 22);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Type";
-            // 
-            // cbType
-            // 
-            this.cbType.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.cbType.FormattingEnabled = true;
-            this.cbType.Items.AddRange(new object[] {
-            "Admin",
-            "Staff"});
-            this.cbType.Location = new System.Drawing.Point(101, 12);
-            this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(159, 27);
-            this.cbType.TabIndex = 6;
-            // 
-            // panel16
-            // 
-            this.panel16.Controls.Add(this.cbType);
-            this.panel16.Controls.Add(this.label8);
-            this.panel16.Location = new System.Drawing.Point(303, 7);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(269, 55);
-            this.panel16.TabIndex = 2;
-            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -894,6 +912,8 @@
             this.tpAccount.ResumeLayout(false);
             this.tpAccount.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).EndInit();
+            this.panel16.ResumeLayout(false);
+            this.panel16.PerformLayout();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel20.ResumeLayout(false);
@@ -923,8 +943,6 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.tcAdmin.ResumeLayout(false);
-            this.panel16.ResumeLayout(false);
-            this.panel16.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

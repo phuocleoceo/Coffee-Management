@@ -78,6 +78,7 @@
             // 
             // btnViewbill
             // 
+            this.btnViewbill.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnViewbill.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewbill.Location = new System.Drawing.Point(387, 12);
             this.btnViewbill.Name = "btnViewbill";
