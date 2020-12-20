@@ -73,7 +73,7 @@
             this.btnReporting.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
             this.btnReporting.Size = new System.Drawing.Size(220, 100);
             this.btnReporting.TabIndex = 5;
-            this.btnReporting.Text = "      Reporting";
+            this.btnReporting.Text = "      Calendar";
             this.btnReporting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporting.UseVisualStyleBackColor = true;
             this.btnReporting.Click += new System.EventHandler(this.btnReporting_Click);
@@ -160,7 +160,7 @@
             this.btnCloseChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseChildForm.Image = global::GUILayer.Properties.Resources.Close;
             this.btnCloseChildForm.Location = new System.Drawing.Point(0, 0);
-            this.btnCloseChildForm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCloseChildForm.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseChildForm.Name = "btnCloseChildForm";
             this.btnCloseChildForm.Size = new System.Drawing.Size(88, 100);
             this.btnCloseChildForm.TabIndex = 2;
