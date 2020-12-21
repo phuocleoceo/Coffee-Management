@@ -105,7 +105,7 @@ namespace GUILayer
         }
         private void btnReporting_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormReporting(), sender);
+            OpenChildForm(new FormCombo(), sender);
         }
 
         private void btnCloseChildForm_Click(object sender, EventArgs e)

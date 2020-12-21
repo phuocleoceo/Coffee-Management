@@ -2,12 +2,13 @@
 using System.Drawing;
 using System.Windows.Forms;
 using Model;
+using BusinessLayer;
 
 namespace GUILayer
 {
-    public partial class FormReporting : Form
+    public partial class FormCombo : Form
     {
-        public FormReporting()
+        public FormCombo()
         {
             InitializeComponent();
         }
@@ -30,10 +31,7 @@ namespace GUILayer
         {
             LoadTheme();
         }
-
-        private void dtpkFromDate_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
+        /*---------------------------------------------------------------------*/
+        private ManageList<DrinkType> listType = new ManageList<DrinkType>();
     }
 }

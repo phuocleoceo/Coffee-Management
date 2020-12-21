@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panelSlideMenu = new System.Windows.Forms.Panel();
-            this.btnReporting = new System.Windows.Forms.Button();
+            this.btnCombo = new System.Windows.Forms.Button();
             this.btnAccount = new System.Windows.Forms.Button();
             this.btnTable = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
@@ -47,7 +47,7 @@
             // panelSlideMenu
             // 
             this.panelSlideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelSlideMenu.Controls.Add(this.btnReporting);
+            this.panelSlideMenu.Controls.Add(this.btnCombo);
             this.panelSlideMenu.Controls.Add(this.btnAccount);
             this.panelSlideMenu.Controls.Add(this.btnTable);
             this.panelSlideMenu.Controls.Add(this.panelLogo);
@@ -57,26 +57,26 @@
             this.panelSlideMenu.Size = new System.Drawing.Size(220, 686);
             this.panelSlideMenu.TabIndex = 20;
             // 
-            // btnReporting
+            // btnCombo
             // 
-            this.btnReporting.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReporting.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReporting.FlatAppearance.BorderSize = 0;
-            this.btnReporting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporting.Font = new System.Drawing.Font("Monotype Corsiva", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporting.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnReporting.Image = global::GUILayer.Properties.Resources.calendar2;
-            this.btnReporting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporting.Location = new System.Drawing.Point(0, 300);
-            this.btnReporting.Margin = new System.Windows.Forms.Padding(0);
-            this.btnReporting.Name = "btnReporting";
-            this.btnReporting.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.btnReporting.Size = new System.Drawing.Size(220, 100);
-            this.btnReporting.TabIndex = 5;
-            this.btnReporting.Text = "      Calendar";
-            this.btnReporting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporting.UseVisualStyleBackColor = true;
-            this.btnReporting.Click += new System.EventHandler(this.btnReporting_Click);
+            this.btnCombo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCombo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCombo.FlatAppearance.BorderSize = 0;
+            this.btnCombo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCombo.Font = new System.Drawing.Font("Monotype Corsiva", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCombo.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnCombo.Image = global::GUILayer.Properties.Resources.calendar2;
+            this.btnCombo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCombo.Location = new System.Drawing.Point(0, 300);
+            this.btnCombo.Margin = new System.Windows.Forms.Padding(0);
+            this.btnCombo.Name = "btnCombo";
+            this.btnCombo.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btnCombo.Size = new System.Drawing.Size(220, 100);
+            this.btnCombo.TabIndex = 5;
+            this.btnCombo.Text = "      Combo";
+            this.btnCombo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCombo.UseVisualStyleBackColor = true;
+            this.btnCombo.Click += new System.EventHandler(this.btnReporting_Click);
             // 
             // btnAccount
             // 
@@ -215,7 +215,7 @@
         private System.Windows.Forms.Button btnTable;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnReporting;
+        private System.Windows.Forms.Button btnCombo;
         private System.Windows.Forms.Button btnAccount;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Label lblTitle;

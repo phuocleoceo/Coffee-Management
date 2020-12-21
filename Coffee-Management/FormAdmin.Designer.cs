@@ -586,8 +586,9 @@
             // dgvDrinkType
             // 
             this.dgvDrinkType.AllowUserToAddRows = false;
+            this.dgvDrinkType.AllowUserToResizeRows = false;
             this.dgvDrinkType.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDrinkType.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvDrinkType.BackgroundColor = System.Drawing.Color.White;
             this.dgvDrinkType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDrinkType.Location = new System.Drawing.Point(175, 67);
             this.dgvDrinkType.Name = "dgvDrinkType";

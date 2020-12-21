@@ -82,11 +82,11 @@
     <Compile Include="FormMainMenu.Designer.cs">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormReporting.cs">
+    <Compile Include="FormCombo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormReporting.Designer.cs">
-      <DependentUpon>FormReporting.cs</DependentUpon>
+    <Compile Include="FormCombo.Designer.cs">
+      <DependentUpon>FormCombo.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTable.cs">
       <SubType>Form</SubType>
@@ -105,8 +105,8 @@
     <EmbeddedResource Include="FormMainMenu.resx">
       <DependentUpon>FormMainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormReporting.resx">
-      <DependentUpon>FormReporting.cs</DependentUpon>
+    <EmbeddedResource Include="FormCombo.resx">
+      <DependentUpon>FormCombo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTable.resx">
       <DependentUpon>FormTable.cs</DependentUpon>
