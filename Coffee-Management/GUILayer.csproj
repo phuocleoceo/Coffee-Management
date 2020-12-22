@@ -48,7 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo.ico</ApplicationIcon>
+    <ApplicationIcon>LogoFinal.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -196,6 +196,7 @@
   <ItemGroup>
     <Content Include="logo.ico" />
     <Content Include="LogoApp.ico" />
+    <Content Include="LogoFinal.ico" />
     <None Include="Resources\accountlogo.png" />
     <None Include="Resources\cup3.png" />
     <None Include="Resources\calendar2.png" />
