@@ -8,6 +8,10 @@ namespace GUILayer
 {
     public partial class FormCombo : Form
     {
+        private ManageList<Drink> listDrink = new ManageList<Drink>();
+        private ManageList<DrinkType> listType = new ManageList<DrinkType>();
+        private ManageList<string> listChooseType = new ManageList<string>();
+        private ManageList<Drink> listChooseDrink = new ManageList<Drink>();
         public FormCombo()
         {
             InitializeComponent();
@@ -26,43 +30,29 @@ namespace GUILayer
                 }
             }
         }
-
         private void FormReporting_Load(object sender, EventArgs e)
         {
             LoadTheme();
+            Display.FormatTable(dgvResult);
+
             LoadCBType();
             BUS_Drink.Instance.GetList(listDrink);
-            QuickSort(listDrink, 0, listDrink.Count - 1);
         }
         /*-------------------------------------------------------------------------------------*/
-        private void QuickSort(ManageList<Drink> list, int left, int right)
-        {
-            if (left <= right)
-            {
-                int i = left, j = right;
-                Drink x = list[(left + right) / 2];
-                while (i <= j)
-                {
-                    while (list[i].Price > x.Price) i++;
-                    while (list[j].Price < x.Price) j--;
-                    if (i <= j)
-                    {
-                        Drink temp = list[i];
-                        list[i] = list[j];
-                        list[j] = temp;
-                        i++;
-                        j--;
-                    }
-                }
-                if (left < j) QuickSort(list, left, j);
-                if (i < right) QuickSort(list, i, right);
-            }
-        }
-        /*-------------------------------------------------------------------------------------*/
+        private static float Money;
+        private static int Quantity;
 
-        private ManageList<DrinkType> listType = new ManageList<DrinkType>();
-        private ManageList<string> listChooseType = new ManageList<string>();
-        //Load List DrinkType vào Combobox , chọn từng cái rồi bấm Add để thêm vào listChooseType
+        private void GetInput()
+        {
+            float BeforeMoney = float.Parse(txtMoney.Text);
+            float Discount = float.Parse(txtDiscount.Text);
+            Money = BeforeMoney * (1 + Discount / 100);
+            Quantity = int.Parse(txtQuantity.Text);
+            result = new Drink[Quantity];
+            A = new int[Quantity + 1];
+            A[0] = 0;
+        }
+
         private void LoadCBType()
         {
             BUS_DrinkType.Instance.GetList(listType);
@@ -71,9 +61,10 @@ namespace GUILayer
                 cbType.Items.Add(listType[i].Name);
             }
         }
-        private int dem = 1;
 
-        private void btnAddType_Click_1(object sender, EventArgs e)
+        // Thêm Type được chọn vào list ChooseType , đồng thời hiện lên textbox
+        private int dem = 1;
+        private void btnAddType_Click(object sender, EventArgs e)
         {
             if (cbType.Text != String.Empty)
             {
@@ -82,80 +73,85 @@ namespace GUILayer
                 cbType.Items.Remove(cbType.Text);
             }
         }
-        /*-------------------------------------------------------------------------------------*/
 
-        //list là List lưu trữ các List Drink tương ứng với từng DrinkType đã được chọn ở trên
-        private ManageList<Drink> listDrink = new ManageList<Drink>();
-        private ManageList<ManageList<Drink>> list = new ManageList<ManageList<Drink>>();
-        private void GetListDrinkPerType()
+        // Thu duoc list cac Drink thuoc Type da chon
+        private void getListChooseDrink()
         {
-            //Tạo list temp để làm trung gian lưu trữ
-            ManageList<Drink> temp = new ManageList<Drink>();
-            /* Duyệt từng listChoosenType một (string) , duyệt listDrink tìm loại Drink có Type giống
-             với listChoosenType[i] rồi kết hợp chúng thành List temp, thêm temp vào list ta được list[i]
-             */
-            for (int i = 0; i < listChooseType.Count; i++)
+            listChooseDrink.Clear();
+            for (int i = 0; i < listDrink.Count; i++)
             {
-                temp.Clear();
-                for (int j = 0; j < listDrink.Count; j++)
+                if (listChooseType.Contains(listDrink[i].Type))
                 {
-                    if (listDrink[j].Type == listChooseType[i])
-                        temp.Add(listDrink[j]);
+                    listChooseDrink.Add(listDrink[i]);
                 }
-                list.Add(temp);
             }
         }
         /*-------------------------------------------------------------------------------------*/
-        private float Money;
-        private void GetMoney()
-        {
-            float BeforeMoney = float.Parse(txtMoney.Text);
-            float Discount = float.Parse(txtDiscount.Text);
-            Money = BeforeMoney * (1 + Discount / 100);
-        }
-        /*-------------------------------------------------------------------------------------*/
-
-        private ManageList<Drink> result = new ManageList<Drink>();
-        private float SUM = 0;
+        private Drink[] result;
+        private int[] A;
+        //Lay to hop C(Quantity,listChooseDrink.Count)
         private void Try(int i)
         {
-            for (int j = 0; j < list[i].Count; j++)
+            for (int j = 1 + A[i - 1]; j <= listChooseDrink.Count - Quantity + i; j++)
             {
-                if (list[i][j].Price <= Money && list[i][j].Price + SUM <= Money)
-                {
-                    SUM += list[i][j].Price;
-                    result.Add(list[i][j]);
-                }
-                //Neu khong tim thay thi dung ham de quy de quay lui
-                if (result[i] == null)
-                {
-                    result.RemoveAt(i);
-                    return;
-                }
-                else if (i == list.Count - 1) return;
-                else
-                {
-                    Try(i + 1);
-                }
+                result[i - 1] = listChooseDrink[j - 1];
+                if (i == Quantity) Check();
+                else Try(i + 1);
             }
         }
-
-        private void getCombo()
+        //Kiem tra xem tong cac Drink co bang Money khong
+        private void Check()
         {
-            Try(0);
-            for (int i = 0; i < result.Count; i++)
+            float SUM = 0;
+            for (int i = 0; i < result.Length; i++)
             {
-                lsvResult.Items.Add(result[i].Name);
+                SUM += result[i].Price;
             }
+            if (SUM == Money && Different()) AddDGV();
+        }
+        //Them vao DGV
+        private void AddDGV()
+        {
+            for (int i = 0; i < result.Length; i++)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(dgvResult);
+                row.Cells[0].Value = result[i].Name;
+                row.Cells[1].Value = result[i].Price;
+                dgvResult.Rows.Add(row);
+            }
+            DataGridViewRow Line = new DataGridViewRow();
+            Line.CreateCells(dgvResult);
+            Line.Cells[0].Value = "--------------------------------------------";
+            Line.Cells[1].Value = "------------------------";
+            dgvResult.Rows.Add(Line);
+        }
+        //Kiem tra xem cac loai Drink co khac Type khong
+        private bool Different()
+        {
+            if (ckbDiffType.Checked)
+            {
+                for (int i = 0; i < result.Length - 1; i++)
+                {
+                    for (int j = i + 1; j < result.Length; j++)
+                    {
+                        if (result[i].Type == result[j].Type)
+                            return false;
+                    }
+                }
+                return true;
+            }
+            else return true;
         }
         /*-------------------------------------------------------------------------------------*/
         private void btnCombo_Click(object sender, EventArgs e)
         {
             try
             {
-                GetMoney();
-                GetListDrinkPerType();
-                getCombo();
+                GetInput();
+                getListChooseDrink();
+                Try(1);
+
             }
             catch (Exception exp)
             {
@@ -163,10 +159,7 @@ namespace GUILayer
                 //MessageBox.Show("Error ! Please Check Input Again ! ");
             }
         }
+
+
     }
 }
-
-/*
- Thực tế thì số tiền thường lớn  + số loại đồ uống ko quá nhiều + thuật toán chỉ lấy giá trị 
-tốt nhất nên dù quay lui ra rất nhiều kết quả nhưng thời gian chạy vẫn sẽ được tối ưu
- */

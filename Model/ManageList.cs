@@ -86,5 +86,14 @@ namespace Model
             data = null;
             size = 0;
         }
+        //Contains for string,int,...
+        public bool Contains(T item)
+        {
+            for (int i = 0; i < size; i++)
+            {
+                if (data[i].Equals(item)) return true;
+            }
+            return false;
+        }
     }
 }
