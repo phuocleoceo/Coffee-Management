@@ -42,7 +42,7 @@
             // btnCombo
             // 
             this.btnCombo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCombo.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCombo.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCombo.Location = new System.Drawing.Point(364, 238);
             this.btnCombo.Name = "btnCombo";
             this.btnCombo.Size = new System.Drawing.Size(126, 72);
@@ -53,25 +53,25 @@
             // 
             // txtMoney
             // 
-            this.txtMoney.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMoney.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMoney.Location = new System.Drawing.Point(24, 59);
             this.txtMoney.Name = "txtMoney";
-            this.txtMoney.Size = new System.Drawing.Size(124, 28);
+            this.txtMoney.Size = new System.Drawing.Size(124, 31);
             this.txtMoney.TabIndex = 2;
             // 
             // txtDiscount
             // 
-            this.txtDiscount.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiscount.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiscount.Location = new System.Drawing.Point(175, 59);
             this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(117, 28);
+            this.txtDiscount.Size = new System.Drawing.Size(117, 31);
             this.txtDiscount.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 21);
+            this.label1.Location = new System.Drawing.Point(33, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 21);
             this.label1.TabIndex = 3;
@@ -81,7 +81,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(176, 21);
+            this.label2.Location = new System.Drawing.Point(177, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 21);
             this.label2.TabIndex = 3;
@@ -89,16 +89,16 @@
             // 
             // cbType
             // 
-            this.cbType.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbType.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbType.FormattingEnabled = true;
-            this.cbType.Location = new System.Drawing.Point(46, 106);
+            this.cbType.Location = new System.Drawing.Point(36, 108);
             this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(221, 30);
+            this.cbType.Size = new System.Drawing.Size(221, 31);
             this.cbType.TabIndex = 4;
             // 
             // txtType
             // 
-            this.txtType.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtType.Font = new System.Drawing.Font("Cambria", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtType.Location = new System.Drawing.Point(24, 222);
             this.txtType.Multiline = true;
             this.txtType.Name = "txtType";
@@ -121,9 +121,9 @@
             // 
             this.btnAddType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddType.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddType.Location = new System.Drawing.Point(80, 154);
+            this.btnAddType.Location = new System.Drawing.Point(99, 159);
             this.btnAddType.Name = "btnAddType";
-            this.btnAddType.Size = new System.Drawing.Size(144, 45);
+            this.btnAddType.Size = new System.Drawing.Size(109, 48);
             this.btnAddType.TabIndex = 1;
             this.btnAddType.Text = "Add";
             this.btnAddType.UseVisualStyleBackColor = true;

@@ -126,7 +126,7 @@ namespace GUILayer
                     SUM += list[i][j].Price;
                     result.Add(list[i][j]);
                 }
-                //Neu khong tim thay thi dung ham de quy do de quay lui
+                //Neu khong tim thay thi dung ham de quy de quay lui
                 if (result[i] == null)
                 {
                     result.RemoveAt(i);
@@ -149,7 +149,7 @@ namespace GUILayer
             }
         }
         /*-------------------------------------------------------------------------------------*/
-              private void btnCombo_Click(object sender, EventArgs e)
+        private void btnCombo_Click(object sender, EventArgs e)
         {
             try
             {
