@@ -96,7 +96,7 @@ namespace GUILayer
             {
                 A[i] = j;
                 result[i - 1] = listChooseDrink[j - 1];
-                if (ckbDiffType.Checked && i >= 2 && (result[i - 1].Type == result[i - 2].Type)) return;
+                //if (ckbDiffType.Checked && i >= 2 && (result[i - 1].Type == result[i - 2].Type)) return;
                 if (i == Quantity) Check();
                 else Try(i + 1);
             }
@@ -109,11 +109,10 @@ namespace GUILayer
             {
                 SUM += result[i].Price;
             }
-            if (SUM == Money) AddDGV();
+            if (SUM == Money && Different()) AddDGV();
         }
 
         //Them vao DGV
-
         private void AddDGV()
         {
             for (int i = 0; i < result.Length; i++)
@@ -131,6 +130,22 @@ namespace GUILayer
             dgvResult.Rows.Add(Line);
         }
 
+        //Kiem tra khac nhau
+        private bool Different()
+        {
+            if (ckbDiffType.Checked)
+            {
+                for (int i = 0; i < result.Length - 1; i++)
+                {
+                    for (int j = i + 1; j < result.Length; j++)
+                    {
+                        if (result[i].Type == result[j].Type) return false;
+                    }
+                }
+                return true;
+            }
+            else return true;
+        }
         /*-------------------------------------------------------------------------------------*/
         private void btnCombo_Click(object sender, EventArgs e)
         {

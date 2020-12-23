@@ -167,7 +167,7 @@
             this.dgvResult.Name = "dgvResult";
             this.dgvResult.ReadOnly = true;
             this.dgvResult.RowHeadersVisible = false;
-            this.dgvResult.Size = new System.Drawing.Size(364, 510);
+            this.dgvResult.Size = new System.Drawing.Size(371, 510);
             this.dgvResult.TabIndex = 9;
             // 
             // DrinkName
