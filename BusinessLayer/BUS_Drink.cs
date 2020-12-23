@@ -31,6 +31,7 @@ namespace BusinessLayer
         {
             DAL_Drink.Instance.Update(updateDrink, oldDrinkID);
         }
+        //Sap xep nhanh giam dan
         public void QuickSort(ManageList<Drink> list, int left, int right)
         {
             if (left <= right)
@@ -54,12 +55,14 @@ namespace BusinessLayer
                 if (i < right) QuickSort(list, i, right);
             }
         }
+        //Hien thi nhung do uong co ten tuy y
         public void SearchDrink(string DrinkName, DataGridView dgv)
         {
             dgv.DataSource = null;
             dgv.Rows.Clear();
             dgv.DataSource = DAL_Drink.Instance.SearchDrink(DrinkName);
         }
+        //Them vao combobox nhung Do uong co kieu la Type
         public void AddDrinkToComboBoxFromType(ManageList<Drink> list, ComboBox cb, string Type)
         {
             cb.Items.Clear();
@@ -70,6 +73,7 @@ namespace BusinessLayer
                     cb.Items.Add(list[i].Name);
             }
         }
+        //Gia tien cua Do uong 
         public float getPrice(ManageList<Drink> list, string DrinkName)
         {
             for (int i = 0; i < list.Count; i++)

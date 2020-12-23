@@ -19,16 +19,18 @@ namespace BusinessLayer
             }
             private set => _instance = value;
         }
+        //Hien thi du lieu vao DâtgridView
         public void ShowDGV(DataGridView dgv)
         {
             dgv.DataSource = null;
             dgv.Rows.Clear();
             dgv.DataSource = Read();
-        }
+        }        
         public DataTable ExcecuteTable(SqlCommand cmd)
         {
             return DataProvider.Instance.ExecuteTable(cmd);
         }
+        
         public void ExecuteNonQuery(SqlCommand cmd)
         {
             DataProvider.Instance.ExecuteNonQuery(cmd);

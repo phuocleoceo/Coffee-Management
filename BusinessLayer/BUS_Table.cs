@@ -32,18 +32,22 @@ namespace BusinessLayer
         {
             DAL_Table.Instance.Update(updateTable, oldTableID);
         }
+        //Dung khi Mo ban , dua ban tu Empty sang Online
         public void SetTableOnline(string TableName)
         {
             DAL_Table.Instance.SetTableOnline(TableName);
         }
+        //Tinh tien cho Ban
         public void SetTotal(string TableName, float Total)
         {
             DAL_Table.Instance.SetTotal(TableName, Total);
         }
+        //Xoa Ban theo ten, Delete la xoa theo ID
         public void ClearTable(string TableName)
         {
             DAL_Table.Instance.ClearTable(TableName);
         }
+        //Chuyen ban
         public void MoveTable(string TableFrom, string TableTo, float Total)
         {
             DAL_Table.Instance.MoveTable(TableFrom, TableTo, Total);

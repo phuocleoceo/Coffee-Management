@@ -31,6 +31,7 @@ namespace BusinessLayer
         {
             DAL_DrinkType.Instance.Update(updateDrinkType, oldDrinkTypeID);
         }
+        //Load danh sach DrinkType vao ComboBox
         public void LoadDrinkTypeToComboBox(ManageList<DrinkType> list,ComboBox cb)
         {
             cb.Items.Clear();
