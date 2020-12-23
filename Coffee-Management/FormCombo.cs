@@ -109,7 +109,8 @@ namespace GUILayer
             {
                 SUM += result[i].Price;
             }
-            if (SUM == Money && Different()) AddDGV();
+            if (!ckbLessEqual.Checked && SUM == Money && Different()) AddDGV();
+            else if (ckbLessEqual.Checked && SUM <= Money && Different()) AddDGV();
         }
 
         //Them vao DGV
@@ -146,6 +147,7 @@ namespace GUILayer
             }
             else return true;
         }
+
         /*-------------------------------------------------------------------------------------*/
         private void btnCombo_Click(object sender, EventArgs e)
         {

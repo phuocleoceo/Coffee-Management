@@ -42,6 +42,7 @@
             this.dgvResult = new System.Windows.Forms.DataGridView();
             this.DrinkName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ckbLessEqual = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResult)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,7 +119,7 @@
             // 
             this.ckbDiffType.AutoSize = true;
             this.ckbDiffType.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbDiffType.Location = new System.Drawing.Point(210, 122);
+            this.ckbDiffType.Location = new System.Drawing.Point(211, 133);
             this.ckbDiffType.Name = "ckbDiffType";
             this.ckbDiffType.Size = new System.Drawing.Size(140, 25);
             this.ckbDiffType.TabIndex = 5;
@@ -184,6 +185,17 @@
             this.Price.ReadOnly = true;
             this.Price.Width = 130;
             // 
+            // ckbLessEqual
+            // 
+            this.ckbLessEqual.AutoSize = true;
+            this.ckbLessEqual.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckbLessEqual.Location = new System.Drawing.Point(210, 102);
+            this.ckbLessEqual.Name = "ckbLessEqual";
+            this.ckbLessEqual.Size = new System.Drawing.Size(106, 25);
+            this.ckbLessEqual.TabIndex = 5;
+            this.ckbLessEqual.Text = "<= Money";
+            this.ckbLessEqual.UseVisualStyleBackColor = true;
+            // 
             // FormCombo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -193,6 +205,7 @@
             this.Controls.Add(this.btnAddType);
             this.Controls.Add(this.txtType);
             this.Controls.Add(this.cbType);
+            this.Controls.Add(this.ckbLessEqual);
             this.Controls.Add(this.ckbDiffType);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -226,5 +239,6 @@
         private System.Windows.Forms.DataGridView dgvResult;
         private System.Windows.Forms.DataGridViewTextBoxColumn DrinkName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.CheckBox ckbLessEqual;
     }
 }
