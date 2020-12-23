@@ -37,9 +37,34 @@ namespace GUILayer
 
             LoadCBType();
             BUS_Drink.Instance.GetList(listDrink);
+            QuickSort(listDrink, 0, listDrink.Count - 1);
+        }
+        private void QuickSort(ManageList<Drink> list, int left, int right)
+        {
+            if (left <= right)
+            {
+                int i = left, j = right;
+                Drink x = list[(left + right) / 2];
+                while (i <= j)
+                {
+                    while (list[i].Price > x.Price) i++;
+                    while (list[j].Price < x.Price) j--;
+                    if (i <= j)
+                    {
+                        Drink temp = list[i];
+                        list[i] = list[j];
+                        list[j] = temp;
+                        i++;
+                        j--;
+                    }
+                }
+                if (left < j) QuickSort(list, left, j);
+                if (i < right) QuickSort(list, i, right);
+            }
         }
         /*-------------------------------------------------------------------------------------*/
         private static float Money;
+        private static float LessMoney;
         private static int Quantity;
 
         private void GetInput()
@@ -47,6 +72,7 @@ namespace GUILayer
             float BeforeMoney = float.Parse(txtMoney.Text);
             float Discount = float.Parse(txtDiscount.Text);
             Money = BeforeMoney * (1 + Discount / 100);
+            LessMoney = float.Parse(txtLessMoney.Text);
             Quantity = int.Parse(txtQuantity.Text);
             result = new Drink[Quantity];
             A = new int[Quantity + 1];
@@ -110,7 +136,7 @@ namespace GUILayer
                 SUM += result[i].Price;
             }
             if (!ckbLessEqual.Checked && SUM == Money && Different()) AddDGV();
-            else if (ckbLessEqual.Checked && SUM <= Money && Different()) AddDGV();
+            else if (ckbLessEqual.Checked && SUM <= Money && SUM >= LessMoney && Different()) AddDGV();
         }
 
         //Them vao DGV
@@ -164,6 +190,14 @@ namespace GUILayer
             }
         }
 
-
+        private void ckbLessEqual_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (ckbLessEqual.Checked) txtLessMoney.Enabled = true;
+            else
+            {
+                txtLessMoney.Text = "0";
+                txtLessMoney.Enabled = false;
+            }
+        }
     }
 }
