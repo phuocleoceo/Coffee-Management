@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Windows.Forms;
 using System.Data.SqlClient;
 using Model;
 using DataAccessLayer;
@@ -46,6 +47,27 @@ namespace BusinessLayer
         public void MoveTable(string TableFrom, string TableTo, float Total)
         {
             DAL_Table.Instance.MoveTable(TableFrom, TableTo, Total);
+        }
+        //Tra ve Total cua ban bat ki
+        public float getTotal(ManageList<Table> list, string TableName)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].Name == TableName) 
+                    return list[i].Total;
+            }
+            return 0;
+        }
+        //Danh sach cac ban co the chuyen den 
+        public void getAvailableTable(ManageList<Table> list,ComboBox cb)
+        {
+            cb.Items.Clear();
+            cb.Text = "";
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].Total == 0)
+                    cb.Items.Add(list[i].Name);
+            }
         }
     }
 }

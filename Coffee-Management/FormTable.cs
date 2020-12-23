@@ -152,27 +152,15 @@ namespace GUILayer
 
         private void cbbDrinkTypeAD_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string DrinkTypeSelected = cbbDrinkTypeAD.Text;
-            cbbDrinkAD.Items.Clear();
-            cbbDrinkAD.Text = "";
             BUS_Drink.Instance.GetList(listDrink);
-            for (int i = 0; i < listDrink.Count; i++)
-            {
-                if (listDrink[i].Type == DrinkTypeSelected)
-                    cbbDrinkAD.Items.Add(listDrink[i].Name);
-            }
+            BUS_Drink.Instance.AddDrinkToComboBoxFromType(listDrink, cbbDrinkAD, cbbDrinkTypeAD.Text);
         }
 
         //Xu ly trong GroupBox Add Drink        
         private void LoadDataForAddDrinkGRB()
         {
             txtTableAD.Text = txtNameTable.Text;
-            BUS_DrinkType.Instance.GetList(listDrinkType);
-            cbbDrinkTypeAD.Items.Clear();
-            for (int i = 0; i < listDrinkType.Count; i++)
-            {
-                cbbDrinkTypeAD.Items.Add(listDrinkType[i].Name);
-            }
+            BUS_DrinkType.Instance.LoadDrinkTypeToComboBox(listDrinkType, cbbDrinkTypeAD);
         }
 
         //Chuyen trang thai Table sang Online
@@ -208,12 +196,7 @@ namespace GUILayer
         private float getPrice()
         {
             BUS_Drink.Instance.GetList(listDrink);
-            for (int i = 0; i < listDrink.Count; i++)
-            {
-                if (listDrink[i].Name == cbbDrinkAD.Text)
-                    return listDrink[i].Price;
-            }
-            return 0;
+            return BUS_Drink.Instance.getPrice(listDrink, cbbDrinkAD.Text);
         }
 
         bool isDrink = false;
@@ -277,15 +260,9 @@ namespace GUILayer
         private void LoadDataForSwitchTableGRB()
         {
             txtFromTable.Text = txtNameTable.Text;
-            cbbToTable.Items.Clear();
-            cbbToTable.Text = "";
             BUS_Table.Instance.GetList(listTable);
             //Chi cho phep nhung ban khac Ban hien tai va hien dang Empty
-            for (int i = 0; i < listTable.Count; i++)
-            {
-                if ((listTable[i].Name != txtFromTable.Text) && (listTable[i].Total == 0))
-                    cbbToTable.Items.Add(listTable[i].Name);
-            }
+            BUS_Table.Instance.getAvailableTable(listTable, cbbToTable);
         }
 
         private void btnSwitchTable_Click(object sender, EventArgs e)
@@ -307,14 +284,10 @@ namespace GUILayer
         }
 
         private void MoveTable()
-        {
-            float TotalSWT = 0;
+        {            
             string TableFrom = txtFromTable.Text;
             string TableTo = cbbToTable.Text;
-            for (int i = 0; i < listTable.Count; i++)
-            {
-                if (listTable[i].Name == TableFrom) TotalSWT = listTable[i].Total;
-            }
+            float TotalSWT = BUS_Table.Instance.getTotal(listTable, TableFrom);
             BUS_Bill.Instance.UpdateTableInBill(TableFrom, TableTo);
             BUS_Table.Instance.MoveTable(TableFrom, TableTo, TotalSWT);
         }

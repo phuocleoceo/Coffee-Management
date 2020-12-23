@@ -54,11 +54,30 @@ namespace BusinessLayer
                 if (i < right) QuickSort(list, i, right);
             }
         }
-        public void SearchDrink(string DrinkName,DataGridView dgv)
+        public void SearchDrink(string DrinkName, DataGridView dgv)
         {
             dgv.DataSource = null;
             dgv.Rows.Clear();
             dgv.DataSource = DAL_Drink.Instance.SearchDrink(DrinkName);
+        }
+        public void AddDrinkToComboBoxFromType(ManageList<Drink> list, ComboBox cb, string Type)
+        {
+            cb.Items.Clear();
+            cb.Text = "";
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].Type == Type)
+                    cb.Items.Add(list[i].Name);
+            }
+        }
+        public float getPrice(ManageList<Drink> list, string DrinkName)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (list[i].Name == DrinkName)
+                    return list[i].Price;
+            }
+            return 0;
         }
     }
 }
