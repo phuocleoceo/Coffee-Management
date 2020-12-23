@@ -30,5 +30,28 @@ namespace BusinessLayer
         {
             DAL_Drink.Instance.Update(updateDrink, oldDrinkID);
         }
+        public void QuickSort(ManageList<Drink> list, int left, int right)
+        {
+            if (left <= right)
+            {
+                int i = left, j = right;
+                Drink x = list[(left + right) / 2];
+                while (i <= j)
+                {
+                    while (list[i].Price > x.Price) i++;
+                    while (list[j].Price < x.Price) j--;
+                    if (i <= j)
+                    {
+                        Drink temp = list[i];
+                        list[i] = list[j];
+                        list[j] = temp;
+                        i++;
+                        j--;
+                    }
+                }
+                if (left < j) QuickSort(list, left, j);
+                if (i < right) QuickSort(list, i, right);
+            }
+        }
     }
 }

@@ -34,33 +34,10 @@ namespace GUILayer
         {
             LoadTheme();
             Display.FormatTable(dgvResult);
-
-            LoadCBType();
+            BUS_DrinkType.Instance.LoadDrinkTypeToComboBox(listType,cbType);
             BUS_Drink.Instance.GetList(listDrink);
         }
-        private void QuickSort(ManageList<Drink> list, int left, int right)
-        {
-            if (left <= right)
-            {
-                int i = left, j = right;
-                Drink x = list[(left + right) / 2];
-                while (i <= j)
-                {
-                    while (list[i].Price > x.Price) i++;
-                    while (list[j].Price < x.Price) j--;
-                    if (i <= j)
-                    {
-                        Drink temp = list[i];
-                        list[i] = list[j];
-                        list[j] = temp;
-                        i++;
-                        j--;
-                    }
-                }
-                if (left < j) QuickSort(list, left, j);
-                if (i < right) QuickSort(list, i, right);
-            }
-        }
+        
         /*-------------------------------------------------------------------------------------*/
         private static float Money;
         private static float LessMoney;
@@ -75,15 +52,6 @@ namespace GUILayer
             Quantity = int.Parse(txtQuantity.Text);
             result = new Drink[Quantity];
             A = new int[Quantity + 1];
-        }
-
-        private void LoadCBType()
-        {
-            BUS_DrinkType.Instance.GetList(listType);
-            for (int i = 0; i < listType.Count; i++)
-            {
-                cbType.Items.Add(listType[i].Name);
-            }
         }
 
         // Thêm Type được chọn vào list ChooseType , đồng thời hiện lên textbox
@@ -109,7 +77,7 @@ namespace GUILayer
                     listChooseDrink.Add(listDrink[i]);
                 }
             }
-            QuickSort(listChooseDrink, 0, listChooseDrink.Count - 1);
+            BUS_Drink.Instance.QuickSort(listChooseDrink, 0, listChooseDrink.Count - 1);
         }
         /*-------------------------------------------------------------------------------------*/
         private Drink[] result;

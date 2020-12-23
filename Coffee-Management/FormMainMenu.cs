@@ -20,6 +20,7 @@ namespace GUILayer
         public FormMainMenu()
         {
             InitializeComponent();
+            FormBorderStyle = FormBorderStyle.None;   //Khong Vien
             Decentralization();
             random = new Random();
         }
@@ -96,7 +97,6 @@ namespace GUILayer
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-
             OpenChildForm(new FormAdmin(), sender);
         }
         private void btnTable_Click(object sender, EventArgs e)
@@ -110,7 +110,7 @@ namespace GUILayer
 
         private void btnCloseChildForm_Click(object sender, EventArgs e)
         {
-            Close();
+            Close();            
         }
     }
 }

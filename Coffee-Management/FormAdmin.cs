@@ -15,24 +15,9 @@ namespace GUILayer
         private void FormAdmin_Load(object sender, EventArgs e)
         {
             Display.FormatTable(dgvAccount);
-            btnEditAccount.Enabled = false;
-            btnDeleteAccount.Enabled = false;
-            btnAddAccount.Enabled = false;
-
             Display.FormatTable(dgvTable);
-            btnAddTable.Enabled = false;
-            btnEditTable.Enabled = false;
-            btnDeleteTable.Enabled = false;
-
             Display.FormatTable(dgvDrink);
-            btnAddDrink.Enabled = false;
-            btnEditDrink.Enabled = false;
-            btnDeleteDrink.Enabled = false;
-
             Display.FormatTable(dgvDrinkType);
-            btnAddDrinkType.Enabled = false;
-            btnEditDrinkType.Enabled = false;
-            btnDeleteDrinkType.Enabled = false;
         }
         /*--------------------------ACCOUNT----------------------------------------*/
         // Đọc dữ liệu của hàng được chọn vào biến 
@@ -178,10 +163,9 @@ namespace GUILayer
 
         private void btnShowDrink_Click(object sender, EventArgs e)
         {
-            DataTable DrinkTypeDT = BUS_DrinkType.Instance.Read();
             BUS_Drink.Instance.ShowDGV(dgvDrink);
-            cbDrinkType.DataSource = DrinkTypeDT;
-            cbDrinkType.ValueMember = "Name";
+            ManageList<DrinkType> listType = new ManageList<DrinkType>();
+            BUS_DrinkType.Instance.LoadDrinkTypeToComboBox(listType,cbDrinkType);
             //Cho phép các Button khác chạy
             btnAddDrink.Enabled = true;
             btnEditDrink.Enabled = true;
