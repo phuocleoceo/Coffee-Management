@@ -40,5 +40,12 @@ namespace DataAccessLayer
             cmd.CommandType = CommandType.StoredProcedure;
             return DataProvider.Instance.ExecuteTable(cmd);
         }
+        public DataTable SearchDrink(string DrinkName)
+        {
+            SqlCommand cmd = new SqlCommand("SEARCHDRINK");
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@DrinkName", SqlDbType.NVarChar).Value = DrinkName;
+            return DataProvider.Instance.ExecuteTable(cmd);
+        }
     }
 }

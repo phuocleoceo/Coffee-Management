@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using Model;
 using DataAccessLayer;
+using System.Windows.Forms;
 
 namespace BusinessLayer
 {
@@ -52,6 +53,12 @@ namespace BusinessLayer
                 if (left < j) QuickSort(list, left, j);
                 if (i < right) QuickSort(list, i, right);
             }
+        }
+        public void SearchDrink(string DrinkName,DataGridView dgv)
+        {
+            dgv.DataSource = null;
+            dgv.Rows.Clear();
+            dgv.DataSource = DAL_Drink.Instance.SearchDrink(DrinkName);
         }
     }
 }

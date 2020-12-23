@@ -742,6 +742,7 @@
             this.txbSearchDrinkName.Size = new System.Drawing.Size(183, 26);
             this.txbSearchDrinkName.TabIndex = 0;
             this.txbSearchDrinkName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txbSearchDrinkName.TextChanged += new System.EventHandler(this.txbSearchDrinkName_TextChanged);
             // 
             // panel7
             // 

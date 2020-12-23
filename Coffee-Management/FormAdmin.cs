@@ -165,7 +165,7 @@ namespace GUILayer
         {
             BUS_Drink.Instance.ShowDGV(dgvDrink);
             ManageList<DrinkType> listType = new ManageList<DrinkType>();
-            BUS_DrinkType.Instance.LoadDrinkTypeToComboBox(listType,cbDrinkType);
+            BUS_DrinkType.Instance.LoadDrinkTypeToComboBox(listType, cbDrinkType);
             //Cho phép các Button khác chạy
             btnAddDrink.Enabled = true;
             btnEditDrink.Enabled = true;
@@ -231,7 +231,11 @@ namespace GUILayer
                 btnShowDrink.PerformClick();
             }
         }
-
+        //Tim kiem 
+        private void txbSearchDrinkName_TextChanged(object sender, EventArgs e)
+        {
+            BUS_Drink.Instance.SearchDrink(txbSearchDrinkName.Text, dgvDrink);
+        }
         /*--------------------------DRINKTYPE------------------------------------*/
         private void dgvDrinkType_SelectionChanged(object sender, EventArgs e)
         {
