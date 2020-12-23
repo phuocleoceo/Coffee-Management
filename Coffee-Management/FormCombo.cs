@@ -37,7 +37,6 @@ namespace GUILayer
 
             LoadCBType();
             BUS_Drink.Instance.GetList(listDrink);
-            QuickSort(listDrink, 0, listDrink.Count - 1);
         }
         private void QuickSort(ManageList<Drink> list, int left, int right)
         {
@@ -110,6 +109,7 @@ namespace GUILayer
                     listChooseDrink.Add(listDrink[i]);
                 }
             }
+            QuickSort(listChooseDrink, 0, listChooseDrink.Count - 1);
         }
         /*-------------------------------------------------------------------------------------*/
         private Drink[] result;
