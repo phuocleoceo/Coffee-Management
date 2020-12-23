@@ -50,7 +50,6 @@ namespace GUILayer
             Quantity = int.Parse(txtQuantity.Text);
             result = new Drink[Quantity];
             A = new int[Quantity + 1];
-            A[0] = 0;
         }
 
         private void LoadCBType()
@@ -89,12 +88,15 @@ namespace GUILayer
         /*-------------------------------------------------------------------------------------*/
         private Drink[] result;
         private int[] A;
+
         //Lay to hop C(Quantity,listChooseDrink.Count)
         private void Try(int i)
         {
             for (int j = 1 + A[i - 1]; j <= listChooseDrink.Count - Quantity + i; j++)
             {
+                A[i] = j;
                 result[i - 1] = listChooseDrink[j - 1];
+                if (ckbDiffType.Checked && i >= 2 && (result[i - 1].Type == result[i - 2].Type)) return;
                 if (i == Quantity) Check();
                 else Try(i + 1);
             }
@@ -107,9 +109,11 @@ namespace GUILayer
             {
                 SUM += result[i].Price;
             }
-            if (SUM == Money && Different()) AddDGV();
+            if (SUM == Money) AddDGV();
         }
+
         //Them vao DGV
+
         private void AddDGV()
         {
             for (int i = 0; i < result.Length; i++)
@@ -126,23 +130,7 @@ namespace GUILayer
             Line.Cells[1].Value = "------------------------";
             dgvResult.Rows.Add(Line);
         }
-        //Kiem tra xem cac loai Drink co khac Type khong
-        private bool Different()
-        {
-            if (ckbDiffType.Checked)
-            {
-                for (int i = 0; i < result.Length - 1; i++)
-                {
-                    for (int j = i + 1; j < result.Length; j++)
-                    {
-                        if (result[i].Type == result[j].Type)
-                            return false;
-                    }
-                }
-                return true;
-            }
-            else return true;
-        }
+
         /*-------------------------------------------------------------------------------------*/
         private void btnCombo_Click(object sender, EventArgs e)
         {
@@ -151,12 +139,11 @@ namespace GUILayer
                 GetInput();
                 getListChooseDrink();
                 Try(1);
-
+                btnCombo.Enabled = false;
             }
-            catch (Exception exp)
+            catch
             {
-                MessageBox.Show(exp.Message);
-                //MessageBox.Show("Error ! Please Check Input Again ! ");
+                MessageBox.Show("Error ! Please Check Input Again ! ");
             }
         }
 
