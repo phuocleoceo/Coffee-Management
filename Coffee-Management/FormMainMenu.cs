@@ -110,7 +110,13 @@ namespace GUILayer
 
         private void btnCloseChildForm_Click(object sender, EventArgs e)
         {
-            Close();            
+            Close();     
+            
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
