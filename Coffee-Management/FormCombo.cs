@@ -29,10 +29,6 @@ namespace GUILayer
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
                 }
             }
-            label1.ForeColor = ThemeColor.PrimaryColor;
-            label2.ForeColor = ThemeColor.PrimaryColor;
-            label3.ForeColor = ThemeColor.PrimaryColor;
-            label4.ForeColor = ThemeColor.PrimaryColor;
         }
         private void FormReporting_Load(object sender, EventArgs e)
         {
@@ -47,12 +43,14 @@ namespace GUILayer
         private static float Money;
         private static float LeastMoney;
         private static int Quantity;
+        private static float Discount;
         //Lay cac du lieu can thiet
         private void GetInput()
         {
             Money = float.Parse(txtMoney.Text);
             LeastMoney = float.Parse(txtLessMoney.Text);
             Quantity = int.Parse(txtQuantity.Text);
+            Discount = float.Parse(txtDiscount.Text);
             result = new Drink[Quantity];
             A = new int[Quantity + 1];
         }
@@ -122,7 +120,7 @@ namespace GUILayer
             Price.DefaultCellStyle.BackColor = Color.GreenYellow;
             Price.Cells[0].Value = "---------Price After Discount : ---";
             //Price.Cells[1].Value = "-----  " + EndPrice + "  ----";
-            Price.Cells[1].Value = "-----  " + (EndPrice * (1 - float.Parse(txtDiscount.Text) / 100)) + "  ----";
+            Price.Cells[1].Value = "-----  " + (EndPrice * (1 - Discount / 100)) + "  ----";
             dgvResult.Rows.Add(Price);
         }
 

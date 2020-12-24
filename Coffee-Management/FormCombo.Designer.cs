@@ -53,10 +53,10 @@
             this.btnCombo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCombo.FlatAppearance.BorderSize = 0;
             this.btnCombo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCombo.Font = new System.Drawing.Font("Cambria", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCombo.Location = new System.Drawing.Point(321, 174);
+            this.btnCombo.Font = new System.Drawing.Font("Cambria", 23F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCombo.Location = new System.Drawing.Point(340, 176);
             this.btnCombo.Name = "btnCombo";
-            this.btnCombo.Size = new System.Drawing.Size(176, 111);
+            this.btnCombo.Size = new System.Drawing.Size(173, 105);
             this.btnCombo.TabIndex = 1;
             this.btnCombo.Text = "Combo";
             this.btnCombo.UseVisualStyleBackColor = true;
@@ -65,18 +65,18 @@
             // txtMoney
             // 
             this.txtMoney.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMoney.Location = new System.Drawing.Point(7, 41);
+            this.txtMoney.Location = new System.Drawing.Point(32, 43);
             this.txtMoney.Name = "txtMoney";
-            this.txtMoney.Size = new System.Drawing.Size(138, 37);
+            this.txtMoney.Size = new System.Drawing.Size(132, 31);
             this.txtMoney.TabIndex = 2;
             this.txtMoney.Text = "200000";
             // 
             // txtDiscount
             // 
             this.txtDiscount.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscount.Location = new System.Drawing.Point(171, 41);
+            this.txtDiscount.Location = new System.Drawing.Point(190, 43);
             this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(138, 37);
+            this.txtDiscount.Size = new System.Drawing.Size(122, 31);
             this.txtDiscount.TabIndex = 2;
             this.txtDiscount.Text = "0";
             // 
@@ -84,9 +84,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(2, 12);
+            this.label1.Location = new System.Drawing.Point(34, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 28);
+            this.label1.Size = new System.Drawing.Size(126, 22);
             this.label1.TabIndex = 3;
             this.label1.Text = "Money (VND)";
             // 
@@ -94,18 +94,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(166, 12);
+            this.label2.Location = new System.Drawing.Point(195, 14);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(158, 28);
+            this.label2.Size = new System.Drawing.Size(126, 22);
             this.label2.TabIndex = 3;
             this.label2.Text = "Discount (%)";
             // 
             // txtQuantity
             // 
             this.txtQuantity.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(7, 120);
+            this.txtQuantity.Location = new System.Drawing.Point(32, 122);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(138, 37);
+            this.txtQuantity.Size = new System.Drawing.Size(132, 31);
             this.txtQuantity.TabIndex = 2;
             this.txtQuantity.Text = "0";
             this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
@@ -114,9 +114,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(2, 90);
+            this.label3.Location = new System.Drawing.Point(54, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 28);
+            this.label3.Size = new System.Drawing.Size(85, 22);
             this.label3.TabIndex = 3;
             this.label3.Text = "Quantity";
             // 
@@ -125,9 +125,9 @@
             this.ckbDiffType.AutoSize = true;
             this.ckbDiffType.Enabled = false;
             this.ckbDiffType.Font = new System.Drawing.Font("Cambria", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbDiffType.Location = new System.Drawing.Point(316, 46);
+            this.ckbDiffType.Location = new System.Drawing.Point(360, 49);
             this.ckbDiffType.Name = "ckbDiffType";
-            this.ckbDiffType.Size = new System.Drawing.Size(181, 30);
+            this.ckbDiffType.Size = new System.Drawing.Size(153, 25);
             this.ckbDiffType.TabIndex = 5;
             this.ckbDiffType.Text = "Different Type";
             this.ckbDiffType.UseVisualStyleBackColor = true;
@@ -136,19 +136,19 @@
             // 
             this.cbType.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbType.FormattingEnabled = true;
-            this.cbType.Location = new System.Drawing.Point(7, 174);
+            this.cbType.Location = new System.Drawing.Point(32, 176);
             this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(308, 35);
+            this.cbType.Size = new System.Drawing.Size(280, 30);
             this.cbType.TabIndex = 6;
             // 
             // txtType
             // 
-            this.txtType.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtType.Location = new System.Drawing.Point(12, 291);
+            this.txtType.Font = new System.Drawing.Font("Cambria", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtType.Location = new System.Drawing.Point(31, 293);
             this.txtType.Multiline = true;
             this.txtType.Name = "txtType";
             this.txtType.ReadOnly = true;
-            this.txtType.Size = new System.Drawing.Size(485, 284);
+            this.txtType.Size = new System.Drawing.Size(482, 284);
             this.txtType.TabIndex = 7;
             // 
             // btnAddType
@@ -156,10 +156,10 @@
             this.btnAddType.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddType.FlatAppearance.BorderSize = 0;
             this.btnAddType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddType.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddType.Location = new System.Drawing.Point(7, 215);
+            this.btnAddType.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddType.Location = new System.Drawing.Point(32, 220);
             this.btnAddType.Name = "btnAddType";
-            this.btnAddType.Size = new System.Drawing.Size(308, 70);
+            this.btnAddType.Size = new System.Drawing.Size(280, 61);
             this.btnAddType.TabIndex = 8;
             this.btnAddType.Text = "Add Type";
             this.btnAddType.UseVisualStyleBackColor = true;
@@ -173,12 +173,12 @@
             this.dgvResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DrinkName,
             this.Price});
-            this.dgvResult.Location = new System.Drawing.Point(503, 12);
+            this.dgvResult.Location = new System.Drawing.Point(555, 12);
             this.dgvResult.Name = "dgvResult";
             this.dgvResult.ReadOnly = true;
             this.dgvResult.RowHeadersVisible = false;
             this.dgvResult.RowHeadersWidth = 51;
-            this.dgvResult.Size = new System.Drawing.Size(424, 563);
+            this.dgvResult.Size = new System.Drawing.Size(372, 563);
             this.dgvResult.TabIndex = 9;
             // 
             // DrinkName
@@ -201,9 +201,9 @@
             // 
             this.ckbLessEqual.AutoSize = true;
             this.ckbLessEqual.Font = new System.Drawing.Font("Cambria", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbLessEqual.Location = new System.Drawing.Point(316, 125);
+            this.ckbLessEqual.Location = new System.Drawing.Point(360, 122);
             this.ckbLessEqual.Name = "ckbLessEqual";
-            this.ckbLessEqual.Size = new System.Drawing.Size(134, 30);
+            this.ckbLessEqual.Size = new System.Drawing.Size(111, 25);
             this.ckbLessEqual.TabIndex = 5;
             this.ckbLessEqual.Text = "<= Money";
             this.ckbLessEqual.UseVisualStyleBackColor = true;
@@ -213,9 +213,9 @@
             // 
             this.txtLessMoney.Enabled = false;
             this.txtLessMoney.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLessMoney.Location = new System.Drawing.Point(171, 120);
+            this.txtLessMoney.Location = new System.Drawing.Point(190, 122);
             this.txtLessMoney.Name = "txtLessMoney";
-            this.txtLessMoney.Size = new System.Drawing.Size(138, 37);
+            this.txtLessMoney.Size = new System.Drawing.Size(122, 31);
             this.txtLessMoney.TabIndex = 2;
             this.txtLessMoney.Text = "0";
             // 
@@ -223,15 +223,15 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cambria", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(166, 90);
+            this.label4.Location = new System.Drawing.Point(172, 92);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(223, 28);
+            this.label4.Size = new System.Drawing.Size(176, 22);
             this.label4.TabIndex = 3;
             this.label4.Text = "Least Money (VND)";
             // 
             // FormCombo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 587);
             this.Controls.Add(this.txtLessMoney);
