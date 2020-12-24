@@ -48,7 +48,8 @@ namespace GUILayer
         {
             float BeforeMoney = float.Parse(txtMoney.Text);
             float Discount = float.Parse(txtDiscount.Text);
-            Money = BeforeMoney * (1 + Discount / 100);
+            //Money = BeforeMoney / (1 - Discount / 100);
+            Money = BeforeMoney;
             LessMoney = float.Parse(txtLessMoney.Text);
             Quantity = int.Parse(txtQuantity.Text);
             result = new Drink[Quantity];
@@ -104,6 +105,7 @@ namespace GUILayer
         //Them vao DGV
         private void AddDGV()
         {
+            float EndPrice = 0;
             for (int i = 0; i < result.Length; i++)
             {
                 DataGridViewRow row = new DataGridViewRow();
@@ -111,12 +113,16 @@ namespace GUILayer
                 row.Cells[0].Value = result[i].Name;
                 row.Cells[1].Value = result[i].Price;
                 dgvResult.Rows.Add(row);
+                EndPrice += result[i].Price;
             }
-            DataGridViewRow Line = new DataGridViewRow();
-            Line.CreateCells(dgvResult);
-            Line.Cells[0].Value = "--------------------------------------------";
-            Line.Cells[1].Value = "------------------------";
-            dgvResult.Rows.Add(Line);
+            //Gia tien
+            DataGridViewRow Price = new DataGridViewRow();
+            Price.CreateCells(dgvResult);
+            Price.DefaultCellStyle.BackColor = Color.GreenYellow;
+            Price.Cells[0].Value = "---------Price After Discount : ---";
+            //Price.Cells[1].Value = "-----  " + EndPrice + "  ----";
+            Price.Cells[1].Value = "-----  " + (EndPrice * (1 - float.Parse(txtDiscount.Text) / 100)) + "  ----";
+            dgvResult.Rows.Add(Price);
         }
 
         //Kiem tra khac nhau
@@ -141,17 +147,24 @@ namespace GUILayer
         {
             try
             {
+                ResetDGV();
                 GetInput();
                 getListChooseDrink();
                 Try(1);
-                btnCombo.Enabled = false;
             }
             catch
             {
                 MessageBox.Show("Error ! Please Check Input Again ! ");
             }
         }
+        //Reset Input
+        private void ResetDGV()
+        {
+            dgvResult.DataSource = null;
+            dgvResult.Rows.Clear();
+        }
 
+        //Chon <= Money thi cho phep nhap Less Money
         private void ckbLessEqual_CheckStateChanged(object sender, EventArgs e)
         {
             if (ckbLessEqual.Checked) txtLessMoney.Enabled = true;
@@ -159,6 +172,16 @@ namespace GUILayer
             {
                 txtLessMoney.Text = "0";
                 txtLessMoney.Enabled = false;
+            }
+        }
+        //Quantity > Type thi khong the chon cac do uong khac Type duoc
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+            if (txtQuantity.Text != String.Empty)
+            {
+                if (int.Parse(txtQuantity.Text) > listChooseType.Count)
+                    ckbDiffType.Enabled = false;
+                else ckbDiffType.Enabled = true;
             }
         }
     }

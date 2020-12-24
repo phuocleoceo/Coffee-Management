@@ -106,6 +106,7 @@
             this.txtQuantity.Size = new System.Drawing.Size(126, 31);
             this.txtQuantity.TabIndex = 2;
             this.txtQuantity.Text = "0";
+            this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
             // 
             // label3
             // 
@@ -120,6 +121,7 @@
             // ckbDiffType
             // 
             this.ckbDiffType.AutoSize = true;
+            this.ckbDiffType.Enabled = false;
             this.ckbDiffType.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ckbDiffType.Location = new System.Drawing.Point(305, 51);
             this.ckbDiffType.Name = "ckbDiffType";
@@ -166,11 +168,11 @@
             this.dgvResult.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DrinkName,
             this.Price});
-            this.dgvResult.Location = new System.Drawing.Point(535, 47);
+            this.dgvResult.Location = new System.Drawing.Point(532, 47);
             this.dgvResult.Name = "dgvResult";
             this.dgvResult.ReadOnly = true;
             this.dgvResult.RowHeadersVisible = false;
-            this.dgvResult.Size = new System.Drawing.Size(371, 510);
+            this.dgvResult.Size = new System.Drawing.Size(379, 510);
             this.dgvResult.TabIndex = 9;
             // 
             // DrinkName
