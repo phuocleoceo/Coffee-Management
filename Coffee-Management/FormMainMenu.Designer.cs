@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMainMenu));
             this.panelSlideMenu = new System.Windows.Forms.Panel();
-            this.btnCombo = new System.Windows.Forms.Button();
-            this.btnAccount = new System.Windows.Forms.Button();
-            this.btnTable = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.btnCloseChildForm = new System.Windows.Forms.Button();
+            this.btnCombo = new System.Windows.Forms.Button();
+            this.btnAccount = new System.Windows.Forms.Button();
+            this.btnTable = new System.Windows.Forms.Button();
             this.panelSlideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -55,10 +55,95 @@
             this.panelSlideMenu.Controls.Add(this.panelLogo);
             this.panelSlideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSlideMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelSlideMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelSlideMenu.Name = "panelSlideMenu";
-            this.panelSlideMenu.Size = new System.Drawing.Size(293, 844);
+            this.panelSlideMenu.Size = new System.Drawing.Size(220, 686);
             this.panelSlideMenu.TabIndex = 20;
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelLogo.Controls.Add(this.label1);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(220, 100);
+            this.panelLogo.TabIndex = 30;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Curlz MT", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(10, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(195, 39);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "IT Coffee Shop";
+            // 
+            // panelTitleBar
+            // 
+            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.panelTitleBar.Controls.Add(this.btnMinimize);
+            this.panelTitleBar.Controls.Add(this.btnCloseChildForm);
+            this.panelTitleBar.Controls.Add(this.lblTitle);
+            this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
+            this.panelTitleBar.Name = "panelTitleBar";
+            this.panelTitleBar.Size = new System.Drawing.Size(935, 100);
+            this.panelTitleBar.TabIndex = 40;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Freestyle Script", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(368, 17);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(193, 71);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "H O M E";
+            // 
+            // panelDesktopPane
+            // 
+            this.panelDesktopPane.BackgroundImage = global::GUILayer.Properties.Resources.logo1;
+            this.panelDesktopPane.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktopPane.Location = new System.Drawing.Point(220, 100);
+            this.panelDesktopPane.Name = "panelDesktopPane";
+            this.panelDesktopPane.Size = new System.Drawing.Size(935, 586);
+            this.panelDesktopPane.TabIndex = 50;
+            // 
+            // btnMinimize
+            // 
+            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnMinimize.Image = global::GUILayer.Properties.Resources.down1;
+            this.btnMinimize.Location = new System.Drawing.Point(860, 0);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(75, 100);
+            this.btnMinimize.TabIndex = 3;
+            this.btnMinimize.UseVisualStyleBackColor = true;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
+            // 
+            // btnCloseChildForm
+            // 
+            this.btnCloseChildForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCloseChildForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCloseChildForm.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
+            this.btnCloseChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseChildForm.Image = global::GUILayer.Properties.Resources.Close;
+            this.btnCloseChildForm.Location = new System.Drawing.Point(0, 0);
+            this.btnCloseChildForm.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCloseChildForm.Name = "btnCloseChildForm";
+            this.btnCloseChildForm.Size = new System.Drawing.Size(88, 100);
+            this.btnCloseChildForm.TabIndex = 2;
+            this.btnCloseChildForm.UseVisualStyleBackColor = true;
+            this.btnCloseChildForm.Click += new System.EventHandler(this.btnCloseChildForm_Click);
             // 
             // btnCombo
             // 
@@ -68,15 +153,15 @@
             this.btnCombo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCombo.Font = new System.Drawing.Font("Monotype Corsiva", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCombo.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnCombo.Image = global::GUILayer.Properties.Resources.combo1;
+            this.btnCombo.Image = global::GUILayer.Properties.Resources.combo11;
             this.btnCombo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCombo.Location = new System.Drawing.Point(0, 369);
+            this.btnCombo.Location = new System.Drawing.Point(0, 300);
             this.btnCombo.Margin = new System.Windows.Forms.Padding(0);
             this.btnCombo.Name = "btnCombo";
-            this.btnCombo.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnCombo.Size = new System.Drawing.Size(293, 123);
+            this.btnCombo.Padding = new System.Windows.Forms.Padding(11, 0, 0, 0);
+            this.btnCombo.Size = new System.Drawing.Size(220, 100);
             this.btnCombo.TabIndex = 5;
-            this.btnCombo.Text = "        Combo";
+            this.btnCombo.Text = "         Combo";
             this.btnCombo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCombo.UseVisualStyleBackColor = true;
             this.btnCombo.Click += new System.EventHandler(this.btnReporting_Click);
@@ -91,13 +176,12 @@
             this.btnAccount.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAccount.Image = global::GUILayer.Properties.Resources.coffe;
             this.btnAccount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAccount.Location = new System.Drawing.Point(0, 246);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAccount.Location = new System.Drawing.Point(0, 200);
             this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnAccount.Size = new System.Drawing.Size(293, 123);
+            this.btnAccount.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAccount.Size = new System.Drawing.Size(220, 100);
             this.btnAccount.TabIndex = 1;
-            this.btnAccount.Text = "        Admin";
+            this.btnAccount.Text = "         Admin";
             this.btnAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAccount.UseVisualStyleBackColor = true;
             this.btnAccount.Click += new System.EventHandler(this.btnAccount_Click);
@@ -112,119 +196,26 @@
             this.btnTable.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnTable.Image = global::GUILayer.Properties.Resources.cup3;
             this.btnTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTable.Location = new System.Drawing.Point(0, 123);
+            this.btnTable.Location = new System.Drawing.Point(0, 100);
             this.btnTable.Margin = new System.Windows.Forms.Padding(0);
             this.btnTable.Name = "btnTable";
-            this.btnTable.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnTable.Size = new System.Drawing.Size(293, 123);
+            this.btnTable.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnTable.Size = new System.Drawing.Size(220, 100);
             this.btnTable.TabIndex = 0;
-            this.btnTable.Text = "        Table";
+            this.btnTable.Text = "         Table";
             this.btnTable.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTable.UseVisualStyleBackColor = true;
             this.btnTable.Click += new System.EventHandler(this.btnTable_Click);
             // 
-            // panelLogo
-            // 
-            this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
-            this.panelLogo.Controls.Add(this.label1);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(293, 123);
-            this.panelLogo.TabIndex = 30;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Curlz MT", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(13, 34);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 49);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "IT Coffee Shop";
-            // 
-            // panelTitleBar
-            // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.panelTitleBar.Controls.Add(this.btnMinimize);
-            this.panelTitleBar.Controls.Add(this.btnCloseChildForm);
-            this.panelTitleBar.Controls.Add(this.lblTitle);
-            this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(293, 0);
-            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4);
-            this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1247, 123);
-            this.panelTitleBar.TabIndex = 40;
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnMinimize.Image = global::GUILayer.Properties.Resources.down1;
-            this.btnMinimize.Location = new System.Drawing.Point(1147, 0);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(100, 123);
-            this.btnMinimize.TabIndex = 3;
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnCloseChildForm
-            // 
-            this.btnCloseChildForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCloseChildForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCloseChildForm.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnCloseChildForm.FlatAppearance.BorderSize = 0;
-            this.btnCloseChildForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseChildForm.Image = global::GUILayer.Properties.Resources.Close;
-            this.btnCloseChildForm.Location = new System.Drawing.Point(0, 0);
-            this.btnCloseChildForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCloseChildForm.Name = "btnCloseChildForm";
-            this.btnCloseChildForm.Size = new System.Drawing.Size(117, 123);
-            this.btnCloseChildForm.TabIndex = 2;
-            this.btnCloseChildForm.UseVisualStyleBackColor = true;
-            this.btnCloseChildForm.Click += new System.EventHandler(this.btnCloseChildForm_Click);
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Freestyle Script", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(491, 21);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(243, 89);
-            this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "H O M E";
-            // 
-            // panelDesktopPane
-            // 
-            this.panelDesktopPane.BackgroundImage = global::GUILayer.Properties.Resources.logo1;
-            this.panelDesktopPane.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktopPane.Location = new System.Drawing.Point(293, 123);
-            this.panelDesktopPane.Margin = new System.Windows.Forms.Padding(4);
-            this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(1247, 721);
-            this.panelDesktopPane.TabIndex = 50;
-            // 
             // FormMainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1540, 844);
+            this.ClientSize = new System.Drawing.Size(1155, 686);
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelSlideMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Coffee Management";

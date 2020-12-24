@@ -195,6 +195,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LogoFinal.ico" />
+    <None Include="Resources\combo11.png" />
+    <None Include="Resources\combo.png" />
     <None Include="Resources\combo1.png" />
     <None Include="Resources\down1.png" />
     <None Include="Resources\accountlogo.png" />
