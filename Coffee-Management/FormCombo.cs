@@ -34,15 +34,16 @@ namespace GUILayer
         {
             LoadTheme();
             Display.FormatTable(dgvResult);
-            BUS_DrinkType.Instance.LoadDrinkTypeToComboBox(listType,cbType);
+            BUS_DrinkType.Instance.GetList(listType);
+            BUS_DrinkType.Instance.LoadDrinkTypeToComboBox(listType, cbType);
             BUS_Drink.Instance.GetList(listDrink);
         }
-        
+
         /*-------------------------------------------------------------------------------------*/
         private static float Money;
         private static float LessMoney;
         private static int Quantity;
-
+        //Lay cac du lieu can thiet
         private void GetInput()
         {
             float BeforeMoney = float.Parse(txtMoney.Text);
@@ -69,14 +70,7 @@ namespace GUILayer
         // Thu duoc list cac Drink thuoc Type da chon
         private void getListChooseDrink()
         {
-            listChooseDrink.Clear();
-            for (int i = 0; i < listDrink.Count; i++)
-            {
-                if (listChooseType.Contains(listDrink[i].Type))
-                {
-                    listChooseDrink.Add(listDrink[i]);
-                }
-            }
+            BUS_Drink.Instance.getListDrinkWithManyType(listDrink, listChooseDrink, listChooseType);
             BUS_Drink.Instance.QuickSort(listChooseDrink, 0, listChooseDrink.Count - 1);
         }
         /*-------------------------------------------------------------------------------------*/

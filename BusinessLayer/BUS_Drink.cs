@@ -83,5 +83,17 @@ namespace BusinessLayer
             }
             return 0;
         }
+        //Tao ra List cac do uong co Type mong muon
+        public void getListDrinkWithManyType(ManageList<Drink> list, ManageList<Drink> chooseDrink, ManageList<string> Type)
+        {
+            chooseDrink.Clear();
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (Type.Contains(list[i].Type))
+                {
+                    chooseDrink.Add(list[i]);
+                }
+            }
+        }
     }
 }

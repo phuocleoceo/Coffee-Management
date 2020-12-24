@@ -35,7 +35,6 @@ namespace BusinessLayer
         public void LoadDrinkTypeToComboBox(ManageList<DrinkType> list,ComboBox cb)
         {
             cb.Items.Clear();
-            GetList(list);
             for (int i = 0; i < list.Count; i++)
             {
                 cb.Items.Add(list[i].Name);

@@ -160,12 +160,17 @@ namespace GUILayer
         }
 
         /*--------------------------DRINK----------------------------------------*/
+        private void LoadDrinkTypeToComboBox()
+        {
+            ManageList<DrinkType> listType = new ManageList<DrinkType>();
+            BUS_DrinkType.Instance.GetList(listType);
+            BUS_DrinkType.Instance.LoadDrinkTypeToComboBox(listType, cbDrinkType);
+        }
 
         private void btnShowDrink_Click(object sender, EventArgs e)
         {
             BUS_Drink.Instance.ShowDGV(dgvDrink);
-            ManageList<DrinkType> listType = new ManageList<DrinkType>();
-            BUS_DrinkType.Instance.LoadDrinkTypeToComboBox(listType, cbDrinkType);
+            LoadDrinkTypeToComboBox();
             //Cho phép các Button khác chạy
             btnAddDrink.Enabled = true;
             btnEditDrink.Enabled = true;

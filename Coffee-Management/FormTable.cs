@@ -160,6 +160,7 @@ namespace GUILayer
         private void LoadDataForAddDrinkGRB()
         {
             txtTableAD.Text = txtNameTable.Text;
+            BUS_DrinkType.Instance.GetList(listDrinkType);
             BUS_DrinkType.Instance.LoadDrinkTypeToComboBox(listDrinkType, cbbDrinkTypeAD);
         }
 
