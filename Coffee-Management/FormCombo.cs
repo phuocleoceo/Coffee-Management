@@ -29,6 +29,10 @@ namespace GUILayer
                     btn.FlatAppearance.BorderColor = ThemeColor.SecondaryColor;
                 }
             }
+            label1.ForeColor = ThemeColor.PrimaryColor;
+            label2.ForeColor = ThemeColor.PrimaryColor;
+            label3.ForeColor = ThemeColor.PrimaryColor;
+            label4.ForeColor = ThemeColor.PrimaryColor;
         }
         private void FormReporting_Load(object sender, EventArgs e)
         {

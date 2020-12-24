@@ -33,9 +33,6 @@
             this.pnlBill = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtTotal = new System.Windows.Forms.Label();
-            this.txtSTT = new System.Windows.Forms.Label();
-            this.txtNameTable = new System.Windows.Forms.Label();
             this.gpbBill = new System.Windows.Forms.GroupBox();
             this.btnPrint = new System.Windows.Forms.Button();
             this.pnlTable = new System.Windows.Forms.Panel();
@@ -72,6 +69,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.printDialogBill = new System.Windows.Forms.PrintDialog();
             this.printDocumentBill = new System.Drawing.Printing.PrintDocument();
+            this.txtTotal = new System.Windows.Forms.Label();
+            this.txtSTT = new System.Windows.Forms.Label();
+            this.txtNameTable = new System.Windows.Forms.Label();
             this.gpbBill.SuspendLayout();
             this.gpbTable.SuspendLayout();
             this.grbChucNang.SuspendLayout();
@@ -90,7 +90,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(27, 399);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 18);
+            this.label1.Size = new System.Drawing.Size(74, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "Price : ";
             // 
@@ -111,7 +111,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(60, 60);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(207, 18);
+            this.label5.Size = new System.Drawing.Size(258, 24);
             this.label5.TabIndex = 10;
             this.label5.Text = "ID             Drink           Quantity";
             // 
@@ -122,35 +122,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(268, 399);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 18);
+            this.label6.Size = new System.Drawing.Size(50, 24);
             this.label6.TabIndex = 14;
             this.label6.Text = "VNĐ";
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTotal.Font = new System.Drawing.Font("Lucida Sans Unicode", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(117, 395);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.Size = new System.Drawing.Size(134, 24);
-            this.txtTotal.TabIndex = 18;
-            this.txtTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtSTT
-            // 
-            this.txtSTT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSTT.Location = new System.Drawing.Point(188, 22);
-            this.txtSTT.Name = "txtSTT";
-            this.txtSTT.Size = new System.Drawing.Size(79, 29);
-            this.txtSTT.TabIndex = 17;
-            this.txtSTT.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // txtNameTable
-            // 
-            this.txtNameTable.Location = new System.Drawing.Point(38, 22);
-            this.txtNameTable.Name = "txtNameTable";
-            this.txtNameTable.Size = new System.Drawing.Size(74, 27);
-            this.txtNameTable.TabIndex = 16;
             // 
             // gpbBill
             // 
@@ -359,7 +333,7 @@
             this.cbbDrinkTypeAD.FormattingEnabled = true;
             this.cbbDrinkTypeAD.Location = new System.Drawing.Point(89, 72);
             this.cbbDrinkTypeAD.Name = "cbbDrinkTypeAD";
-            this.cbbDrinkTypeAD.Size = new System.Drawing.Size(177, 29);
+            this.cbbDrinkTypeAD.Size = new System.Drawing.Size(177, 34);
             this.cbbDrinkTypeAD.TabIndex = 37;
             this.cbbDrinkTypeAD.SelectedIndexChanged += new System.EventHandler(this.cbbDrinkTypeAD_SelectedIndexChanged);
             // 
@@ -386,7 +360,7 @@
             this.txtTableAD.Location = new System.Drawing.Point(89, 24);
             this.txtTableAD.Name = "txtTableAD";
             this.txtTableAD.ReadOnly = true;
-            this.txtTableAD.Size = new System.Drawing.Size(177, 29);
+            this.txtTableAD.Size = new System.Drawing.Size(177, 34);
             this.txtTableAD.TabIndex = 3;
             // 
             // cbbDrinkAD
@@ -395,7 +369,7 @@
             this.cbbDrinkAD.FormattingEnabled = true;
             this.cbbDrinkAD.Location = new System.Drawing.Point(89, 121);
             this.cbbDrinkAD.Name = "cbbDrinkAD";
-            this.cbbDrinkAD.Size = new System.Drawing.Size(178, 29);
+            this.cbbDrinkAD.Size = new System.Drawing.Size(178, 34);
             this.cbbDrinkAD.TabIndex = 2;
             // 
             // nUDQuantityAD
@@ -403,7 +377,7 @@
             this.nUDQuantityAD.Font = new System.Drawing.Font("Lucida Sans Unicode", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nUDQuantityAD.Location = new System.Drawing.Point(89, 170);
             this.nUDQuantityAD.Name = "nUDQuantityAD";
-            this.nUDQuantityAD.Size = new System.Drawing.Size(177, 34);
+            this.nUDQuantityAD.Size = new System.Drawing.Size(177, 41);
             this.nUDQuantityAD.TabIndex = 1;
             this.nUDQuantityAD.Value = new decimal(new int[] {
             1,
@@ -417,7 +391,7 @@
             this.label11.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(2, 173);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(90, 20);
+            this.label11.Size = new System.Drawing.Size(109, 23);
             this.label11.TabIndex = 0;
             this.label11.Text = "Quantity : ";
             // 
@@ -427,7 +401,7 @@
             this.label4.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(28, 74);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 20);
+            this.label4.Size = new System.Drawing.Size(69, 23);
             this.label4.TabIndex = 0;
             this.label4.Text = "Type :";
             // 
@@ -437,7 +411,7 @@
             this.label8.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(23, 123);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 20);
+            this.label8.Size = new System.Drawing.Size(81, 23);
             this.label8.TabIndex = 0;
             this.label8.Text = "Drink : ";
             // 
@@ -447,7 +421,7 @@
             this.label3.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(20, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 20);
+            this.label3.Size = new System.Drawing.Size(82, 23);
             this.label3.TabIndex = 0;
             this.label3.Text = "Table : ";
             // 
@@ -474,7 +448,7 @@
             this.txtFromTable.Location = new System.Drawing.Point(107, 35);
             this.txtFromTable.Name = "txtFromTable";
             this.txtFromTable.ReadOnly = true;
-            this.txtFromTable.Size = new System.Drawing.Size(131, 29);
+            this.txtFromTable.Size = new System.Drawing.Size(131, 34);
             this.txtFromTable.TabIndex = 20;
             // 
             // cbbToTable
@@ -483,7 +457,7 @@
             this.cbbToTable.FormattingEnabled = true;
             this.cbbToTable.Location = new System.Drawing.Point(107, 93);
             this.cbbToTable.Name = "cbbToTable";
-            this.cbbToTable.Size = new System.Drawing.Size(131, 29);
+            this.cbbToTable.Size = new System.Drawing.Size(131, 34);
             this.cbbToTable.TabIndex = 19;
             // 
             // btnAcceptSwitch
@@ -508,7 +482,7 @@
             this.label13.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(34, 95);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(44, 20);
+            this.label13.Size = new System.Drawing.Size(53, 23);
             this.label13.TabIndex = 0;
             this.label13.Text = "To : ";
             // 
@@ -518,7 +492,7 @@
             this.label12.Font = new System.Drawing.Font("Lucida Sans Unicode", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(16, 37);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(65, 20);
+            this.label12.Size = new System.Drawing.Size(78, 23);
             this.label12.TabIndex = 0;
             this.label12.Text = "From : ";
             // 
@@ -574,7 +548,7 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(54, 81);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(109, 19);
+            this.label16.Size = new System.Drawing.Size(134, 24);
             this.label16.TabIndex = 0;
             this.label16.Text = "Lê Mạnh Duy";
             // 
@@ -583,7 +557,7 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(52, 53);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(169, 19);
+            this.label15.Size = new System.Drawing.Size(204, 24);
             this.label15.TabIndex = 0;
             this.label15.Text = "Nguyễn Khoa Hoàng";
             // 
@@ -592,7 +566,7 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(51, 25);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(165, 19);
+            this.label14.Size = new System.Drawing.Size(204, 24);
             this.label14.TabIndex = 0;
             this.label14.Text = "Trương Minh Phước";
             // 
@@ -604,9 +578,35 @@
             // 
             this.printDocumentBill.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocumentBill_PrintPage);
             // 
+            // txtTotal
+            // 
+            this.txtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTotal.Font = new System.Drawing.Font("Lucida Sans Unicode", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(117, 395);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(134, 24);
+            this.txtTotal.TabIndex = 18;
+            this.txtTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtSTT
+            // 
+            this.txtSTT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSTT.Location = new System.Drawing.Point(188, 22);
+            this.txtSTT.Name = "txtSTT";
+            this.txtSTT.Size = new System.Drawing.Size(79, 29);
+            this.txtSTT.TabIndex = 17;
+            this.txtSTT.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // txtNameTable
+            // 
+            this.txtNameTable.Location = new System.Drawing.Point(38, 22);
+            this.txtNameTable.Name = "txtNameTable";
+            this.txtNameTable.Size = new System.Drawing.Size(74, 27);
+            this.txtNameTable.TabIndex = 16;
+            // 
             // FormTable
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(953, 578);
@@ -648,9 +648,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Label txtTotal;
-        private System.Windows.Forms.Label txtSTT;
-        private System.Windows.Forms.Label txtNameTable;
         private System.Windows.Forms.GroupBox gpbBill;
         private System.Windows.Forms.Panel pnlTable;
         private System.Windows.Forms.GroupBox gpbTable;
@@ -686,6 +683,9 @@
         private System.Windows.Forms.ComboBox cbbDrinkTypeAD;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtFromTable;
+        private System.Windows.Forms.Label txtNameTable;
+        private System.Windows.Forms.Label txtSTT;
+        private System.Windows.Forms.Label txtTotal;
 
         public System.Windows.Forms.MouseEventHandler txtNameMan_MouseClick { get; set; }
     }

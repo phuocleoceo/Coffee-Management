@@ -194,12 +194,11 @@
     <None Include="Resources\Glossy Sticker Icons1 [Converted].png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="logo.ico" />
-    <Content Include="LogoApp.ico" />
     <Content Include="LogoFinal.ico" />
+    <None Include="Resources\combo1.png" />
+    <None Include="Resources\down1.png" />
     <None Include="Resources\accountlogo.png" />
     <None Include="Resources\cup3.png" />
-    <None Include="Resources\calendar2.png" />
     <None Include="Resources\Close.png" />
     <None Include="Resources\logo1.png" />
   </ItemGroup>
