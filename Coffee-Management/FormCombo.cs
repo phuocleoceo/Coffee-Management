@@ -46,10 +46,7 @@ namespace GUILayer
         //Lay cac du lieu can thiet
         private void GetInput()
         {
-            float BeforeMoney = float.Parse(txtMoney.Text);
-            float Discount = float.Parse(txtDiscount.Text);
-            //Money = BeforeMoney / (1 - Discount / 100);
-            Money = BeforeMoney;
+            Money = float.Parse(txtMoney.Text);
             LessMoney = float.Parse(txtLessMoney.Text);
             Quantity = int.Parse(txtQuantity.Text);
             result = new Drink[Quantity];
