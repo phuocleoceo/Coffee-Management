@@ -41,13 +41,13 @@ namespace GUILayer
 
         /*-------------------------------------------------------------------------------------*/
         private static float Money;
-        private static float LessMoney;
+        private static float LeastMoney;
         private static int Quantity;
         //Lay cac du lieu can thiet
         private void GetInput()
         {
             Money = float.Parse(txtMoney.Text);
-            LessMoney = float.Parse(txtLessMoney.Text);
+            LeastMoney = float.Parse(txtLessMoney.Text);
             Quantity = int.Parse(txtQuantity.Text);
             result = new Drink[Quantity];
             A = new int[Quantity + 1];
@@ -96,7 +96,7 @@ namespace GUILayer
                 SUM += result[i].Price;
             }
             if (!ckbLessEqual.Checked && SUM == Money && Different()) AddDGV();
-            else if (ckbLessEqual.Checked && SUM <= Money && SUM >= LessMoney && Different()) AddDGV();
+            else if (ckbLessEqual.Checked && SUM <= Money && SUM >= LeastMoney && Different()) AddDGV();
         }
 
         //Them vao DGV

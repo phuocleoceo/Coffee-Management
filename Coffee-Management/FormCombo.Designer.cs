@@ -217,9 +217,9 @@
             this.label4.Font = new System.Drawing.Font("Cambria", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(162, 91);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(155, 21);
+            this.label4.Size = new System.Drawing.Size(162, 21);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Less Money (VND)";
+            this.label4.Text = "Least Money (VND)";
             // 
             // FormCombo
             // 
