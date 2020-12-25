@@ -37,7 +37,7 @@ namespace DataAccessLayer
             }
             catch (SqlException)
             {
-                MessageBox.Show("Duplicate PK Value ! ");
+                MessageBox.Show("Check Information Again !", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             finally
@@ -55,7 +55,7 @@ namespace DataAccessLayer
             }
             catch (SqlException)
             {
-                MessageBox.Show("Duplicate PK Value ! ");
+                MessageBox.Show("Check Information Again !", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -72,7 +72,7 @@ namespace DataAccessLayer
             }
             catch (SqlException)
             {
-                MessageBox.Show("Duplicate PK Value ! ");
+                MessageBox.Show("Check Information Again !", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return "";
             }
             finally

@@ -139,7 +139,7 @@ namespace GUILayer
                 }
                 else if (txtSTT.Text == "Empty")
                 {
-                    DialogResult ms = MessageBox.Show("This Table Is Now Empty !. Open It?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult ms = MessageBox.Show("This Table Is Now Empty !. Open It?", "Open Table", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (ms == DialogResult.Yes)
                     {
                         grbAddDrink.Visible = true;

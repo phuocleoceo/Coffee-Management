@@ -84,7 +84,6 @@ namespace GUILayer
             {
                 A[i] = j;
                 result[i - 1] = listChooseDrink[j - 1];
-                //if (ckbDiffType.Checked && i >= 2 && (result[i - 1].Type == result[i - 2].Type)) return;
                 if (i == Quantity) Check();
                 else Try(i + 1);
             }
@@ -114,14 +113,24 @@ namespace GUILayer
                 dgvResult.Rows.Add(row);
                 EndPrice += result[i].Price;
             }
-            //Gia tien
-            DataGridViewRow Price = new DataGridViewRow();
-            Price.CreateCells(dgvResult);
-            Price.DefaultCellStyle.BackColor = Color.GreenYellow;
-            Price.Cells[0].Value = "---------Price After Discount : ---";
-            //Price.Cells[1].Value = "-----  " + EndPrice + "  ----";
-            Price.Cells[1].Value = "-----  " + (EndPrice * (1 - Discount / 100)) + "  ----";
-            dgvResult.Rows.Add(Price);
+            //Gia tien ban dau cua Combo
+            DataGridViewRow BeforePrice = new DataGridViewRow();
+            BeforePrice.CreateCells(dgvResult);
+            BeforePrice.DefaultCellStyle.BackColor = Color.Aquamarine;
+            BeforePrice.Cells[0].Value = "--------------Total Price : -----------";
+            BeforePrice.Cells[1].Value = "-----  " + EndPrice + "  ----";
+            dgvResult.Rows.Add(BeforePrice);
+
+            if (Discount > 0)
+            {
+                //Gia tien sau Discount
+                DataGridViewRow AfterPrice = new DataGridViewRow();
+                AfterPrice.CreateCells(dgvResult);
+                AfterPrice.DefaultCellStyle.BackColor = Color.GreenYellow;
+                AfterPrice.Cells[0].Value = "---------Price After Discount : ---";
+                AfterPrice.Cells[1].Value = "-----  " + (EndPrice * (1 - Discount / 100)) + "  ----";
+                dgvResult.Rows.Add(AfterPrice);
+            }            
         }
 
         //Kiem tra khac nhau
