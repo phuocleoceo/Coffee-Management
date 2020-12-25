@@ -31,7 +31,7 @@ namespace GUILayer
             }
         }
         private void FormReporting_Load(object sender, EventArgs e)
-        {
+        {            
             LoadTheme();
             Display.FormatTable(dgvResult);
             BUS_DrinkType.Instance.GetList(listType);

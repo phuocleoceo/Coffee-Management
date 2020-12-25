@@ -372,5 +372,14 @@ namespace GUILayer
             e.Graphics.DrawString(HoaDon, new Font("Arial", 15, FontStyle.Bold), Brushes.Black, 100, 200);
         }
 
+        private void grbInfo_MouseCaptureChanged(object sender, EventArgs e)
+        {
+            label14.Hide();
+            label15.Text = FormLogin.Cashier;
+            label16.Hide();
+            pictureBox1.Hide();
+            pictureBox2.Hide();
+            pictureBox3.Hide();
+        }
     }
 }
