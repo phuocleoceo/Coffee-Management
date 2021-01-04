@@ -117,5 +117,10 @@ namespace GUILayer
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void panelLogo_Click(object sender, EventArgs e)
+        {
+            activeForm.Close();
+        }
     }
 }
